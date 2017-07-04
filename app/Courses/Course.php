@@ -29,11 +29,31 @@ class Course extends Model
 {
     use Uuids;
 
+    const STATUS_PUBLISHED = 'published';
+
     protected $table = 'courses';
+
     public $incrementing = false;
+
+    protected $fillable = [
+        'status',
+        'slug',
+        'category_id',
+        'title',
+        'announce',
+        'description',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+    ];
 
     public function category(): BelongsTo
     {
         return $this->belongsTo(CourseCategory::class);
+    }
+
+    public function isPublished(): bool
+    {
+        return $this->status && $this->status == static::STATUS_PUBLISHED;
     }
 }

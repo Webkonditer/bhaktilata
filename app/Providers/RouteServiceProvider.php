@@ -30,6 +30,9 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('course_slug', function ($courseSlug) use ($repo) {
             return $repo->findBySlug($courseSlug);
         });
+        Route::bind('course', function ($courseId) use ($repo) {
+            return $repo->findById($courseId);
+        });
         $repo = app()->make('App\Repositories\CourseCategoryRepository');
         Route::bind('course_category_slug', function ($courseSlug) use ($repo) {
             return $repo->findBySlug($courseSlug);

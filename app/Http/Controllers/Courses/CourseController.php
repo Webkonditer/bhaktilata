@@ -27,7 +27,7 @@ class CourseController extends Controller
 
     public function course(CourseCategory $category, Course $course)
     {
-        dd($course->category);
+        app()->make('menu')->get('crumbs')->add($course->title, ['route' => ['courses.course', 'course_category_slug' => $category->slug, 'course_slug' => $course->slug]]);
         return view('public.courses.course', [
             'category' => $category,
             'course' => $course,

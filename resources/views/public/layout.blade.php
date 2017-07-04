@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    {!! $main->asUl() !!}
     @yield('content')
 </body>
 </html>
