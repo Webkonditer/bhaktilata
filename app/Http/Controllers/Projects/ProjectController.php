@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\CourseRepository;
 use Lavary\Menu\Menu;
 
-class CourseController extends Controller
+class ProjectController extends Controller
 {
     /**
      * @var CourseRepository

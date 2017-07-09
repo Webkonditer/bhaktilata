@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CoursesAndCategoriesSeeder extends Seeder
+class ProjectsAndCategoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class CoursesAndCategoriesSeeder extends Seeder
      */
     public function run()
     {
-    	$coursesCategories = [
+    	$projectsCategories = [
     		[
     			'status' => 'published',
 			    'slug' => 'test_category',
@@ -24,33 +24,36 @@ class CoursesAndCategoriesSeeder extends Seeder
             ]
 	    ];
     	$categoryIds = [];
-    	foreach ($coursesCategories as $categoryData) {
-    		$category = new \App\Courses\ProjectCategory($categoryData);
+    	foreach ($projectsCategories as $categoryData) {
+    		$category = new \App\Projects\ProjectCategory($categoryData);
     		$category->save();
     		$categoryIds[] = $category->id;
 	    }
-        $courses = [
+        $projects = [
         	[
 	            'status' => 'published',
-		        'slug' => 'test-course',
-		        'title' => 'Тестовый курс',
+		        'slug' => 'test-project',
+		        'title' => 'Тестовый проект',
+                'link' => 'http://ya.ru',
 		        'category_id' => $categoryIds[0],
 	        ],
             [
                 'status' => 'published',
-                'slug' => 'one-more-course',
-                'title' => 'Ещё курс',
+                'slug' => 'one-more-project',
+                'title' => 'Ещё проект',
+                'is_opened' => false,
                 'category_id' => $categoryIds[0],
             ],
             [
                 'status' => 'published',
-                'slug' => 'new-course',
-                'title' => 'Новый курс',
+                'slug' => 'new-project',
+                'title' => 'Новый проект',
+                'is_opened' => true,
                 'category_id' => $categoryIds[1],
             ],
         ];
-    	foreach ($courses as $course) {
-    		$course = new \App\Courses\Course($course);
+    	foreach ($projects as $course) {
+    		$course = new \App\Projects\Project($course);
     		$course->save();
 	    }
     }

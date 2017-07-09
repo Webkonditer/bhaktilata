@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Courses;
+namespace App\Http\Controllers\Projects;
 
-use App\Courses\ProjectCategory;
+use App\Projects\ProjectCategory;
 use App\Http\Controllers\Controller;
-use App\Repositories\CourseRepository;
+use App\Repositories\ProjectRepository;
 
 class ListController extends Controller
 {
     /**
-     * @var CourseRepository
+     * @var ProjectRepository
      */
     private $repository;
 
     /**
      * ListController constructor.
      *
-     * @param CourseRepository $repository
+     * @param ProjectRepository $repository
      */
-    public function __construct(CourseRepository $repository)
+    public function __construct(ProjectRepository $repository)
     {
         $this->repository = $repository;
     }

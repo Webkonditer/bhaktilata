@@ -1,24 +1,26 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Route::get('/', function () {
-    return view('welcome');
-})->name('main');
-
 /** @var \Illuminate\Routing\Router $router */
-$router->middleware('navigation')->namespace('Courses')->group(function() use ($router) {
-	$router->get('/kursy', 'ListController@index')->name('courses');
-	$router->get('/kursy/{course_category_slug}', 'ListController@category')->name('courses.category');
-	$router->get('/kursy/{course_category_slug}/{course_slug}', 'CourseController@course')->name('courses.course');
+$router->middleware('navigation')->group(function($router) {
+    /** @var \Illuminate\Routing\Router $router */
+    $router->get('/', 'IndexController@index')->name('main');
+
+    $router->namespace('Courses')->prefix('/courses')->group(function($router) {
+        /** @var \Illuminate\Routing\Router $router */
+        $router->get('', 'ListController@index')->name('courses');
+        $router->get('/{course_category_slug}', 'ListController@category')->name('courses.category');
+        $router->get('/{course_category_slug}/{course_slug}', 'CourseController@course')->name('courses.course');
+    });
+
+    $router->namespace('Projects')->prefix('/projects')->group(function($router) {
+        /** @var \Illuminate\Routing\Router $router */
+        $router->get('', 'ListController@index')->name('projects');
+        $router->get('/{project_category_slugs}', 'ListController@category')
+            ->name('projects.category')
+            ->where('project_category_slug', '(.*)');
+        $router->get('/{course_category_slug}/{project_slug}', 'ProjectsController@project')->name('projects.project');
+    });
+
 });
 
 $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(function() use ($router) {
@@ -29,5 +31,3 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/courses/{course}/delete', 'Courses\CourseController@delete')->name('admin.course.delete');
 });
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

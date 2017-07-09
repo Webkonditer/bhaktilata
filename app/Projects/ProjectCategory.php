@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Courses;
+namespace App\Projects;
 
 use App\Uuids;
 use Illuminate\Database\Eloquent\Model;
@@ -13,8 +13,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @package App\Courses
  *
  * @property string    $id
- * @property string    $id
- * @property string    $status
  * @property string    $slug
  * @property string    $title
  * @property string    $description
@@ -24,15 +22,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property \DateTime $created_at
  * @property \DateTime $updated_at
  */
-class CourseCategory extends Model
+class ProjectCategory extends Model
 {
     use Uuids;
 
-    protected $table = 'course_categories';
+    protected $table = 'projects_categories';
     public $incrementing = false;
 
-    public function courses(): HasMany
+    public function projects(): HasMany
     {
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Project::class);
     }
 }

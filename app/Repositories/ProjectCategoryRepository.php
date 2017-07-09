@@ -3,17 +3,22 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
-use App\Courses\CourseCategory;
+use App\Projects\ProjectCategory;
 
-class CourseCategoryRepository
+class ProjectCategoryRepository
 {
     public function all()
     {
-        return CourseCategory::all();
+        return ProjectCategory::all();
     }
 
-    public function findBySlug(string $slug): ?CourseCategory
+    public function firstLevel()
     {
-        return CourseCategory::query()->where('slug', '=', $slug)->firstOrFail();
+        return ProjectCategory::query()->whereNull('parent_id')->get();
+    }
+
+    public function findBySlug(string $slug): ?ProjectCategory
+    {
+        return ProjectCategory::query()->where('slug', '=', $slug)->firstOrFail();
     }
 }

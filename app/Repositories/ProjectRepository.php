@@ -3,33 +3,33 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
-use App\Courses\Course;
-use App\Courses\CourseCategory;
+use App\Projects\Project;
+use App\Projects\ProjectCategory;
 use Illuminate\Database\Eloquent\Collection;
 
-class CourseRepository
+class ProjectRepository
 {
     public function all()
     {
-        return Course::all();
+        return Project::all();
     }
 
-    public function findById(string $id): ?Course
+    public function findById(string $id): ?Project
     {
-        return Course::query()->where('id', '=', $id)->firstOrFail();
+        return Project::query()->where('id', '=', $id)->firstOrFail();
     }
 
-    public function findBySlug(string $slug): ?Course
+    public function findBySlug(string $slug): ?Project
     {
-        return Course::query()->where('slug', '=', $slug)->firstOrFail();
+        return Project::query()->where('slug', '=', $slug)->firstOrFail();
     }
 
-    public function inCategory(CourseCategory $category): ?Collection
+    public function inCategory(ProjectCategory $category): ?Collection
     {
-        return Course::query()->where('category_id', '=', $category->id)->get();
+        return Project::query()->where('category_id', '=', $category->id)->get();
     }
 
-    public function save(Course $course)
+    public function save(Project $course)
     {
         return $course->save();
     }
