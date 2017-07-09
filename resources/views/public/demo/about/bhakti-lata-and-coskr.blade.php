@@ -1,5 +1,5 @@
 @extends('public.layout')
 
 @section('content')
-    <h1>Программа и видение</h1>
+    <h1>Бхакти-лата и ЦОСКР</h1>
 @endsection

@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Mockery\Exception;
+use Illuminate\Http\Request;
 
-class DemoController extends Controller
+class PagesController extends Controller
 {
-    public function index(string $path = '')
+    public function index(string $path = '', Request $request)
     {
         view()->addNamespace('demo', storage_path('demo'));
 
-        $path = str_replace('/', '.', trim($path, '/'));
+        $path = str_replace('/', '.', trim($path ?: $request->path(), '/'));
         try {
-            return view('demo::' . $path);
-        } catch (Exception $e) {
-            var_dump($e); die;
+            return view('public.demo.' . $path);
+        } catch (\InvalidArgumentException $e) {
+            return abort(404, 'Page not found');
         }
-        var_dump($path); die;
     }
 }

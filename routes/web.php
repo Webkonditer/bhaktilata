@@ -21,6 +21,10 @@ $router->middleware('navigation')->group(function($router) {
         $router->get('/{course_category_slug}/{project_slug}', 'ProjectsController@project')->name('projects.project');
     });
 
+    $router->get('/about', 'PagesController@index');
+    $router->get('/about/bhakti-lata-and-coskr', 'PagesController@index');
+    $router->get('/about/program-and-vision', 'PagesController@index');
+    $router->get('/about/stages', 'PagesController@index');
 });
 
 $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(function() use ($router) {
