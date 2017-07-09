@@ -9,6 +9,7 @@
 </head>
 <body>
     {!! $main->asUl() !!}
+    {!! $crumbs->asUl() !!}
     @yield('content')
 </body>
 </html>
