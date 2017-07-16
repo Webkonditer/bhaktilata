@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CourseRepository
 {
-    public function all()
+    use AdminEditTrait;
+
+    public function __construct()
     {
-        return Course::all();
+        $this->model = new Course();
     }
 
     public function findById(string $id): ?Course
@@ -27,10 +29,5 @@ class CourseRepository
     public function inCategory(CourseCategory $category): ?Collection
     {
         return Course::query()->where('category_id', '=', $category->id)->get();
-    }
-
-    public function save(Course $course)
-    {
-        return $course->save();
     }
 }

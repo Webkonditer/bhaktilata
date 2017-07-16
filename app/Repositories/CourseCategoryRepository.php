@@ -7,9 +7,16 @@ use App\Courses\CourseCategory;
 
 class CourseCategoryRepository
 {
-    public function all()
+    use AdminEditTrait;
+
+    public function __construct()
     {
-        return CourseCategory::all();
+        $this->model = new CourseCategory();
+    }
+
+    public function published()
+    {
+        return CourseCategory::query()->where('status', 'published')->get();
     }
 
     public function findBySlug(string $slug): ?CourseCategory

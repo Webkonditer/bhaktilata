@@ -3,6 +3,11 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
+        <a href="{{ route('admin.pages.add') }}" class="btn btn-primary">Добавить страницу</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
         <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
                 <tr role="row">
@@ -39,7 +44,6 @@
                 </tr>
             </tfoot>
         </table>
-        <a href="{{ route('admin.pages.add') }}" class="btn btn-block btn-primary">Добавить</a>
     </div>
 </div>
 @endsection

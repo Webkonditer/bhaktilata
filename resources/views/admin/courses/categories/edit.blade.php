@@ -9,7 +9,7 @@
             {{--</div>--}}
             {{--<!-- /.box-header -->--}}
             <!-- form start -->
-                <form role="form" name="edit" action="{{ route('admin.course.store', ['course' => $course]) }}" method="POST">
+                <form role="form" name="edit" action="{{ route('admin.course.category.store', ['category' => $category]) }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="box-body">
                         <div class="form-group">
@@ -18,7 +18,7 @@
                                     <input type="checkbox"
                                            id="published"
                                            name="edit[published]"
-                                           {{$course->isPublished() ? 'checked' : '' }}
+                                           {{ $category->isPublished() ? 'checked' : '' }}
                                     /> Отображается на сайте
                                 </label>
                             </div>
@@ -29,7 +29,7 @@
                                    name="edit[title]"
                                    class="form-control"
                                    id="title"
-                                   value="{{$course->title}}"
+                                   value="{{$category->title}}"
                                    placeholder="Введите название"
                             />
                         </div>
@@ -39,34 +39,17 @@
                                    name="edit[slug]"
                                    class="form-control"
                                    id="slug"
-                                   value="{{$course->slug}}"
+                                   value="{{$category->slug}}"
                                    placeholder="Enter email"
                             />
                         </div>
                         <div class="form-group">
-                            <label for="category_id">Категория</label>
-                            <select name="edit[category_id]" id="category_id" class="form-control">
-                                <option value="">Не выбрана</option>
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->title}}</option>
-                                @endforeach;
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="announce">Анонс</label>
-                            <textarea id="announce"
-                                      name="edit[announce]"
-                                      rows="10"
-                                      cols="80"
-                                      class="js-editor-enabled">{{ $course->announce }}</textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Полное описание</label>
+                            <label for="description">Описание</label>
                             <textarea id="description"
                                       name="edit[description]"
                                       rows="10"
                                       cols="80"
-                                      class="js-editor-enabled">{{ $course->description }}</textarea>
+                                      class="js-editor-enabled">{{ $category->description }}</textarea>
                         </div>
 
                         <div class="form-group">
@@ -75,7 +58,7 @@
                                    name="edit[meta_title]"
                                    class="form-control"
                                    id="meta_title"
-                                   value="{{ $course->meta_title }}"
+                                   value="{{ $category->meta_title }}"
                                    placeholder="Введите meta title"
                             />
                         </div>
@@ -85,7 +68,7 @@
                                    name="edit[meta_description]"
                                    class="form-control"
                                    id="meta_description"
-                                   value="{{ $course->meta_description }}"
+                                   value="{{ $category->meta_description }}"
                                    placeholder="Введите meta description"
                             />
                         </div>
@@ -95,7 +78,7 @@
                                    name="edit[meta_keywords]"
                                    class="form-control"
                                    id="meta_keywords"
-                                   value="{{ $course->meta_keywords }}"
+                                   value="{{ $category->meta_keywords }}"
                                    placeholder="Введите meta keywords"
                             />
                         </div>

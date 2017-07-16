@@ -24,7 +24,7 @@ class Navigation extends BaseTrimmer
             $menu->about->add('Бхакти-лата и ЦОСКР', 'about/bhakti-lata-and-coskr');
             $menu->about->add('Программа и видение', 'about/program-and-vision');
             $menu->about->add('Ступени', 'about/stages');
-            $menu->add('Проекты Бхакти-латы', '/projects')->nickname('projects');
+            $menu->add('Проекты Бхакти-латы', 'projects')->nickname('projects');
             $repo = app()->make('App\Repositories\ProjectCategoryRepository');
             foreach ($repo->firstLevel() as $category) {
                 $menu->projects
@@ -49,13 +49,12 @@ class Navigation extends BaseTrimmer
 
             $menu->add('Курсы', ['route' => 'courses'])->nickname('courses');
             $repo = app()->make('App\Repositories\CourseCategoryRepository');
-            foreach ($repo->all() as $category) {
+            foreach ($repo->published() as $category) {
                 $menu->courses
                     ->add($category->title,
                         ['route' => ['courses.category', 'course_category_slug' => $category->slug]])
                     ->active(route('courses.category', ['course_category_slug' => $category->slug], false) . '/*');
             }
-            $menu->courses->add('Расписание курсов', '/courses/schedule');
             $menu->add('Ресусры', '/resources')->nickname('resources');
             $menu->resources->add('Видео и вебинары', '/resources/video');
             $menu->resources->add('Документы', '/resources/documents');

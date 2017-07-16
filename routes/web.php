@@ -30,14 +30,16 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
 
     $router->get('/courses', 'Courses\ListController@index')->name('admin.courses.list');
+    $router->get('/courses/add', 'Courses\CourseController@add')->name('admin.course.add');
     $router->get('/courses/{course}/edit', 'Courses\CourseController@edit')->name('admin.course.edit');
     $router->post('/courses/{course}/store', 'Courses\CourseController@store')->name('admin.course.store');
     $router->get('/courses/{course}/delete', 'Courses\CourseController@delete')->name('admin.course.delete');
 
     $router->get('/courses/categories', 'Courses\CategoriesListController@index')->name('admin.courses.categories.list');
-    $router->get('/courses/categories/{category}/edit', 'Courses\CourseCategoryController@edit')->name('admin.course.category.edit');
-    $router->post('/courses/categories/{category}/store', 'Courses\CourseCategoryController@store')->name('admin.course.category.store');
-    $router->get('/courses/categories{category}/delete', 'Courses\CourseCategoryController@delete')->name('admin.course.category.delete');
+    $router->get('/courses/categories/add', 'Courses\CategoryController@add')->name('admin.course.category.add');
+    $router->get('/courses/categories/{category}/edit', 'Courses\CategoryController@edit')->name('admin.course.category.edit');
+    $router->post('/courses/categories/{category}/store', 'Courses\CategoryController@store')->name('admin.course.category.store');
+    $router->get('/courses/categories/{category}/delete', 'Courses\CategoryController@delete')->name('admin.course.category.delete');
 
     $router->get('/pages', 'Pages\ListController@index')->name('admin.pages.list');
     $router->get('/pages/add', 'Pages\PageController@add')->name('admin.pages.add');

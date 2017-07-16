@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin\Pages;
 use App\Pages\Page;
 use App\Http\Controllers\Controller;
 use App\Repositories\PageRepository;
+use App\Repositories\ProjectRepository;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -19,10 +20,10 @@ class PageController extends Controller
             $page->setUser($user);
             $repository->save($page);
         }
-        return redirect(route('admin.page.edit', ['page' => $page]));
+        return redirect()->route('admin.page.edit', ['page' => $page]);
     }
 
-    public function edit(Page $page, PageRepository $repository)
+    public function edit(Page $page)
     {
         return view('admin.pages.edit', [
             'page' => $page,
@@ -34,7 +35,16 @@ class PageController extends Controller
         $data = $request->get('edit');
         $page->fill($data);
         $page->setPublishStatus(isset($data['published']));
+        $page->setUser(\Auth::user());
         $repository->save($page);
-        return redirect(route('admin.page.edit', ['page' => $page]));
+        return redirect()->route('admin.page.edit', ['page' => $page]);
+    }
+
+    public function delete(Page $page, PageRepository $repository)
+    {
+        $page->setUser(\Auth::user());
+        $repository->remove($page);
+
+        return redirect()->route('admin.pages.list');
     }
 }

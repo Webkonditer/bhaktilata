@@ -37,7 +37,7 @@ class CreateCourseAndCourseCategoryTable extends Migration
 				$table->uuid('id')->primary();
 				$table->enum('status', ['draft', 'unpublished', 'published', 'deleted'])->index('courses_status');
 				$table->string('slug', 191)->index('course_slug');
-				$table->string('category_id', 191)->index('course_category');
+				$table->string('category_id', 191)->index('course_category')->nullable();
 				$table->string('title', 255);
 				$table->string('announce', 600)->nullable();
 				$table->text('description')->nullable();

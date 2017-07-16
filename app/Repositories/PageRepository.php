@@ -8,9 +8,11 @@ use App\User;
 
 class PageRepository
 {
-    public function all()
+    use AdminEditTrait;
+
+    public function __construct()
     {
-        return Page::all();
+        $this->model = new Page();
     }
 
     public function findById(string $id): ?Page
@@ -23,21 +25,11 @@ class PageRepository
         return Page::query()->where('status', '=', Page::STATUS_PUBLISHED)->where('path', '=', $slug)->firstOrFail();
     }
 
-    public function getDraft(User $user)
-    {
-        return Page::query()->where('status', '=', 'draft')->where('user_id', '=', $user->id)->first();
-    }
-
     public function makeNew()
     {
         return new Page([
             'title' => '',
             'path' => '',
         ]);
-    }
-
-    public function save(Page $course)
-    {
-        return $course->save();
     }
 }
