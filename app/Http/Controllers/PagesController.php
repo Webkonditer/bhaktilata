@@ -2,19 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Pages\Page;
 
 class PagesController extends Controller
 {
-    public function index(string $path = '', Request $request)
+    public function index(Page $page)
     {
-        view()->addNamespace('demo', storage_path('demo'));
-
-        $path = str_replace('/', '.', trim($path ?: $request->path(), '/'));
-        try {
-            return view('public.demo.' . $path);
-        } catch (\InvalidArgumentException $e) {
-            return abort(404, 'Page not found');
-        }
+        return view('public.pages.page', [
+            'page' => $page,
+        ]);
     }
 }

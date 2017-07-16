@@ -41,6 +41,11 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('project_slug', function ($projectSlug) use ($repo) {
             return $repo->findBySlug($projectSlug);
         });
+
+        $repo = app()->make('App\Repositories\PageRepository');
+        Route::bind('page_path', function ($path) use ($repo) {
+            return $repo->findByPath('/' . $path);
+        });
     }
 
     /**

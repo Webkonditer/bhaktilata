@@ -345,10 +345,18 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/courses/list"><i class="fa fa-circle-o"></i> Список курсов</a></li>
-                        <li><a href="/admin/courses/categories/list"><i class="fa fa-circle-o"></i> Список категорий</a></li>
+                        <li><a href="{{ route('admin.courses.list') }}"><i class="fa fa-circle-o"></i> Список курсов</a></li>
+                        <li><a href="{{ route('admin.courses.categories.list') }}"><i class="fa fa-circle-o"></i> Список категорий</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="/admin/pages">
+                        <i class="fa fa-dashboard"></i> <span>Страницы</span>
+                    </a>
+                </li>
+                <li class="header">ТУТ</li>
+                <li class="header">НЕКТОРЫЙ</li>
+                <li class="header">ОГРНАИЧИНТЕЛЬ</li>
                 <li class="active treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
