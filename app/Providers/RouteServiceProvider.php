@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Course;
+use App\Projects\ProjectCategory;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -36,6 +38,20 @@ class RouteServiceProvider extends ServiceProvider
         $repo = app()->make('App\Repositories\CourseCategoryRepository');
         Route::bind('course_category_slug', function ($courseSlug) use ($repo) {
             return $repo->findBySlug($courseSlug);
+        });
+        $repo = app()->make('App\Repositories\ProjectCategoryRepository');
+        Route::bind('project_category_slugs', function ($projectCategorySlug) use ($repo) {
+            $slugs = explode('/', $projectCategorySlug);
+            $categories = collect();
+            $categories->push($prevCategory = $lastCategory = $repo->findBySlug(array_pop($slugs)));
+            while($slug = array_pop($slugs)) {
+                $category = $repo->findBySlug($slug);
+                if ($prevCategory->parent->id != $category->id) {
+                    throw (new ModelNotFoundException)->setModel(ProjectCategory::class);
+                }
+                $categories->push($prevCategory = $category);
+            }
+            return $categories->reverse();
         });
         $repo = app()->make('App\Repositories\ProjectRepository');
         Route::bind('project_slug', function ($projectSlug) use ($repo) {

@@ -41,7 +41,7 @@ class CreateProjectAndProjectCategoryTable extends Migration
                 $table->uuid('id')->primary();
                 $table->enum('status', ['draft', 'unpublished', 'published', 'deleted'])->index('courses_status');
                 $table->string('slug', 191)->index('project_slug');
-                $table->string('category_id', 191)->index('project_category');
+                $table->string('category_id', 191)->index('project_category')->nullable();
                 $table->string('title', 255);
                 $table->string('announce', 600)->nullable();
                 $table->text('description')->nullable();

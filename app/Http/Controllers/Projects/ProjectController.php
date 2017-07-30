@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Courses;
+namespace App\Http\Controllers\Projects;
 
-use App\Courses\Course;
-use App\Courses\ProjectCategory;
 use App\Http\Controllers\Controller;
+use App\Projects\Project;
+use App\Projects\ProjectCategory;
 use App\Repositories\CourseRepository;
-use Lavary\Menu\Menu;
 
 class ProjectController extends Controller
 {
@@ -26,12 +25,27 @@ class ProjectController extends Controller
     }
 
 
-    public function course(ProjectCategory $category, Course $course)
+    public function project($categoriesPath, Project $project)
     {
-        app()->make('menu')->get('crumbs')->add($course->title, ['route' => ['courses.course', 'course_category_slug' => $category->slug, 'course_slug' => $course->slug]]);
-        return view('public.courses.course', [
+        $first = true;
+        foreach ($categoriesPath as $category) {
+            if ($first) {
+                $first = false;
+                continue;
+            }
+            app()->make('menu')->get('crumbs')->add($category->title, ['route' => [
+                'projects.category',
+                'project_category_slug' => $category->slugPath(),
+            ]]);
+        }
+        app()->make('menu')->get('crumbs')->add($project->title, ['route' => [
+            'projects.project',
+            'project_category_slug' => $category->slugPath(),
+            'project_slug' => $project->slug
+        ]]);
+        return view('public.projects.project', [
             'category' => $category,
-            'course' => $course,
+            'project' => $project,
         ]);
     }
 }

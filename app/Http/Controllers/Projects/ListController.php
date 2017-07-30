@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Projects;
 use App\Projects\ProjectCategory;
 use App\Http\Controllers\Controller;
 use App\Repositories\ProjectRepository;
+use Illuminate\Support\Collection;
 
 class ListController extends Controller
 {
@@ -26,17 +27,29 @@ class ListController extends Controller
 
     public function index()
     {
-        $courses = $this->repository->all();
-        return view('public.courses.list', [
-            'courses' => $courses
+        $projects = $this->repository->all();
+        return view('public.projects.list', [
+            'projects' => $projects
         ]);
     }
 
-    public function category(ProjectCategory $category)
+    /**
+     * @param Collection|ProjectCategory[] $categories
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function category(Collection $categories)
     {
-        $courses = $this->repository->inCategory($category);
-        return view('public.courses.list', [
-            'courses' => $courses
+        $projects = $this->repository->inCategory($categories->last());
+        /** @var Builder $c */
+        /** @noinspection PhpUndefinedClassInspection */
+        $c = \Menu::get('crumbs');
+        foreach ($categories->slice(1, $categories->count()) as $category) {
+            $c->add($category->title, 'aaa');
+        }
+        return view('public.projects.list', [
+            'projects' => $projects,
+            'category' => $categories->last(),
         ]);
     }
 }

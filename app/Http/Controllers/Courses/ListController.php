@@ -36,7 +36,8 @@ class ListController extends Controller
     {
         $courses = $this->repository->inCategory($category);
         return view('public.courses.list', [
-            'courses' => $courses
+            'courses' => $courses,
+            'category' => $category,
         ]);
     }
 }

@@ -48,7 +48,7 @@
                             <select name="edit[category_id]" id="category_id" class="form-control">
                                 <option value="">Не выбрана</option>
                                 @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                    <option value="{{$category->id}}" {{$category->id == $course->category_id ? 'selected' : ''}}>{{$category->title}}</option>
                                 @endforeach;
                             </select>
                         </div>

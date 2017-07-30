@@ -26,11 +26,43 @@ class ProjectCategory extends Model
 {
     use Uuids;
 
+    const STATUS_PUBLISHED = 'published';
+
     protected $table = 'projects_categories';
     public $incrementing = false;
+
+    protected $fillable = [
+        'title',
+        'slug',
+        'description',
+        'parent_id',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+    ];
 
     public function projects(): HasMany
     {
         return $this->hasMany(Project::class);
+    }
+
+    public function isPublished(): bool
+    {
+        return $this->status && $this->status == static::STATUS_PUBLISHED;
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(ProjectCategory::class, 'parent_id');
+    }
+
+    public function slugPath()
+    {
+        $slug = '';
+        if ($parent = $this->parent) {
+            $slug = $parent->slugPath();
+        }
+        return ltrim($slug . '/' . $this->slug, '/');
+
     }
 }

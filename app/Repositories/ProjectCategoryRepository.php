@@ -7,9 +7,11 @@ use App\Projects\ProjectCategory;
 
 class ProjectCategoryRepository
 {
-    public function all()
+    use AdminEditTrait;
+
+    public function __construct()
     {
-        return ProjectCategory::all();
+        $this->model = new ProjectCategory();
     }
 
     public function firstLevel()

@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Collection;
 
 class ProjectRepository
 {
-    public function all()
+    use AdminEditTrait;
+
+    public function __construct()
     {
-        return Project::all();
+        $this->model = new Project();
     }
 
     public function findById(string $id): ?Project
@@ -27,10 +29,5 @@ class ProjectRepository
     public function inCategory(ProjectCategory $category): ?Collection
     {
         return Project::query()->where('category_id', '=', $category->id)->get();
-    }
-
-    public function save(Project $course)
-    {
-        return $course->save();
     }
 }

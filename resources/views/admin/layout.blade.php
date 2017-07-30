@@ -349,6 +349,18 @@
                         <li><a href="{{ route('admin.courses.categories.list') }}"><i class="fa fa-circle-o"></i> Список категорий</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-dashboard"></i> <span>Проекты</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('admin.projects.list') }}"><i class="fa fa-circle-o"></i> Список проектов</a></li>
+                        <li><a href="{{ route('admin.projects.categories.list') }}"><i class="fa fa-circle-o"></i> Список категорий</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="/admin/pages">
                         <i class="fa fa-dashboard"></i> <span>Страницы</span>
