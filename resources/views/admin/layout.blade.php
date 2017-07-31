@@ -797,7 +797,9 @@
             radioClass: 'iradio_flat-green'
         });
         $('textarea.js-editor-enabled').each(function() {
-            CKEDITOR.replace($(this).get(0));
+            CKEDITOR.replace($(this).get(0), {
+                allowedContent: true
+            });
         });
     });
 </script>
