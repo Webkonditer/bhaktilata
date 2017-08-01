@@ -17,7 +17,8 @@
     <link href="{{ url('css/animate.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url('css/css-plugin-collections.css') }}" rel="stylesheet"/>
     <!-- CSS | menuzord megamenu skins -->
-    <link id="menuzord-menu-skins" href="{{ url('css/menuzord-skins/menuzord-boxed.css') }}" rel="stylesheet"/>
+{{--    <link id="menuzord-menu-skins" href="{{ url('css/menuzord-skins/menuzord-boxed.css') }}" rel="stylesheet"/>--}}
+    <link id="menuzord-menu-skins" href="{{ url('css/menuzord-skins/menuzord-rounded-boxed.css') }}" rel="stylesheet"/>
     <link id="menuzord-menu-skins" href="{{ url('css/menuzord-animations.css') }}" rel="stylesheet"/>
     <!-- CSS | Main style file -->
     <link href="{{ url('css/style-main.css') }}" rel="stylesheet" type="text/css">
@@ -36,7 +37,7 @@
     <link  href="{{ url('js/revolution-slider/css/navigation.css') }}" rel="stylesheet" type="text/css"/>
 
     <!-- CSS | Theme Color -->
-    <link href="{{ url('css/colors/theme-skin-blue.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url('css/colors/theme-skin-green.css') }}" rel="stylesheet" type="text/css">
 
     <script src="{{ url('js/jquery-2.2.4.min.js') }}"></script>
     <script src="{{ url('js/jquery-ui.min.js') }}"></script>

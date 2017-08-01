@@ -1074,9 +1074,10 @@ section > .container-fluid {
 /* -------- Menuzord ---------- */
 .menuzord-menu > li {
   padding: 24px 0;
+  position: relative;
 }
 .menuzord-menu ul.dropdown {
-  top: 83px;
+  top: 71px;
 }
 .menuzord-menu > li > a {
   font-size: 13px;
