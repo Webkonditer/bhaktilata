@@ -993,7 +993,7 @@ var THEMEMASCOT = {};
                 $menuzord.menuzord({
                     align: "right",
                     effect: "none",
-                    animation: "drop-left",
+                    animation: "drop-down",
                     indicatorFirstLevel: "<i class='fa fa-angle-down'></i>",
                     indicatorSecondLevel: "<i class='fa fa-angle-right'></i>"
                 });
