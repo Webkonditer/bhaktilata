@@ -796,6 +796,12 @@
             checkboxClass: 'icheckbox_flat-green',
             radioClass: 'iradio_flat-green'
         });
+        CKEDITOR.dtd.$removeEmpty['i'] = false;
+        CKEDITOR.dtd.$removeEmpty['a'] = false;
+        CKEDITOR.dtd.$removeEmpty['span'] = false;
+        CKEDITOR.dtd.$removeEmpty['div'] = false;
+        CKEDITOR.dtd.$removeEmpty['li'] = false;
+        CKEDITOR.dtd.$removeEmpty['button'] = false;
         $('textarea.js-editor-enabled').each(function() {
             CKEDITOR.replace($(this).get(0), {
                 allowedContent: true
