@@ -20,13 +20,16 @@ class Navigation extends BaseTrimmer
     {
         \Menu::make('main', function ($menu) {
 //            $menu->add('Главная', ['route' => 'main']);
-            $menu->add('Бхакти-лата', 'bhakti-lata')->nickname('bhakti_lata');
-            $menu->bhakti_lata->add('О проекте', 'bhakti-lata/about');
-            $menu->bhakti_lata->add('Серия курсов "Бхакти-лата"', 'bhakti-lata/course_series')->nickname('bhakti_lata_series');
-            $menu->bhakti_lata_series->add('Ступень 1', 'bhakti-lata/course_series/stage-1');
-            $menu->bhakti_lata_series->add('Ступень 2', 'bhakti-lata/course_series/stage-2');
-            $menu->bhakti_lata_series->add('Ступень 3', 'bhakti-lata/course_series/stage-3');
-            $menu->bhakti_lata_series->add('Ступень 4', 'bhakti-lata/course_series/stage-4');
+            $menu->add('Бхакти-лата', 'about')->nickname('bhakti_lata');
+            $menu->bhakti_lata->add('Миссия', 'about/program-and-vision');
+            $menu->bhakti_lata->add('Ступени', 'about/stages');
+            $menu->bhakti_lata->add('Вопросы и ответы', 'about/questions-and-answers');
+            $menu->bhakti_lata->add('Материалы', 'about/materials');
+//            $menu->bhakti_lata->add('Серия курсов "Бхакти-лата"', 'bhakti-lata/course_series')->nickname('bhakti_lata_series');
+//            $menu->bhakti_lata_series->add('Ступень 1', 'bhakti-lata/course_series/stage-1');
+//            $menu->bhakti_lata_series->add('Ступень 2', 'bhakti-lata/course_series/stage-2');
+//            $menu->bhakti_lata_series->add('Ступень 3', 'bhakti-lata/course_series/stage-3');
+//            $menu->bhakti_lata_series->add('Ступень 4', 'bhakti-lata/course_series/stage-4');
             $menu->add('Наши проекты', 'projects')->nickname('projects');
 //            $repo = app()->make('App\Repositories\ProjectCategoryRepository');
 //            foreach ($repo->firstLevel() as $category) {
@@ -66,22 +69,24 @@ class Navigation extends BaseTrimmer
             $menu->projects_another_projects->add('Партнёры Бхакти-латы', 'projects/another-projects/partners');
             $menu->projects_another_projects->add('Частные разработки', 'projects/another-projects/personal');
 
-            $menu->projects->add('Ресурсы', 'resources')->nickname('projects_resources');
-            $menu->projects_resources->add('Статьи', 'resources/articles');
-            $menu->projects_resources->add('Новости', 'resources/news');
-            $menu->projects_resources->add('Видео/вебинары', 'resources/video');
-            $menu->projects_resources->add('Документы', 'resources/documents');
-            $menu->projects_resources->add('Ссылки', 'resources/links');
-            $menu->projects_resources->add('Заказ книг', 'resources/books');
+            $menu->add('Ресурсы', 'resources')->nickname('resources');
+            $menu->resources->add('Статьи', 'resources/articles');
+            $menu->resources->add('Новости', 'resources/news');
+            $menu->resources->add('Видео/вебинары', 'resources/video');
+            $menu->resources->add('Документы', 'resources/documents');
+            $menu->resources->add('Ссылки', 'resources/links');
+            $menu->resources->add('Заказ книг', 'resources/books');
 
-            $menu->add('Онлайн-обучение', 'http://gbc.bhaktilata.ru/')->nickname('online_studying');
-            $menu->online_studying->add('Как работать с платформой', 'online-studying/how-to-use-platform');
+            $menu->add('Обучение', 'studying')->nickname('studying');
+            $menu->studying->add('Ближайшие курсы', 'studying/closest-courses');
+            $menu->studying->add('Онлайн-обучение', 'http://gbc.bhaktilata.ru/')->nickname('online_studying');
             $menu->online_studying->add('Все курсы', 'online-studying/all-courses');
+            $menu->online_studying->add('Помощь платформой', 'online-studying/how-to-use-platform');
 
             $menu->add('Сотрудничество', 'cooperation')->nickname('cooperation');
             $menu->cooperation->add('Сотрудничество', 'cooperation/cooperation');
             $menu->cooperation->add('Пожертвование', 'cooperation/donations');
-            $menu->cooperation->add('Стать проектов Бхакти-латы', 'cooperation/become-a-project');
+            $menu->cooperation->add('Стать проектом Бхакти-латы', 'cooperation/become-a-project');
 
             $menu->add('Контакты', 'contacts')->nickname('contacts');
             $menu->contacts->add('Бхакти-лата в общинах', 'contacts/bhaktilata-in-yatras');
