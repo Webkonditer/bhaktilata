@@ -12,7 +12,7 @@
             <div class="section-content pt-100">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="title text-white">Курсы</h3>
+                        <h1 class="title text-white">{{ !empty($category) ? $category->title : 'Курсы' }}</h1>
                         @include('public.navigation.crumbs-menu')
                     </div>
                 </div>
@@ -21,7 +21,6 @@
     </section>
     <section>
         <div class="container">
-            <h1>{{ !empty($category) ? $category->title : 'Курсы' }}</h1>
             <div class="row multi-row-clearfix">
                 @foreach($courses as $course)
                     <?php

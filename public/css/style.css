@@ -8,3 +8,17 @@ theme. But don't modify style-main.css file.
 */
 
 /* Your custom css codes start here: */
+
+/* -------- Menuzord ---------- */
+.menuzord-menu > li {
+    padding: 24px 0;
+    position: relative;
+}
+.menuzord-menu ul.dropdown {
+    top: 71px;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 40px;
+}

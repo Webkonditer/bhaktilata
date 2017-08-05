@@ -7,7 +7,7 @@
             <div class="section-content pt-100">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="title text-white">Курсы</h3>
+                        <h1 class="title text-white">{{ $course->title }}</h1>
                         @include('public.navigation.crumbs-menu')
                     </div>
                 </div>
@@ -16,7 +16,6 @@
     </section>
     <section>
         <div class="container">
-            <h1>{{ $course->title }}</h1>
             <div class="content">{!! $course->description !!}</div>
         </div>
     </section>

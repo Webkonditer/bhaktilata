@@ -38,6 +38,7 @@
 
     <!-- CSS | Theme Color -->
     <link href="{{ url('css/colors/theme-skin-green.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url('css/style.css') }}" rel="stylesheet" type="text/css">
 
     <script src="{{ url('js/jquery-2.2.4.min.js') }}"></script>
     <script src="{{ url('js/jquery-ui.min.js') }}"></script>
