@@ -49,6 +49,7 @@
     <!-- Revolution Slider 5.x SCRIPTS -->
     <script src="{{ url('js/revolution-slider/js/jquery.themepunch.tools.min.js') }}"></script>
     <script src="{{ url('js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
+    <script charset="UTF-8" src="//cdn.sendpulse.com/28edd3380a1c17cf65b137fe96516659/js/push/8e40b81f657c2038fae5ce21858ec207_1.js" async></script>
 
 
 </head>
