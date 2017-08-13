@@ -4,6 +4,7 @@
 
             <!-- Section: home -->
             <section id="home">
+                {!! $form->render() !!}
                 <div class="container-fluid p-0">
 
                     <!-- Slider Revolution Start -->

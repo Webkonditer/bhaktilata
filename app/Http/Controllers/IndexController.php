@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\FormsRepository;
+
 class IndexController extends Controller
 {
     /**
@@ -9,8 +11,11 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(FormsRepository $formsRepository)
     {
-        return view('welcome');
+        $view =  view('welcome', [
+            'form' => $formsRepository->find('test'),
+        ])->render();
+        return $view;
     }
 }

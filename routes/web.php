@@ -25,6 +25,10 @@ $router->middleware('navigation')->group(function($router) {
             ->where('project_category_slugs', '^[a-zA-Z\/-](?!project).+');
     });
 
+
+    $router->get('forms/ok', '\App\Forms\Http\Controllers\SimpleFormController@success')->name('simple.form.ok');
+    $router->post('forms/{code}', '\App\Forms\Http\Controllers\SimpleFormController@store')->name('simple.form.store');
+
     $router->get('{page_path}', 'PagesController@index')
         ->name('page')
         ->where('page_path', '(?!admin|login)(.+)');

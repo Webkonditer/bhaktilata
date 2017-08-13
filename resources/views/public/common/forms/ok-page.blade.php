@@ -7,7 +7,7 @@
             <div class="section-content pt-100">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="title text-white">{{ $page->title }}</h3>
+                        <h1 class="title text-white">Сообщение отправлено</h1>
                         @include('public.navigation.crumbs-menu')
                     </div>
                 </div>
@@ -16,10 +16,8 @@
     </section>
     <section>
         <div class="container">
-            <?php
-                $content = $page->content . '<p>%form:test</p>';
-            ?>
-            <div class="content">{!! \App\Forms\FormsInsertion::process($content) !!}</div>
+            <p>Ваше сообщение успешно отправлено и мы свяжемся с Вами в ближайшее время.</p>
+            <p>Спасибо за обращение!</p>
         </div>
     </section>
 @endsection
