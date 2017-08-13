@@ -16,7 +16,7 @@
     </section>
     <section>
         <div class="container">
-            <div class="content">{!! \App\Forms\FormsInsertion::process($content) !!}</div>
+            <div class="content">{!! \App\Forms\FormsInsertion::process($page->content) !!}</div>
         </div>
     </section>
 @endsection
