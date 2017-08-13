@@ -16,9 +16,6 @@
     </section>
     <section>
         <div class="container">
-            <?php
-                $content = $page->content . '<p>%form:test</p>';
-            ?>
             <div class="content">{!! \App\Forms\FormsInsertion::process($content) !!}</div>
         </div>
     </section>
