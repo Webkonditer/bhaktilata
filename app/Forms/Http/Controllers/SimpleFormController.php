@@ -36,7 +36,7 @@ class SimpleFormController extends Controller
         \Mail::to($form->getEmail())->send(new Mail\FormSubmittedAdmin($form, $formResult));
 
         if ($email = $form->getClientEmail()) {
-            \Mail::to($form->getEmail())->send(new Mail\FormSubmittedClient($form, $formResult));
+            \Mail::to($email)->send(new Mail\FormSubmittedClient($form, $formResult));
         }
 
         return redirect()->route('simple.form.ok');
