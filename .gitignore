@@ -12,3 +12,7 @@ Homestead.yaml
 npm-debug.log
 .env
 !.gitkeep
+/public/images
+/public/docs
+/public/yandex*
+/public/sp-push*
