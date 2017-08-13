@@ -11,11 +11,8 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(FormsRepository $formsRepository)
+    public function index()
     {
-        $view =  view('welcome', [
-            'form' => $formsRepository->find('test'),
-        ])->render();
-        return $view;
+        return view('welcome');
     }
 }
