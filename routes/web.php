@@ -5,25 +5,25 @@ $router->middleware('navigation')->group(function($router) {
     /** @var \Illuminate\Routing\Router $router */
     $router->get('/', 'IndexController@index')->name('main');
 
-    $router->namespace('Courses')->prefix('/courses')->group(function($router) {
-        /** @var \Illuminate\Routing\Router $router */
-        $router->get('', 'ListController@index')->name('courses');
-        $router->get('/{course_category_slug}', 'ListController@category')->name('courses.category');
-        $router->get('/{course_category_slug}/{course_slug}', 'CourseController@course')->name('courses.course');
-    });
-
-    $router->namespace('Projects')->prefix('/projects')->group(function($router) {
-        /** @var \Illuminate\Routing\Router $router */
-        $router->get('', 'ListController@index')->name('projects');
-
-        $router->get('/{project_category_slugs}/project/{project_slug}', 'ProjectController@project')
-            ->name('projects.project')
-            ->where('project_category_slugs', '^[a-zA-Z\/-](?!project).+');
-
-        $router->get('/{project_category_slugs}', 'ListController@category')
-            ->name('projects.category')
-            ->where('project_category_slugs', '^[a-zA-Z\/-](?!project).+');
-    });
+//    $router->namespace('Courses')->prefix('/courses')->group(function($router) {
+//        /** @var \Illuminate\Routing\Router $router */
+//        $router->get('', 'ListController@index')->name('courses');
+//        $router->get('/{course_category_slug}', 'ListController@category')->name('courses.category');
+//        $router->get('/{course_category_slug}/{course_slug}', 'CourseController@course')->name('courses.course');
+//    });
+//
+//    $router->namespace('Projects')->prefix('/projects')->group(function($router) {
+//        /** @var \Illuminate\Routing\Router $router */
+//        $router->get('', 'ListController@index')->name('projects');
+//
+//        $router->get('/{project_category_slugs}/project/{project_slug}', 'ProjectController@project')
+//            ->name('projects.project')
+//            ->where('project_category_slugs', '^[a-zA-Z\/-](?!project).+');
+//
+//        $router->get('/{project_category_slugs}', 'ListController@category')
+//            ->name('projects.category')
+//            ->where('project_category_slugs', '^[a-zA-Z\/-](?!project).+');
+//    });
 
 
     $router->get('forms/ok', '\App\Forms\Http\Controllers\SimpleFormController@success')->name('simple.form.ok');
