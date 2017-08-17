@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string          $meta_title
  * @property string          $meta_description
  * @property string          $meta_keywords
+ * @property string          $image
  * @property \DateTime       $created_at
  * @property \DateTime       $updated_at
  */
@@ -38,6 +39,7 @@ class Page extends Model
         'status',
         'path',
         'title',
+        'image',
         'content',
         'meta_title',
         'meta_description',

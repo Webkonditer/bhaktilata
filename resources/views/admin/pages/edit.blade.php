@@ -49,6 +49,16 @@
                             />
                         </div>
                         <div class="form-group">
+                            <label for="slug">Изображение</label>
+                            <input type="text"
+                                   name="edit[image]"
+                                   class="form-control"
+                                   id="image"
+                                   value="{{$page->image}}"
+                                   placeholder="Укажите путь до картинки от DOC ROOT веб-сервера"
+                            />
+                        </div>
+                        <div class="form-group">
                             <label for="description">Содержимое</label>
                             <textarea id="description"
                                       name="edit[content]"
