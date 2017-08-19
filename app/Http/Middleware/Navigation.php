@@ -20,56 +20,50 @@ class Navigation extends BaseTrimmer
     {
         \Menu::make('main', function ($menu) {
 //            $menu->add('Главная', ['route' => 'main']);
-            $menu->add('Бхакти-лата', 'about')->nickname('bhakti_lata');
+            $menu->raw('Бхакти-лата')->nickname('bhakti_lata');
             $menu->bhakti_lata->add('Миссия', 'about/program-and-vision');
             $menu->bhakti_lata->add('Ступени', 'about/stages');
             $menu->bhakti_lata->add('Вопросы и ответы', 'about/questions-and-answers');
             $menu->bhakti_lata->add('Материалы', 'about/materials');
-//            $menu->bhakti_lata->add('Серия курсов "Бхакти-лата"', 'bhakti-lata/course_series')->nickname('bhakti_lata_series');
-//            $menu->bhakti_lata_series->add('Ступень 1', 'bhakti-lata/course_series/stage-1');
-//            $menu->bhakti_lata_series->add('Ступень 2', 'bhakti-lata/course_series/stage-2');
-//            $menu->bhakti_lata_series->add('Ступень 3', 'bhakti-lata/course_series/stage-3');
-//            $menu->bhakti_lata_series->add('Ступень 4', 'bhakti-lata/course_series/stage-4');
-            $menu->add('Наши проекты', 'projects')->nickname('projects');
-//            $repo = app()->make('App\Repositories\ProjectCategoryRepository');
-//            foreach ($repo->firstLevel() as $category) {
-//                $menu->projects
-//                    ->add($category->title, ['route' => [
-//                        'projects.category',
-//                        'project_category_slug' => $category->slugPath()
-//                    ]])
-//                    ->active(route('projects.category', ['project_category_slugs' => $category->slugPath()], false) . '*');
-//            }
 
-            $menu->projects->add('Внеконфессиональная проповедь', 'projects/non-confessional-preaching')->nickname('projects_non_confessional');
-            $menu->projects_non_confessional->add('Вечные ответы', 'projects/non-confessional-preaching/eternal-answers');
-            $menu->projects->add('Наставничество', 'projects/mentoring')->nickname('projects_mentoring');
-            $menu->projects_mentoring->add('Базовый курс по наставничеству', 'projects/mentoring/basic-course');
-            $menu->projects->add('Философия и практика', 'projects/philosophy-and-practice')->nickname('projects_philosophy_and_practice');
 
-            $menu->projects_philosophy_and_practice->add('Общие курсы', 'projects/philosophy-and-practice/common-courses')->nickname('projects_philosophy_and_practice_general');
+            $menu->raw('Рекомендованые проекты')->nickname('projects')->data('megamenu', true);
 
-            $menu->projects_philosophy_and_practice_general->add('Серия курсов Бхакти-лата', 'projects/philosophy-and-practice/common-courses/bhakti-lata-series');
-            $menu->projects_philosophy_and_practice_general->add('Ученик в ИСККОН', 'projects/philosophy-and-practice/common-courses/student-in-iskcon');
-            $menu->projects_philosophy_and_practice_general->add('Саманья-бхакти-шастры', 'projects/philosophy-and-practice/common-courses/samanha-bhakti-sastra');
-            $menu->projects_philosophy_and_practice->add('Специализирвоанные курсы', 'projects/philosophy-and-practice/special-courses')->nickname('philosophy_and_practice_special_courses');
-            $menu->philosophy_and_practice_special_courses->add('Школа джапа медитации', 'projects/philosophy-and-practice/special-courses/japa-meditation-school');
-            $menu->philosophy_and_practice_special_courses->add('Курсы санскрита', 'projects/philosophy-and-practice/common-courses/sanskrit-courses');
+            $menu->projects->raw('Внеконфессиональная проповедь')->nickname('projects_non_confessional');
+            $menu->projects_non_confessional->add('Вечные ответы', 'eternal');
+            $menu->projects->raw('Наставничество')->nickname('projects_mentoring');
+            $menu->projects_mentoring->add('Базовый курс по наставничеству', 'mentor');
 
-            $menu->projects->add('Служение в миссии', 'projects/serving-in-mission')->nickname('projects_serving_in_mission');
-            $menu->projects_serving_in_mission->add('Размышления над миссией', 'projects/serving-in-mission/reflections-on-the-mission');
-            $menu->projects_serving_in_mission->add('Курсы подготовки учителей', 'projects/serving-in-mission/teachers-training-courses')->nickname('serving_in_mission_teachers_training_courses');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 1', 'projects/serving-in-mission/teachers-training-courses/part-1');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: практикум', 'projects/serving-in-mission/teachers-training-courses/part-2-practice');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: углубление', 'projects/serving-in-mission/teachers-training-courses/part-2-deep');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: дискуссии и команды', 'projects/serving-in-mission/teachers-training-courses/part-2-discussion-and-commands');
-            $menu->projects_serving_in_mission->add('Курсы подготовки лидеров', 'projects/philosophy-and-practice/leadership-training');
+            $menu->projects->raw('Философия и практика')->nickname('projects_philosophy_and_practice');
+            $menu->projects_philosophy_and_practice->raw('Общие курсы')->nickname('projects_philosophy_and_practice_general');
 
-            $menu->projects->add('Другие проекты', 'projects/another-projects')->nickname('projects_another_projects');
+            $menu->projects_philosophy_and_practice_general->add('Серия курсов Бхакти-лата', 'about/materials');
+            $menu->projects_philosophy_and_practice_general->add('Ученик в ИСККОН', 'idc');
+            $menu->projects_philosophy_and_practice_general->add('Саманья-бхакти-шастры', 'bs');
+            $menu->projects_philosophy_and_practice->raw('Специализирвоанные курсы')->nickname('philosophy_and_practice_special_courses');
+            $menu->philosophy_and_practice_special_courses->add('Курсы санскрита', 'sanskrit');
+
+            $menu->projects->raw('Собздание общин')->nickname('projects_creating_commons');
+            $menu->projects_creating_commons->add('Семейный коммитет', 'http://sk.mockt.ru/');
+
+            $menu->projects->raw('Простая жизнь')->nickname('projects_simple_life');
+            $menu->projects_simple_life->add('Комитет вайшнавких поселений', 'http://www.krishnaland.ru/ ');
+
+            $menu->projects->raw('Служение в миссии')->nickname('projects_serving_in_mission');
+            $menu->projects_serving_in_mission->add('Размышления над миссией', 'mission');
+            $menu->projects_serving_in_mission->raw('Курсы подготовки учителей')->nickname('serving_in_mission_teachers_training_courses');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 1', 'tcc1');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: практикум', 'tcc2-1');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: углубление', 'tcc2-2');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: дискуссии и команды', 'tcc2-3');
+            $menu->projects_serving_in_mission->add('Курсы подготовки лидеров', 'leaders');
+            $menu->projects_serving_in_mission->add('Джи-Би-Си колледж в России', 'gbc');
+
+            $menu->projects->raw('Другие проекты')->nickname('projects_another_projects');
             $menu->projects_another_projects->add('Партнёры Бхакти-латы', 'projects/another-projects/partners');
             $menu->projects_another_projects->add('Частные разработки', 'projects/another-projects/personal');
 
-            $menu->add('Ресурсы', 'resources')->nickname('resources');
+            $menu->raw('Ресурсы')->nickname('resources');
             $menu->resources->add('Статьи', 'resources/articles');
             $menu->resources->add('Новости', 'resources/news');
             $menu->resources->add('Видео/вебинары', 'resources/video');
@@ -77,31 +71,21 @@ class Navigation extends BaseTrimmer
             $menu->resources->add('Ссылки', 'resources/links');
             $menu->resources->add('Заказ книг', 'resources/books');
 
-            $menu->add('Обучение', 'studying')->nickname('studying');
-            $menu->studying->add('Ближайшие курсы', 'studying/closest-courses');
-            $menu->studying->add('Онлайн-обучение', 'http://gbc.bhaktilata.ru/')->nickname('online_studying');
-            $menu->online_studying->add('Все курсы', 'online-studying/all-courses');
-            $menu->online_studying->add('Помощь платформой', 'online-studying/how-to-use-platform');
+            $menu->raw('Обучение')->nickname('studying');
+            $menu->studying->add('Расписание очных курсов', 'studying/closest-courses');
+            $menu->studying->add('Онлайн-обучение', 'https://online.bhaktilata.ru/');
+            $menu->studying->add('Техническая поддержка', 'online-studying/how-to-use-platform');
 
-            $menu->add('Сотрудничество', 'cooperation')->nickname('cooperation');
-            $menu->cooperation->add('Сотрудничество', 'cooperation/cooperation');
+            $menu->raw('Сотрудничество')->nickname('cooperation');
+            $menu->cooperation->add('Принять участие', 'cooperation/participate');
             $menu->cooperation->add('Пожертвование', 'cooperation/donations');
             $menu->cooperation->add('Стать проектом Бхакти-латы', 'cooperation/become-a-project');
+            $menu->cooperation->add('Стать преподавателем курса', 'cooperation/become-a-teacher');
+            $menu->cooperation->add('Руководителям общин', 'cooperation/leaders');
 
-            $menu->add('Контакты', 'contacts')->nickname('contacts');
-            $menu->contacts->add('Бхакти-лата в общинах', 'contacts/bhaktilata-in-yatras');
+            $menu->raw('Контакты')->nickname('contacts');
+            $menu->contacts->add('Связь с нами', 'contacts/contact-us');
             $menu->contacts->add('Лидеры и преподаватели в регионах', 'contacts/leaders');
-
-//            $menu->add('Курсы', ['route' => 'courses'])->nickname('courses');
-//            $repo = app()->make('App\Repositories\CourseCategoryRepository');
-//            foreach ($repo->published() as $category) {
-//                $menu->courses
-//                    ->add($category->title, ['route' => [
-//                        'courses.category',
-//                        'course_category_slug' => $category->slug
-//                    ]])
-//                    ->active(route('courses.category', ['course_category_slug' => $category->slug], false) . '/*');
-//            }
         });
 
         \Menu::make('crumbs', function ($menu) {
@@ -109,7 +93,14 @@ class Navigation extends BaseTrimmer
             $menu->add('Главная', ['route' => 'main']);
             foreach ($mainNavigation->items as $key => $item) {
                 if ($item->attr('class') == 'active') {
-                    $menu->add($item->title, isset($item->link->path['route']) ? ['route' => $item->link->path['route']] : $item->link->path['url']);
+                    $url = $item->link ?
+                        isset($item->link->path['route']) ? ['route' => $item->link->path['route']] : $item->link->path['url'] :
+                        null;
+                    if (!$url) {
+                        $menu->raw($item->title);
+                    } else {
+                        $menu->add($item->title, $url);
+                    }
                 }
             }
             $menu->roots()->last()->attributes['class'] = 'active';

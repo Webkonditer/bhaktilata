@@ -18,7 +18,15 @@ theme. But don't modify style-main.css file.
     top: 71px;
 }
 
+.menuzord-menu > li.with-mega {
+    position: static;
+}
+
 h1 {
     font-weight: 500;
     font-size: 40px;
+}
+
+a:not([href]) {
+    cursor: default;
 }
