@@ -44,10 +44,10 @@ class Navigation extends BaseTrimmer
             $menu->philosophy_and_practice_special_courses->add('Курсы санскрита', 'sanskrit');
 
             $menu->projects->raw('Собздание общин')->nickname('projects_creating_commons');
-            $menu->projects_creating_commons->add('Семейный коммитет', 'http://sk.mockt.ru/');
+            $menu->projects_creating_commons->add('Семейный коммитет', 'http://sk.mockt.ru/')->data('outer', true);
 
             $menu->projects->raw('Простая жизнь')->nickname('projects_simple_life');
-            $menu->projects_simple_life->add('Комитет вайшнавких поселений', 'http://www.krishnaland.ru/ ');
+            $menu->projects_simple_life->add('Комитет вайшнавких поселений', 'http://www.krishnaland.ru/ ')->data('outer', true);
 
             $menu->projects->raw('Служение в миссии')->nickname('projects_serving_in_mission');
             $menu->projects_serving_in_mission->add('Размышления над миссией', 'mission');
@@ -73,7 +73,7 @@ class Navigation extends BaseTrimmer
 
             $menu->raw('Обучение')->nickname('studying');
             $menu->studying->add('Расписание очных курсов', 'studying/closest-courses');
-            $menu->studying->add('Онлайн-обучение', 'https://online.bhaktilata.ru/');
+            $menu->studying->add('Онлайн-обучение', 'https://online.bhaktilata.ru/')->data('outer', true);
             $menu->studying->add('Техническая поддержка', 'online-studying/how-to-use-platform');
 
             $menu->raw('Сотрудничество')->nickname('cooperation');

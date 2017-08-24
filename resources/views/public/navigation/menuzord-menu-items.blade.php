@@ -1,6 +1,6 @@
 @foreach($links as $link)
     <li class="{{$link->isActive ? 'active' : ''}} {{$link->megamenu ? 'with-mega' : ''}}">
-        <a {!! $link->url() ? 'href="' . $link->url() . '"' : '' !!}>{!! $link->title !!}</a>
+        <a {!! $link->url() ? 'href="' . $link->url() . '"' : '' !!} {{$link->outer ? 'target="_blank"' : ''}}>{!! $link->title !!}</a>
         @if($link->hasChildren())
             @if ($link->megamenu)
                 <div class="megamenu">
