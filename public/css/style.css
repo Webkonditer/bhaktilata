@@ -30,3 +30,7 @@ h1 {
 a:not([href]) {
     cursor: default;
 }
+
+.menuzord-brand img {
+    max-height: 63px;
+}

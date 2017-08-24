@@ -53,7 +53,7 @@
 
 
 </head>
-<body class="boxed-layout pt-40 pb-40 pt-sm-0" data-bg-img="{{ url('images/pattern/p5.png') }}">
+<body class="boxed-layout pb-40 pt-sm-0" data-bg-img="{{ url('images/pattern/p5.png') }}">
     {{--{!! $main->asUl() !!}--}}
     {{--{!! $crumbs->asUl() !!}--}}
     <div id="wrapper" class="clearfix">
@@ -68,42 +68,48 @@
         @endif
 
         <!-- Header -->
+
         <header id="header" class="header">
-            <div class="header-top bg-black-333 sm-text-center border-top-theme-color-3px p-0">
+            <div class="header-top bg-deep xs-text-center">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="widget no-border m-0">
-                                <ul class="list-inline xs-text-center text-white mt-5">
-                                    <li class="m-0 pl-10 pr-10"> <a href="#" class="text-white"><i class="fa fa-phone text-theme-colored"></i> 123-456-789</a> </li>
-                                    <li class="m-0 pl-10 pr-10">
-                                        <a href="#" class="text-white"><i class="fa fa-envelope-o text-theme-colored"></i> contact@yourdomain.com</a>
-                                    </li>
+
+                                <ul class="styled-icons icon-dark icon-circled icon-theme-colored icon-sm">
+                                    <li style="vertical-align: middle;"><span style="line-height: 30px;">Присоединяйтесь:</span></li>
+                                    <li style="vertical-align: middle;"><a target="_blank" href="https://vk.com/bhaktilata"><i class="fa fa-vk"></i></a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-4 pr-0">
+                        <div class="col-md-9">
                             <div class="widget no-border m-0">
-                                <ul class="styled-icons icon-dark icon-flat icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
-                                    <li><a href="#"><i class="fa fa-facebook text-white"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter text-white"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus text-white"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram text-white"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin text-white"></i></a></li>
+                                <ul class="list-inline xs-text-center text-right mt-5">
+                                    <li class="m-0 pl-10 pr-10"> <a class="text-gray" href="#">Подпишитесь на новости</a> </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <a class="btn btn-colored btn-flat btn-theme-colored pb-10 ajaxload-popup" href="ajax-load/reservation-form.html">Get A Quote Now</a>
                         </div>
                     </div>
                 </div>
+                <div class="form-outer sp-popup-outer sp-force-hide"> <style class="" id="subscribe-form-style" >.sp-force-hide { display: none;
+                        }
+                        .sp-form[sp-id="80529"] { display: block; background: #e3e3e3; padding: 40px; width: 390px; max-width: 100%; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-color: #dddddd; border-style: solid; border-width: 1px; font-family: "Segoe UI", Segoe, "Open Sans", sans-serif;
+                        }
+                        .sp-form[sp-id="80529"] .sp-form-control { background: #ffffff; border-color: #ffffff; border-style: solid; border-width: 1px; font-size: 15px; padding-left: 8.75px; padding-right: 8.75px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; height: 35px; width: 100%;
+                        }
+                        .sp-form[sp-id="80529"] .sp-field label { color: #ffffff; font-size: 16px; font-style: normal; font-weight: bold;
+                        }
+                        .sp-form[sp-id="80529"] .sp-button { border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; background-color: #63a93a; color: #ffffff; width: 100%; font-weight: 700; font-style: normal; font-family: Arial,"Helvetica Neue",sans-serif; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; background: linear-gradient(to top, #487b2a , #82c65a);
+                        }
+                        .sp-form[sp-id="80529"] .sp-button-container { text-align: left;
+                        }
+                    </style><div class="sp-form sp-form-regular sp-form-popup" id="sp-form-80529" sp-show-options="%7B%22amd%22%3Afalse%2C%22condition%22%3A%22onEnter%22%2C%22delay%22%3A10%2C%22repeat%22%3A3%2C%22background%22%3A%22dark%22%2C%22position%22%3A%22bottom-center%22%7D" sp-lang="ru" sp-hash="3de22445e0bfd9c52af8aef1235b9064df9009a118d23735261a74ccf8dfcd78" sp-id="80529"> <button class="sp-btn-close " >&nbsp;</button> <div class="sp-message"> <div></div> </div> <div class="sp-element-container ui-sortable ui-droppable sp-lg sp-field-nolabel" id="droppableArea" ><div class="sp-field " sp-id="sp-2e0450a4-6c19-4179-9d82-4d3c94646df2" > <div class=" " style="line-height: 1.2; font-family: inherit;" ><p>Отправляя данную форму, даю согласие на обработку моих персональных данных в соответствии с <a href="../../../../../docs/policy.pdf" target="_blank" rel="noopener">политикой в отношении обработки персональных</a> данных и <a href="../../../../../docs/terms.pdf" target="_blank" rel="noopener">пользовательским соглашением</a>.</p></div> </div><div class="sp-field " sp-id="sp-a7437f4b-99d6-4574-910c-d1209744fa4f" > <label class="sp-control-label "> <span class="">Email</span> <strong class="" >*</strong> </label> <input name="sform[email]" class="sp-form-control " required="required" type="email" placeholder="Введите Ваш e-mail" sp-tips="%7B%22required%22%3A%22%D0%9E%D0%B1%D1%8F%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%B5%22%2C%22wrong%22%3A%22%D0%9D%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20email-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%22%7D" sp-type="email"> </div></div> <div class="sp-field sp-button-container sp-lg" sp-id="sp-e6398ba3-614c-47c7-9265-e5e887d17cf3" > <button class="sp-button " id="sp-e6398ba3-614c-47c7-9265-e5e887d17cf3"> Подписаться </button> </div> <div class="sp-link-wrapper sp-brandname__left" > <a class="sp-link " href="https://sendpulse.com/en/?ref=520617" target="_blank" > <span class="sp-link-img">&nbsp;</span> <span class="" translate="FORM.PROVIDED_BY">Предоставлено SendPulse</span> </a> </div> </div> <script src="//login.sendpulse.com/apps/fc3/build/default-handler.js" type="text/javascript"></script></div>
             </div>
             <div class="header-nav">
-                <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
+                <div class="header-nav-wrapper navbar-scrolltofixed bg-lightest" style="z-index: 1000;">
                     <div class="container">
-                        <nav id="menuzord" class="menuzord default">
-                            <a class="menuzord-brand pull-left flip xs-pull-center mt-20" href="/">
+                        <nav id="menuzord" class="menuzord default bg-lightest menuzord-responsive">
+                            <a class="menuzord-brand pull-left flip xs-pull-center mt-10" href="/">
                                 <img src="{{ url('images/logo-wide.png') }}" alt="">
                             </a>
                             @include('public.navigation.menuzord-menu')
@@ -120,106 +126,55 @@
         <!-- end main-content -->
 
         <!-- Footer -->
-        <footer id="footer" class="footer" data-bg-img="{{ url('images/footer-bg.png') }}" data-bg-color="#25272e">
+        <footer id="footer" class="footer pb-0 bg-black-111">
             <div class="container pt-70 pb-40">
-                <div class="row border-bottom-black">
+                <div class="row multi-row-clearfix">
                     <div class="col-sm-6 col-md-3">
+                        <div class="widget dark"> <img alt="" src="{{ url('images/logo-wide.png') }}">
+                            <ul class="styled-icons icon-dark mt-20">
+                                <li><a href="#" data-bg-color="#3B5998" style="background: rgb(59, 89, 152) none repeat scroll 0% 0% !important;"><i class="fa fa-vk"></i></a></li>
+                                <li><a href="#" data-bg-color="#C22E2A" style="background: rgb(194, 46, 42) none repeat scroll 0% 0% !important;"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="widget dark">
-                            <img class="mt-10 mb-20" alt="" src="{{ url('images/logo-wide-white-footer.png') }}">
-                            <p>203, Envato Labs, Behind Alis Steet, Melbourne, Australia.</p>
-                            <ul class="list-inline mt-5">
-                                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray" href="#">123-456-789</a> </li>
-                                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a class="text-gray" href="#">contact@yourdomain.com</a> </li>
-                                <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray" href="#">www.yourdomain.com</a> </li>
-                            </ul>
-                            <ul class="social-icons icon-dark icon-theme-colored icon-circled icon-sm mt-15">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            </ul>
+                            <div class="form-outer sp-force-hide"><style class="" id="subscribe-form-style" >.sp-force-hide { display: none;
+                                    }
+                                    .sp-form[sp-id="80531"] { display: block; background: #111111; padding: 15px; width: 500px; max-width: 100%; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-color: #111111; border-style: solid; border-width: 1px; font-family: Arial, "Helvetica Neue", sans-serif;
+                                    }
+                                    .sp-form[sp-id="80531"] .sp-form-control { background: #ffffff; border-color: #cccccc; border-style: solid; border-width: 1px; font-size: 15px; padding-left: 8.75px; padding-right: 8.75px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; height: 35px; width: 100%;
+                                    }
+                                    .sp-form[sp-id="80531"] .sp-field label { color: #ffffff; font-size: 13px; font-style: normal; font-weight: bold;
+                                    }
+                                    .sp-form[sp-id="80531"] .sp-button { border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; background-color: #63a93a; color: #ffffff; width: auto; font-weight: 700; font-style: normal; font-family: Arial,sans-serif; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;
+                                    }
+                                    .sp-form[sp-id="80531"] .sp-button-container { text-align: center;
+                                    }
+                                </style> <div class="sp-form sp-form-regular sp-form-embed" id="sp-form-80531" sp-show-options="%7B%22amd%22%3Afalse%2C%22condition%22%3A%22onEnter%22%2C%22delay%22%3A10%2C%22repeat%22%3A3%2C%22background%22%3A%22dark%22%2C%22position%22%3A%22bottom-right%22%7D" sp-lang="ru" sp-hash="dfffbe5e7019df8a5c4e831fa848fdba24a1304188175fb54f52c0788c4789b4" sp-id="80531"> <div class="sp-message"> <div></div> </div> <div class="sp-element-container ui-sortable ui-droppable" id="droppableArea" ><div class="sp-field " sp-id="sp-27f995f7-a6fd-42be-a6b8-f642eeb618f9" > <div class=" " style="line-height: 1.2; font-family: inherit;" ><p style="text-align: center;"><span style="color: #ffffff; font-size: 24px;">Подпишитесь на нашу рассылку</span></p>
+                                                <p><span style="color: #ffffff;">Отправляя данную форму, даю согласие на обработку моих персональных данных в соответствии с <a href="/docs/policy.pdf" target="_blank" rel="noopener">политикой в отношении обработки персональных данных</a> и <a href="/docs/terms.pdf" target="_blank" rel="noopener">пользовательским соглашением</a>.</span></p></div> </div><div class="sp-field " sp-id="sp-040cd649-37b5-45a3-92cb-31659113bb45" > <label class="sp-control-label "> <span class="">Email</span> <strong class="" >*</strong> </label> <input name="sform[email]" class="sp-form-control " required="required" type="email" placeholder="Ваш e-mail" sp-tips="%7B%22required%22%3A%22%D0%9E%D0%B1%D1%8F%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%B5%22%2C%22wrong%22%3A%22%D0%9D%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20email-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%22%7D" sp-type="email"> </div></div> <div class="sp-field sp-button-container " sp-id="sp-0c20a21b-5cfd-4493-9dd0-ceca6c0fdd2f" > <button class="sp-button " id="sp-0c20a21b-5cfd-4493-9dd0-ceca6c0fdd2f"> Подписаться </button> </div> <div class="sp-link-wrapper sp-brandname__center " > </div> </div> <script src="//login.sendpulse.com/apps/fc3/build/default-handler.js" type="text/javascript"></script></div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
                         <div class="widget dark">
-                            <h5 class="widget-title line-bottom">Latest News</h5>
-                            <div class="latest-posts">
-                                <article class="post media-post clearfix pb-0 mb-10">
-                                    <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                                    <div class="post-right">
-                                        <h5 class="post-title mt-0 mb-5"><a href="#">Sustainable Construction</a></h5>
-                                        <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                                    </div>
-                                </article>
-                                <article class="post media-post clearfix pb-0 mb-10">
-                                    <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                                    <div class="post-right">
-                                        <h5 class="post-title mt-0 mb-5"><a href="#">Industrial Coatings</a></h5>
-                                        <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                                    </div>
-                                </article>
-                                <article class="post media-post clearfix pb-0 mb-10">
-                                    <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                                    <div class="post-right">
-                                        <h5 class="post-title mt-0 mb-5"><a href="#">Storefront Installations</a></h5>
-                                        <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="widget dark">
-                            <h5 class="widget-title line-bottom">Useful Links</h5>
-                            <ul class="list angle-double-right list-border">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Campaign</a></li>
-                                <li><a href="#">Latest News</a></li>
-                                <li><a href="#">Gallery</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="widget dark">
-                            <h5 class="widget-title line-bottom">Photos from Flickr</h5>
+                            <h5 class="widget-title line-bottom">Новые фото</h5>
                             <div id="flickr-feed" class="clearfix">
-                                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=52617155@N08">
+                                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=157921558@N08">
                                 </script>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom bg-black-333">
-                <div class="container pt-15 pb-10">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="font-11 text-black-777 m-0 sm-text-center">Copyright &copy;2016 ThemeMascot. All Rights Reserved</p>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="widget no-border m-0">
-                                <ul class="list-inline sm-text-center mt-5 font-12">
-                                    <li>
-                                        <a href="#">FAQ</a>
-                                    </li>
-                                    <li>|</li>
-                                    <li>
-                                        <a href="#">Help Desk</a>
-                                    </li>
-                                    <li>|</li>
-                                    <li>
-                                        <a href="#">Support</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="footer-nav bg-black-222 p-20">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <p class="text-white font-11 m-0">Внизу: (с) 2017 Бхакти-лата. Все права защищены.</p>
                     </div>
                 </div>
             </div>
         </footer>
+
         <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
     </div>
     <!-- end wrapper -->
