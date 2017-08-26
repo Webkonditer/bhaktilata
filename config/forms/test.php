@@ -7,6 +7,7 @@ return [
             'type' => 'string',
             'caption' => 'Тестовое поле',
             'required' => true,
+            'placeholder' => 'Ваш E-mail',
         ],
         'email' => [
             'type' => 'email',
