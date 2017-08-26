@@ -159,7 +159,7 @@
                         <div class="widget dark">
                             <h5 class="widget-title line-bottom">Новые фото</h5>
                             <div id="flickr-feed" class="clearfix">
-                                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=157921558@N08">
+                                <script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=157921558@N08">
                                 </script>
                             </div>
                         </div>
