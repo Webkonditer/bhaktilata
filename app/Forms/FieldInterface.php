@@ -16,4 +16,6 @@ interface FieldInterface
     public function setParent(FormInterface $form);
 
     public function rules();
+
+    public function placeholder(): string;
 }

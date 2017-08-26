@@ -7,6 +7,6 @@
        class="form-control"
        id="{{ $field->getName() }}"
        name="{{ $field->getCode() }}"
-       placeholder="Ваше имя"
+       placeholder="{{ $field->placeholder() }}"
        value="{{ $field->getValue() }}"
         />

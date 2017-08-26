@@ -104,4 +104,9 @@ abstract class AbstractField implements FieldInterface
     {
         return !empty($this->messages);
     }
+
+    public function placeholder(): string
+    {
+        return (string)$this->getParameter('placeholder');
+    }
 }
