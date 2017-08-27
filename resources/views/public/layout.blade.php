@@ -19,7 +19,7 @@
     <!-- CSS | menuzord megamenu skins -->
 {{--    <link id="menuzord-menu-skins" href="{{ url('css/menuzord-skins/menuzord-boxed.css') }}" rel="stylesheet"/>--}}
     <link id="menuzord-menu-skins" href="{{ url('css/menuzord-skins/menuzord-rounded-boxed.css') }}" rel="stylesheet"/>
-    <link id="menuzord-menu-skins" href="{{ url('css/menuzord-animations.css') }}" rel="stylesheet"/>
+    <link id="menuzord-animations" href="{{ url('css/menuzord-animations.css') }}" rel="stylesheet"/>
     <!-- CSS | Main style file -->
     <link href="{{ url('css/style-main.css') }}" rel="stylesheet" type="text/css">
     <!-- CSS | Preloader Styles -->
@@ -75,35 +75,21 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="widget no-border m-0">
-
-                                <ul class="styled-icons icon-dark icon-circled icon-theme-colored icon-sm">
-                                    <li style="vertical-align: middle;"><span style="line-height: 30px;">Присоединяйтесь:</span></li>
-                                    <li style="vertical-align: middle;"><a target="_blank" href="https://vk.com/bhaktilata"><i class="fa fa-vk"></i></a></li>
+                                <ul class="list-inline xs-text-center mt-5">
+                                    <li class="m-0 pl-10 pr-10"> <a class="text-gray" href="#footer">Подпишитесь на новости</a> </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-9">
                             <div class="widget no-border m-0">
-                                <ul class="list-inline xs-text-center text-right mt-5">
-                                    <li class="m-0 pl-10 pr-10"> <a class="text-gray" href="#">Подпишитесь на новости</a> </li>
+                                <ul class="styled-icons icon-dark icon-circled icon-theme-colored icon-sm text-right">
+                                    <li style="vertical-align: middle;"><span style="line-height: 30px;">Присоединяйтесь:</span></li>
+                                    <li style="vertical-align: middle;"><a target="_blank" href="https://vk.com/bhaktilata"><i class="fa fa-vk"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="form-outer sp-popup-outer sp-force-hide"> <style class="" id="subscribe-form-style" >.sp-force-hide { display: none;
-                        }
-                        .sp-form[sp-id="80529"] { display: block; background: #e3e3e3; padding: 40px; width: 390px; max-width: 100%; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-color: #dddddd; border-style: solid; border-width: 1px; font-family: "Segoe UI", Segoe, "Open Sans", sans-serif;
-                        }
-                        .sp-form[sp-id="80529"] .sp-form-control { background: #ffffff; border-color: #ffffff; border-style: solid; border-width: 1px; font-size: 15px; padding-left: 8.75px; padding-right: 8.75px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; height: 35px; width: 100%;
-                        }
-                        .sp-form[sp-id="80529"] .sp-field label { color: #ffffff; font-size: 16px; font-style: normal; font-weight: bold;
-                        }
-                        .sp-form[sp-id="80529"] .sp-button { border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; background-color: #63a93a; color: #ffffff; width: 100%; font-weight: 700; font-style: normal; font-family: Arial,"Helvetica Neue",sans-serif; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; background: linear-gradient(to top, #487b2a , #82c65a);
-                        }
-                        .sp-form[sp-id="80529"] .sp-button-container { text-align: left;
-                        }
-                    </style><div class="sp-form sp-form-regular sp-form-popup" id="sp-form-80529" sp-show-options="%7B%22amd%22%3Afalse%2C%22condition%22%3A%22onEnter%22%2C%22delay%22%3A10%2C%22repeat%22%3A3%2C%22background%22%3A%22dark%22%2C%22position%22%3A%22bottom-center%22%7D" sp-lang="ru" sp-hash="3de22445e0bfd9c52af8aef1235b9064df9009a118d23735261a74ccf8dfcd78" sp-id="80529"> <button class="sp-btn-close " >&nbsp;</button> <div class="sp-message"> <div></div> </div> <div class="sp-element-container ui-sortable ui-droppable sp-lg sp-field-nolabel" id="droppableArea" ><div class="sp-field " sp-id="sp-2e0450a4-6c19-4179-9d82-4d3c94646df2" > <div class=" " style="line-height: 1.2; font-family: inherit;" ><p>Отправляя данную форму, даю согласие на обработку моих персональных данных в соответствии с <a href="../../../../../docs/policy.pdf" target="_blank" rel="noopener">политикой в отношении обработки персональных</a> данных и <a href="../../../../../docs/terms.pdf" target="_blank" rel="noopener">пользовательским соглашением</a>.</p></div> </div><div class="sp-field " sp-id="sp-a7437f4b-99d6-4574-910c-d1209744fa4f" > <label class="sp-control-label "> <span class="">Email</span> <strong class="" >*</strong> </label> <input name="sform[email]" class="sp-form-control " required="required" type="email" placeholder="Введите Ваш e-mail" sp-tips="%7B%22required%22%3A%22%D0%9E%D0%B1%D1%8F%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%B5%22%2C%22wrong%22%3A%22%D0%9D%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20email-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%22%7D" sp-type="email"> </div></div> <div class="sp-field sp-button-container sp-lg" sp-id="sp-e6398ba3-614c-47c7-9265-e5e887d17cf3" > <button class="sp-button " id="sp-e6398ba3-614c-47c7-9265-e5e887d17cf3"> Подписаться </button> </div> <div class="sp-link-wrapper sp-brandname__left" > <a class="sp-link " href="https://sendpulse.com/en/?ref=520617" target="_blank" > <span class="sp-link-img">&nbsp;</span> <span class="" translate="FORM.PROVIDED_BY">Предоставлено SendPulse</span> </a> </div> </div> <script src="//login.sendpulse.com/apps/fc3/build/default-handler.js" type="text/javascript"></script></div>
             </div>
             <div class="header-nav">
                 <div class="header-nav-wrapper navbar-scrolltofixed bg-lightest" style="z-index: 1000;">
@@ -128,12 +114,12 @@
         <!-- Footer -->
         <footer id="footer" class="footer pb-0 bg-black-111">
             <div class="container pt-70 pb-40">
-                <div class="row multi-row-clearfix">
+                <div class="row multi-row-clearfix" style="text-align:center;">
                     <div class="col-sm-6 col-md-3">
                         <div class="widget dark"> <img alt="" src="{{ url('images/logo-wide.png') }}">
-                            <ul class="styled-icons icon-dark mt-20">
-                                <li><a href="#" data-bg-color="#3B5998" style="background: rgb(59, 89, 152) none repeat scroll 0% 0% !important;"><i class="fa fa-vk"></i></a></li>
-                                <li><a href="#" data-bg-color="#C22E2A" style="background: rgb(194, 46, 42) none repeat scroll 0% 0% !important;"><i class="fa fa-youtube"></i></a></li>
+                            <ul class="styled-icons icon-dark mt-20" style="display:inline-block">
+                                <li><a href="https://vk.com/bhaktilata" data-bg-color="#3B5998" style="background: rgb(59, 89, 152) none repeat scroll 0% 0% !important;"><i class="fa fa-vk"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCJqCv7PHvvKTBEYSy9_Rveg?spfreload=10" data-bg-color="#C22E2A" style="background: rgb(194, 46, 42) none repeat scroll 0% 0% !important;"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -169,7 +155,7 @@
             <div class="footer-nav bg-black-222 p-20">
                 <div class="row text-center">
                     <div class="col-md-12">
-                        <p class="text-white font-11 m-0">Внизу: (с) 2017 Бхакти-лата. Все права защищены.</p>
+                        <p class="text-white font-11 m-0">© 2017, Бхакти-лата. Все права защищены.</p>
                     </div>
                 </div>
             </div>

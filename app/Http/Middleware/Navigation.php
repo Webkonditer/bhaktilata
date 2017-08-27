@@ -40,8 +40,8 @@ class Navigation extends BaseTrimmer
             $menu->projects_philosophy_and_practice_general->add('Серия курсов Бхакти-лата', 'about/materials');
             $menu->projects_philosophy_and_practice_general->add('Ученик в ИСККОН', 'idc');
             $menu->projects_philosophy_and_practice_general->add('Саманья-бхакти-шастры', 'bs');
-            $menu->projects_philosophy_and_practice->raw('Специализирвоанные курсы')->nickname('philosophy_and_practice_special_courses');
-            $menu->philosophy_and_practice_special_courses->add('Курсы санскрита', 'sanskrit');
+//            $menu->projects_philosophy_and_practice->raw('Специализирвоанные курсы')->nickname('philosophy_and_practice_special_courses');
+//            $menu->philosophy_and_practice_special_courses->add('Курсы санскрита', 'sanskrit');
 
             $menu->projects->raw('Собздание общин')->nickname('projects_creating_commons');
             $menu->projects_creating_commons->add('Семейный коммитет', 'http://sk.mockt.ru/')->data('outer', true);
@@ -54,10 +54,10 @@ class Navigation extends BaseTrimmer
             $menu->projects_serving_in_mission->add('Курсы подготовки лидеров', 'leaders');
             $menu->projects_serving_in_mission->add('Джи-Би-Си колледж в России', 'gbc');
             $menu->projects_serving_in_mission->raw('Курсы подготовки учителей')->nickname('serving_in_mission_teachers_training_courses');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 1', 'tcc1');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: практикум', 'tcc2-1');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: углубление', 'tcc2-2');
-            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: дискуссии и команды', 'tcc2-3');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 1', 'ttc1');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: практикум', 'ttc2-1');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: углубление', 'ttc2-2');
+            $menu->serving_in_mission_teachers_training_courses->add('Часть 2: дискуссии и команды', 'ttc2-3');
 
             $menu->projects->raw('Другие проекты')->nickname('projects_another_projects');
             $menu->projects_another_projects->add('Партнёры Бхакти-латы', 'projects/another-projects/partners');
