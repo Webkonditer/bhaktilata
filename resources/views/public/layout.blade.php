@@ -166,6 +166,7 @@
     <!-- end wrapper -->
 
     <!-- Footer Scripts -->
+    <script type="text/javascript" src="//vk.com/js/api/share.js?93"></script>
     <!-- JS | Custom script for all pages -->
     <script src="{{ url('js/custom.js') }}"></script>
 </body>
