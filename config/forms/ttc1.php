@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Регистрация ',
+    'title' => 'Регистрация на КПУ1',
     'fields' => [
         'name' => [
             'type' => 'string',

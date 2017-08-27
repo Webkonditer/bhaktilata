@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Регистрация ',
+    'title' => 'Регистрация на Ученик в ИСККОН',
     'fields' => [
         'name' => [
             'type' => 'string',
@@ -47,7 +47,7 @@ return [
             'placeholder' => 'Ваш комментарий, если есть ',
         ],
     ],
-    'send_to' => 'makarovt@gmail.com',
+    'send_to' => 'bhaktisastri@mail.ru',
     'send_to_client' => 'email',
     'submit' => 'Отправить',
     'parameters' => [
