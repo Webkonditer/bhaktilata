@@ -90,7 +90,7 @@ class Navigation extends BaseTrimmer
 
         \Menu::make('crumbs', function ($menu) {
             $mainNavigation = \Menu::get('main');
-            $menu->add('Главная', ['route' => 'main']);
+//            $menu->add('Главная', ['route' => 'main']);
             foreach ($mainNavigation->items as $key => $item) {
                 if ($item->attr('class') == 'active') {
                     $url = $item->link ?
@@ -101,6 +101,7 @@ class Navigation extends BaseTrimmer
                     } else {
                         $menu->add($item->title, $url);
                     }
+                    break;
                 }
             }
             $menu->roots()->last()->attributes['class'] = 'active';
