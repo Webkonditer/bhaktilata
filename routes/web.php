@@ -66,6 +66,12 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/pages/{page}/edit', 'Pages\PageController@edit')->name('admin.page.edit');
     $router->post('/pages/{page}/store', 'Pages\PageController@store')->name('admin.page.store');
     $router->get('/pages/{page}/delete', 'Pages\PageController@delete')->name('admin.page.delete');
+
+    $router->get('/quotes', 'Quotes\ListController@index')->name('admin.quotes.list');
+    $router->get('/quotes/add', 'Quotes\QuoteController@add')->name('admin.quotes.add');
+    $router->get('/quotes/{quote}/edit', 'Quotes\QuoteController@edit')->name('admin.quote.edit');
+    $router->post('/quotes/{quote}/store', 'Quotes\QuoteController@store')->name('admin.quote.store');
+    $router->get('/quotes/{quote}/delete', 'Quotes\QuoteController@delete')->name('admin.quote.delete');
 });
 
 Auth::routes();

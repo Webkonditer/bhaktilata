@@ -34,3 +34,33 @@ a:not([href]) {
 .menuzord-brand img {
     max-height: 63px;
 }
+
+.quote-of-the-day {
+
+}
+.quote-of-the-day__title {
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+.quote-of-the-day__date {
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 14px;
+    color: #a9a9a9;
+}
+.quote-of-the-day__location {
+    font-size: 14px;
+    color: #a9a9a9;
+}
+.quote-of-the-day__text {
+    text-align: justify;
+    font-style: italic;
+    margin-top: 33px;
+}
+
+.quote-of-the-day__author {
+    text-align: right;
+    font-weight: bold;
+    font-style: italic;
+}

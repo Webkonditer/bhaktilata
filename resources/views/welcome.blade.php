@@ -190,17 +190,13 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
-                    <h3 class="widget-title line-bottom">Шрила Прабхупада <a class="text-theme-colored" href="/today">сегодня:</a></h3>
-                    <span class="inline-block text-gray-darkgray mr-10 font-14"><i class="fa fa-calendar mr-5 text-theme-colored"></i> 17 августа 1967</span> <span class="text-gray-darkgray font-14"><i class="fa fa-map-marker mr-5"></i> Вриндаван</span>
-
-                    <p>&nbsp;</p>
-
-                    <p align="justify"><i>Вопрос Парикшита столь замечателен, что сам по себе является лучшим предметом для слушания. Задавая подобные вопросы и слушая ответы на них, можно подняться на высшую ступень совершенства. Господь Кришна &mdash; изначальная Верховная Личность, поэтому любые вопросы о Нем изначальны и совершенны. Господь Шри Чайтанья Махапрабху говорил, что сделать свою жизнь совершенной &mdash; значит прийти к трансцендентному любовному служению Кришне. Вопросы о Кришне и ответы на них поднимают человека на этот трансцендентный уровень, и потому вопросы Махараджи Парикшита о философии Кришны достойны всяческих похвал.</i></p>
-                    <i> </i>
-
-                    <p align="right"><i><strong>Письмо Анируддхе дасу</strong></i></p>
-                </div>
+                @if (!empty($quote))
+                    <div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
+                        @include('public.widgets.quote-of-the-day', [
+                            'quote' => $quote,
+                        ])
+                    </div>
+                @endif
 
                 <div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
                     <h3 class="widget-title line-bottom">Последние <a class="text-theme-colored" href="/resources/news">новости:</a></h3>

@@ -12,7 +12,12 @@ trait AdminEditTrait
 
     public function all()
     {
-        return $this->model->query()->whereNotIn('status', ['draft', 'deleted'])->get();
+        return $this->queryAll()->get();
+    }
+
+    protected function queryAll()
+    {
+        return $this->model->query()->whereNotIn('status', ['draft', 'deleted']);
     }
 
     public function save(Model $entity): bool

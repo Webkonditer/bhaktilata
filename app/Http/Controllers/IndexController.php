@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\FormsRepository;
+use App\Domain\QuoteOfTheDay\QuoteRepository;
 
 class IndexController extends Controller
 {
     /**
      * Show the application dashboard.
      *
+     * @param QuoteRepository $quoteRepository
+     *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(QuoteRepository $quoteRepository)
     {
-        return view('welcome');
+        return view('welcome', [
+            'quote' => $quoteRepository->forToday(),
+        ]);
     }
 }

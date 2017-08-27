@@ -16,11 +16,14 @@
     <!-- jvectormap -->
     <link rel="stylesheet" href="/admin/AdminLTE/node_modules/jvectormap/jquery-jvectormap.css">
     <link rel="stylesheet" href="/admin/AdminLTE/plugins/iCheck/all.css">
+
+    <link rel="stylesheet" href="/admin/AdminLTE/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/admin/AdminLTE/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/admin/AdminLTE/dist/css/skins/_all-skins.min.css">
+
 
     {{--
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -337,33 +340,38 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">ОСНОВЫНЕ РАЗЕДЛЫ</li>
-                <li class="treeview">
-                    <a href="javascript:void(0)">
-                        <i class="fa fa-dashboard"></i> <span>Курсы</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ route('admin.courses.list') }}"><i class="fa fa-circle-o"></i> Список курсов</a></li>
-                        <li><a href="{{ route('admin.courses.categories.list') }}"><i class="fa fa-circle-o"></i> Список категорий</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="javascript:void(0)">
-                        <i class="fa fa-dashboard"></i> <span>Проекты</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ route('admin.projects.list') }}"><i class="fa fa-circle-o"></i> Список проектов</a></li>
-                        <li><a href="{{ route('admin.projects.categories.list') }}"><i class="fa fa-circle-o"></i> Список категорий</a></li>
-                    </ul>
-                </li>
+                {{--<li class="treeview">--}}
+                    {{--<a href="javascript:void(0)">--}}
+                        {{--<i class="fa fa-dashboard"></i> <span>Курсы</span>--}}
+                        {{--<span class="pull-right-container">--}}
+                            {{--<i class="fa fa-angle-left pull-right"></i>--}}
+                        {{--</span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="treeview-menu">--}}
+                        {{--<li><a href="{{ route('admin.courses.list') }}"><i class="fa fa-circle-o"></i> Список курсов</a></li>--}}
+                        {{--<li><a href="{{ route('admin.courses.categories.list') }}"><i class="fa fa-circle-o"></i> Список категорий</a></li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+                {{--<li class="treeview">--}}
+                    {{--<a href="javascript:void(0)">--}}
+                        {{--<i class="fa fa-dashboard"></i> <span>Проекты</span>--}}
+                        {{--<span class="pull-right-container">--}}
+                            {{--<i class="fa fa-angle-left pull-right"></i>--}}
+                        {{--</span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="treeview-menu">--}}
+                        {{--<li><a href="{{ route('admin.projects.list') }}"><i class="fa fa-circle-o"></i> Список проектов</a></li>--}}
+                        {{--<li><a href="{{ route('admin.projects.categories.list') }}"><i class="fa fa-circle-o"></i> Список категорий</a></li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
                 <li>
                     <a href="/admin/pages">
                         <i class="fa fa-dashboard"></i> <span>Страницы</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('admin.quotes.list')}}">
+                        <i class="fa fa-dashboard"></i> <span>Цитата дня</span>
                     </a>
                 </li>
                 <li class="header">ТУТ</li>
@@ -785,6 +793,8 @@
 <script src="/admin/AdminLTE/node_modules/chart.js/Chart.min.js"></script>
 <script src="/admin/AdminLTE/plugins/iCheck/icheck.min.js"></script>
 <script src="/admin/AdminLTE/node_modules/ckeditor/ckeditor.js"></script>
+<script src="/admin/AdminLTE/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="/admin/AdminLTE/node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js"></script>
 <script src="/admin/AdminLTE/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 {{--<script src="/admin/AdminLTE/dist/js/pages/dashboard2.js"></script>--}}
@@ -806,6 +816,13 @@
             CKEDITOR.replace($(this).get(0), {
                 allowedContent: true
             });
+        });
+
+        $('input.datepicker-enabled').datepicker({
+            autoclose: true,
+            format: 'dd.mm.yyyy',
+            language: 'ru',
+            todayBtn: 'linked'
         });
     });
 </script>
