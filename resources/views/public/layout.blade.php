@@ -58,11 +58,11 @@
     {{--{!! $crumbs->asUl() !!}--}}
     <div id="wrapper" class="clearfix">
         <!-- preloader -->
-        @if (false && !isset($_GET['no_preloader']))
+        @if (!isset($_GET['no_preloader']))
             <div id="preloader">
                 <div id="spinner">
                     <img class="floating ml-5" src="{{ url('/images/preloaders/13.png') }}" alt="">
-                    <h5 class="line-height-50 font-18">Загрузка...</h5>
+                    <h5 class="line-height-50 font-18">Бхакти-лата растёт...</h5>
                 </div>
             </div>
         @endif
