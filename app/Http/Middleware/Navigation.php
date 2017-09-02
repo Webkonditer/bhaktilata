@@ -33,6 +33,7 @@ class Navigation extends BaseTrimmer
             $menu->projects_non_confessional->add('Вечные ответы', 'eternal');
             $menu->projects->raw('Наставничество')->nickname('projects_mentoring');
             $menu->projects_mentoring->add('Базовый курс по наставничеству', 'mentor');
+            $menu->projects_mentoring->add('Украинский наставнический курс', 'http://online.bhaktilata.ru/courses/course-v1:Test+Test+Test/about')->data('outer', true);
 
             $menu->projects->raw('Философия и практика')->nickname('projects_philosophy_and_practice');
             $menu->projects_philosophy_and_practice->raw('Общие курсы')->nickname('projects_philosophy_and_practice_general');
