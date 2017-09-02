@@ -121,6 +121,7 @@
                                 <li><a href="https://vk.com/bhaktilata" data-bg-color="#3B5998" style="background: rgb(59, 89, 152) none repeat scroll 0% 0% !important;"><i class="fa fa-vk"></i></a></li>
                                 <li><a href="https://www.youtube.com/channel/UCJqCv7PHvvKTBEYSy9_Rveg?spfreload=10" data-bg-color="#C22E2A" style="background: rgb(194, 46, 42) none repeat scroll 0% 0% !important;"><i class="fa fa-youtube"></i></a></li>
                             </ul>
+                            <p style="font-size: 10px; color: #fff;">Наш сайт не осуществляет какую-либо миссионерскую деятельность от имени какого-либо религиозного объединения, не направлен на распространение сведений о каком-либо вероучении среди лиц, не являющихся его последователями, не преследует цель вовлечения в какое-либо религиозное объединение.</p>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -149,9 +150,6 @@
                                 </script>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <p>Наш сайт не осуществляет какую-либо миссионерскую деятельность от имени какого-либо религиозного объединения, не направлен на распространение сведений о каком-либо вероучении среди лиц, не являющихся его последователями, не преследует цель вовлечения в какое-либо религиозное объединение.</p>
                     </div>
                 </div>
             </div>
