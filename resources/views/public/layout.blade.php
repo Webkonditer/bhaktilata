@@ -50,7 +50,7 @@
     <script src="{{ url('js/revolution-slider/js/jquery.themepunch.tools.min.js') }}"></script>
     <script src="{{ url('js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
     <script charset="UTF-8" src="//cdn.sendpulse.com/28edd3380a1c17cf65b137fe96516659/js/push/032cdb76ad646524fe81acb93629f244_1.js" async></script>
-
+    <script type="text/javascript" src="//vk.com/js/api/share.js?93"></script>
 
 </head>
 <body class="boxed-layout pb-40 pt-sm-0" data-bg-img="{{ url('images/pattern/p5.png') }}">
@@ -169,7 +169,6 @@
     <!-- end wrapper -->
 
     <!-- Footer Scripts -->
-    <script type="text/javascript" src="//vk.com/js/api/share.js?93"></script>
     <!-- JS | Custom script for all pages -->
     <script src="{{ url('js/custom.js') }}"></script>
 </body>
