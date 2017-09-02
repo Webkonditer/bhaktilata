@@ -6,13 +6,13 @@ return [
         'name' => [
             'type' => 'string',
             'caption' => 'Имя ',
-            'required' => true,
+            'required' => false,
             'placeholder' => 'Ваше имя',
         ],
         'email' => [
             'type' => 'email',
             'caption' => 'E-mail ',
-            'required' => true,
+            'required' => false,
             'placeholder' => 'Ваш e-mail',
         ],
         'phone' => [
@@ -24,20 +24,26 @@ return [
         'skype' => [
             'type' => 'string',
             'caption' => 'Skype ',
-            'required' => true,
+            'required' => false,
             'placeholder' => 'Ваш Skype, если есть ',
         ],
         'city' => [
             'type' => 'string',
             'caption' => 'Город ',
-            'required' => true,
+            'required' => false,
             'placeholder' => 'Ваш город проживания ',
         ],
         'require' => [
             'type' => 'string',
             'caption' => 'Требования к студентам ',
-            'required' => true,
+            'required' => false,
             'placeholder' => 'Подходите ли Вы под требования к студентам курса?',
+        ],
+        'time' => [
+            'type' => 'string',
+            'caption' => 'Время занятий ',
+            'required' => false,
+            'placeholder' => 'Укажите время по Мск, когда Вы точно не сможете быть на встречах с куратором ',
         ],
         'description' => [
             'type' => 'text',
