@@ -11,47 +11,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Stylesheet -->
-    <link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url('css/jquery-ui.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url('css/animate.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url('css/css-plugin-collections.css') }}" rel="stylesheet"/>
-    <!-- CSS | menuzord megamenu skins -->
-{{--    <link id="menuzord-menu-skins" href="{{ url('css/menuzord-skins/menuzord-boxed.css') }}" rel="stylesheet"/>--}}
-    <link id="menuzord-menu-skins" href="{{ url('css/menuzord-skins/menuzord-rounded-boxed.css') }}" rel="stylesheet"/>
-    <link id="menuzord-animations" href="{{ url('css/menuzord-animations.css') }}" rel="stylesheet"/>
-    <!-- CSS | Main style file -->
-    <link href="{{ url('css/style-main.css') }}" rel="stylesheet" type="text/css">
-    <!-- CSS | Preloader Styles -->
-    <link href="{{ url('css/preloader.css') }}" rel="stylesheet" type="text/css">
-    <!-- CSS | Custom Margin Padding Collection -->
-    <link href="{{ url('css/custom-bootstrap-margin-padding.css') }}" rel="stylesheet" type="text/css">
-    <!-- CSS | Responsive media queries -->
-    <link href="{{ url('css/responsive.css') }}" rel="stylesheet" type="text/css">
-    <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
-    <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+    <link href="{{ url('css/public.css') }}" rel="stylesheet" type="text/css">
 
-    <!-- Revolution Slider 5.x CSS settings -->
-    <link  href="{{ url('js/revolution-slider/css/settings.css') }}" rel="stylesheet" type="text/css"/>
-    <link  href="{{ url('js/revolution-slider/css/layers.css') }}" rel="stylesheet" type="text/css"/>
-    <link  href="{{ url('js/revolution-slider/css/navigation.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ url('js/public.js') }}"></script>
 
-    <!-- CSS | Theme Color -->
-    <link href="{{ url('css/colors/theme-skin-green.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url('css/style.css') }}" rel="stylesheet" type="text/css">
-
-    <script src="{{ url('js/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ url('js/jquery-ui.min.js') }}"></script>
-    <script src="{{ url('js/bootstrap.min.js') }}"></script>
-    <!-- JS | jquery plugin collection for this theme -->
-    <script src="{{ url('js/jquery-plugin-collection.js') }}"></script>
-
-    <!-- Revolution Slider 5.x SCRIPTS -->
-    <script src="{{ url('js/revolution-slider/js/jquery.themepunch.tools.min.js') }}"></script>
-    <script src="{{ url('js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
     <script charset="UTF-8" src="//cdn.sendpulse.com/28edd3380a1c17cf65b137fe96516659/js/push/032cdb76ad646524fe81acb93629f244_1.js" async></script>
     <script type="text/javascript" src="//vk.com/js/api/share.js?93"></script>
-
 </head>
 <body class="boxed-layout pb-40 pt-sm-0" data-bg-img="{{ url('images/pattern/p5.png') }}">
     {{--{!! $main->asUl() !!}--}}
