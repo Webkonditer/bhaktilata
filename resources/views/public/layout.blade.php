@@ -116,7 +116,7 @@
             <div class="container pt-70 pb-40">
                 <div class="row multi-row-clearfix" style="text-align:center;">
                     <div class="col-sm-6 col-md-3">
-                        <div class="widget dark"> <img alt="" src="{{ url('images/logo-wide.png') }}">
+                        <div class="widget dark"> <img alt="" src="{{ url('images/logo-wide2.png') }}">
                             <ul class="styled-icons icon-dark mt-20" style="display:inline-block">
                                 <li><a href="https://vk.com/bhaktilata" data-bg-color="#3B5998" style="background: rgb(59, 89, 152) none repeat scroll 0% 0% !important;"><i class="fa fa-vk"></i></a></li>
                                 <li><a href="https://www.youtube.com/channel/UCJqCv7PHvvKTBEYSy9_Rveg?spfreload=10" data-bg-color="#C22E2A" style="background: rgb(194, 46, 42) none repeat scroll 0% 0% !important;"><i class="fa fa-youtube"></i></a></li>
