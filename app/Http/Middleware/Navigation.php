@@ -44,7 +44,7 @@ class Navigation extends BaseTrimmer
 //            $menu->projects_philosophy_and_practice->raw('Специализирвоанные курсы')->nickname('philosophy_and_practice_special_courses');
 //            $menu->philosophy_and_practice_special_courses->add('Курсы санскрита', 'sanskrit');
 
-            $menu->projects->raw('Собздание общин')->nickname('projects_creating_commons');
+            $menu->projects->raw('Создание общин')->nickname('projects_creating_commons');
             $menu->projects_creating_commons->add('Семейный коммитет', 'http://sk.mockt.ru/')->data('outer', true);
 
             $menu->projects->raw('Простая жизнь')->nickname('projects_simple_life');
