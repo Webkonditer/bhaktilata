@@ -54,7 +54,7 @@
                                                         @foreach ($contacts[1] as $contact)
                                                             <tr>
                                                                 <th scope="row">{{ $contact->place }}</th>
-                                                                <td><a data-toggle="modal" href="#leader-contact-form">{{ $contact->name }}</a></td>
+                                                                <td><a data-toggle="modal" data-contact-id="{{ $contact->id }}" href="#leader-contact-form">{{ $contact->name }}</a></td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
@@ -123,7 +123,7 @@
                                                         @foreach ($contacts[3] as $contact)
                                                             <tr>
                                                                 <th scope="row">{{ $contact->place }}</th>
-                                                                <td><a data-toggle="modal" href="#leader-contact-form">{{ $contact->name }}</a></td>
+                                                                <td><a data-toggle="modal" data-contact-id="{{ $contact->id }}" href="#leader-contact-form">{{ $contact->name }}</a></td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
@@ -154,7 +154,7 @@
                                                         @foreach ($contacts[4] as $contact)
                                                             <tr>
                                                                 <th scope="row">{{ $contact->place }}</th>
-                                                                <td><a data-toggle="modal" href="#leader-contact-form">{{ $contact->name }}</a></td>
+                                                                <td><a data-toggle="modal" data-contact-id="{{ $contact->id }}" href="#leader-contact-form">{{ $contact->name }}</a></td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
