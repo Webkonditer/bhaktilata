@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var \App\Domain\Contacts\Contact[]|Collection $contacts
+ */
+?>
 @extends('admin.layout')
 
 @section('content')
@@ -11,6 +16,9 @@
         <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
                 <tr role="row">
+                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Название: активируйте, чтобы изменить сортировку">
+                        Вкл.
+                    </th>
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Название: активируйте, чтобы изменить сортировку">
                         Раздел
                     </th>
@@ -30,6 +38,7 @@
             <tbody>
                 @foreach($contacts as $contact)
                     <tr role="row">
+                        <td>{{ $contact->isPublished() ? 'Да' : 'Нет' }}</td>
                         <td>{{ $contact->getSectionTitle() }}</td>
                         <td>{{ $contact->place }}</td>
                         <td>{{ $contact->name }}</td>

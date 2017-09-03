@@ -22,7 +22,7 @@ class ContactsRepository
 
     public function getContactsFromSection($sectionId): Collection
     {
-        return Contact::query()->where('section', (int)$sectionId)->get() ?: collect([]);
+        return Contact::query()->where('status', Contact::STATUS_PUBLISHED)->where('section', (int)$sectionId)->get() ?: collect([]);
     }
 
     public function makeNew()
