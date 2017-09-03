@@ -10,7 +10,7 @@ class Form implements FormInterface
     const TYPE_POST = 'POST';
     const TYPE_GET = 'GET';
     /** @var FieldInterface[] */
-    private $fields;
+    protected $fields;
     private $title;
     private $submitText;
     private $action;
@@ -53,6 +53,16 @@ class Form implements FormInterface
     public function fields()
     {
         return $this->fields;
+    }
+
+    public function visibleFields()
+    {
+        return array_filter($this->fields, function ($f) { return $f->isVisible(); });
+    }
+
+    public function hiddenFields()
+    {
+        return array_filter($this->fields, function ($f) { return !$f->isVisible(); });
     }
 
     public function setTitle(string $title)

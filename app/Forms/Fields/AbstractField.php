@@ -72,7 +72,7 @@ abstract class AbstractField implements FieldInterface
 
     public function getName()
     {
-        return $this->parent->getCode() . '_' . $this->getCode();
+        return str_replace('.','_', $this->parent->getCode() . '_' . $this->getCode());
     }
 
     public function getCaption()
@@ -108,5 +108,10 @@ abstract class AbstractField implements FieldInterface
     public function placeholder(): string
     {
         return (string)$this->getParameter('placeholder');
+    }
+
+    public function isVisible(): bool
+    {
+        return true;
     }
 }

@@ -29,6 +29,8 @@ $router->middleware('navigation')->group(function($router) {
     $router->get('forms/ok', '\App\Forms\Http\Controllers\SimpleFormController@success')->name('simple.form.ok');
     $router->post('forms/{code}', '\App\Forms\Http\Controllers\SimpleFormController@store')->name('simple.form.store');
 
+    $router->get('contacts/leaders_new', 'Contacts\ContactsController@leaders')->name('contacts.leaders');
+
     $router->get('{page_path}', 'PagesController@index')
         ->name('page')
         ->where('page_path', '(?!admin|login)(.+)');
@@ -72,6 +74,12 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/quotes/{quote}/edit', 'Quotes\QuoteController@edit')->name('admin.quote.edit');
     $router->post('/quotes/{quote}/store', 'Quotes\QuoteController@store')->name('admin.quote.store');
     $router->get('/quotes/{quote}/delete', 'Quotes\QuoteController@delete')->name('admin.quote.delete');
+
+    $router->get('/contacts', 'Contacts\ListController@index')->name('admin.contacts.list');
+    $router->get('/contacts/add', 'Contacts\ContactController@add')->name('admin.contacts.add');
+    $router->get('/contacts/{contact}/edit', 'Contacts\ContactController@edit')->name('admin.contact.edit');
+    $router->post('/contacts/{contact}/store', 'Contacts\ContactController@store')->name('admin.contact.store');
+    $router->get('/contacts/{contact}/delete', 'Contacts\ContactController@delete')->name('admin.contact.delete');
 });
 
 Auth::routes();

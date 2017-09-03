@@ -18,4 +18,6 @@ interface FieldInterface
     public function rules();
 
     public function placeholder(): string;
+
+    public function isVisible(): bool;
 }

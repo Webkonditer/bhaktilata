@@ -9,7 +9,8 @@ class FormsFactory
 {
     public function fromConfig($code, $config)
     {
-        $form = new Form($code, Form::TYPE_POST, !empty($config['parameters']) ? $config['parameters'] : []);
+        $class = !empty($config['customClass']) ? $config['customClass'] : Form::class;
+        $form = new $class($code, Form::TYPE_POST, !empty($config['parameters']) ? $config['parameters'] : []);
         $form->setTitle($config['title']);
 
         foreach ($config['fields'] as $fieldCode => $fieldParameters) {
@@ -42,8 +43,11 @@ class FormsFactory
                 return new Fields\EmailField($code, $parameters);
             case 'text':
                 return new Fields\TextField($code, $parameters);
+            case 'hidden':
+                return new Fields\HiddenField($code, $parameters);
             default:
                 throw new \RuntimeException('Не удалось найти тип поля [' . $type .']');
         }
     }
 }
+
