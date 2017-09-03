@@ -2,7 +2,7 @@
 
 return [
     'customClass' => \App\CustomForms\ContactLeaderForm::class,
-    'title' => 'Свзаться с ответсвенным',
+    'title' => 'Свзаться с ответственным',
     'fields' => [
         'name' => [
             'type' => 'string',
@@ -24,6 +24,7 @@ return [
             'placeholder' => 'Ваш вопрос или обращение',
         ],
         'contact_id' => [
+            'caption' => 'Получатель',
             'type' => 'hidden',
         ],
     ],
