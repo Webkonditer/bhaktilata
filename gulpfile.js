@@ -1,8 +1,10 @@
-'use strict'
+'use strict';
 
 var gulp = require('gulp');
 var concatCss = require('gulp-concat-css');
 var concat = require('gulp-concat');
+var strip = require('gulp-strip-comments');
+var uglify = require('gulp-uglify');
 
 gulp.task('css', function () {
     return gulp.src([
@@ -37,7 +39,7 @@ gulp.task('js', function() {
         'public/js/revolution-slider/js/jquery.themepunch.tools.min.js',
         'public/js/revolution-slider/js/jquery.themepunch.revolution.min.js',
         'public/js/revolution-slider/js/extensions/*.min.js',
-    ]).pipe(concat('public.js'))
+    ]).pipe(strip()).pipe(uglify()).pipe(concat('public.js'))
         .pipe(gulp.dest('public/js'))
 });
 
