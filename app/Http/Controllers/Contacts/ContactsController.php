@@ -17,7 +17,7 @@ class ContactsController extends Controller
                 3 => $repository->getContactsFromSection(3),
                 4 => $repository->getContactsFromSection(4),
             ],
-            'form' => $formsRepository->find('contacts.leaders'),
+            'form' => $formsRepository->find('contacts_leaders'),
         ]);
     }
 }
