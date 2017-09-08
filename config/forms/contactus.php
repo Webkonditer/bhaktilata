@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Связь с нами ',
+    'title' => 'Связь с нами',
     'fields' => [
         'name' => [
             'type' => 'string',
@@ -24,12 +24,12 @@ return [
         'topic' => [
             'type' => 'string',
             'caption' => 'Тема сообщения ',
-            'required' => true,
-            'placeholder' => 'Тема сообщения',
+            'required' => ture,
+            'placeholder' => 'Тема Вашего сообщения ',
         ],
         'description' => [
             'type' => 'text',
-            'caption' => 'Текст письма ',
+            'caption' => 'Текст ',
             'required' => true,
             'rows' => 10,
             'placeholder' => 'Ваш текст ',
