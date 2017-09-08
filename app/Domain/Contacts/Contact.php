@@ -14,6 +14,7 @@ use App\Common\Model;
  * @property string $name
  * @property string $email
  * @property int    $section
+ * @property int    $sort
  */
 class Contact extends Model
 {
@@ -24,6 +25,7 @@ class Contact extends Model
         'name' => 'string|required',
         'email' => 'string|required|email',
         'section' => 'integer|required',
+        'sort' => 'integer',
     ];
 
     protected $fillable = [
@@ -31,10 +33,12 @@ class Contact extends Model
         'name',
         'email',
         'section',
+        'sort',
     ];
 
     protected $casts = [
         'section' => 'integer',
+        'sort' => 'integer',
     ];
 
     protected static $sections = [

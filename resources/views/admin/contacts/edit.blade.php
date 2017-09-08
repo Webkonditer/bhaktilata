@@ -29,6 +29,15 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="sort">Порядок вывода</label>
+                            <input type="text"
+                                   name="edit[sort]"
+                                   class="form-control"
+                                   id="sort"
+                                   value="{{$contact->sort}}"
+                            />
+                        </div>
+                        <div class="form-group">
                             <label for="section">Раздел</label>
                             <select name="edit[section]" id="section" class="form-control">
                                 <option value="">Не указан</option>

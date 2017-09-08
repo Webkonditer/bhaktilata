@@ -16,8 +16,11 @@
         <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
                 <tr role="row">
-                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Название: активируйте, чтобы изменить сортировку">
+                    <th style="width: 45px;" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Название: активируйте, чтобы изменить сортировку">
                         Вкл.
+                    </th>
+                    <th style="width: 75px;" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Название: активируйте, чтобы изменить сортировку">
+                        Порядок
                     </th>
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Название: активируйте, чтобы изменить сортировку">
                         Раздел
@@ -39,6 +42,7 @@
                 @foreach($contacts as $contact)
                     <tr role="row">
                         <td>{{ $contact->isPublished() ? 'Да' : 'Нет' }}</td>
+                        <td style="text-align: right; padding-right:30px;">{{ $contact->sort ?: '' }}</td>
                         <td>{{ $contact->getSectionTitle() }}</td>
                         <td>{{ $contact->place }}</td>
                         <td>{{ $contact->name }}</td>
@@ -50,10 +54,13 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Название</th>
-                    <th>Код</th>
-                    <th>Статус</th>
-                    <th>Категория</th>
+                    <th>Вкл.</th>
+                    <th>Порядок</th>
+                    <th>Раздел</th>
+                    <th>Город/Регион/Проект</th>
+                    <th>Имя</th>
+                    <th>E-mail</th>
+                    <th colspan="2"></th>
                 </tr>
             </tfoot>
         </table>
