@@ -87,6 +87,7 @@ class Navigation extends BaseTrimmer
             $menu->raw('Контакты')->nickname('contacts');
             $menu->contacts->add('Связь с нами', 'contacts/contact-us');
             $menu->contacts->add('Лидеры и преподаватели в регионах', 'contacts/leaders');
+            $menu->contacts->add('Санга ведущих Бхакти-латы', 'contacts/community');
         });
 
         \Menu::make('crumbs', function ($menu) {
