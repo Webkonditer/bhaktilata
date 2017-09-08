@@ -27,7 +27,7 @@ class Navigation extends BaseTrimmer
             $menu->bhakti_lata->add('Материалы', 'about/materials');
 
 
-            $menu->raw('Рекомендованые проекты')->nickname('projects')->data('megamenu', true);
+            $menu->add('Рекомендованые проекты', 'projects')->nickname('projects')->data('megamenu', true);
 
             $menu->projects->raw('Внеконфессиональная проповедь')->nickname('projects_non_confessional');
             $menu->projects_non_confessional->add('Вечные ответы', 'eternal');
