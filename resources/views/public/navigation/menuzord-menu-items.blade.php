@@ -30,10 +30,13 @@
                         </div>
                     </div>
                 </div>
+                <ul class="dropdown">
+                    @include('public.navigation.menuzord-menu-items', ['links' => $link->children()])
+                </ul>
             @else
-            <ul class="dropdown">
-                @include('public.navigation.menuzord-menu-items', ['links' => $link->children()])
-            </ul>
+                <ul class="dropdown">
+                    @include('public.navigation.menuzord-menu-items', ['links' => $link->children()])
+                </ul>
             @endif
         @endif
     </li>

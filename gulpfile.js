@@ -5,6 +5,7 @@ var concatCss = require('gulp-concat-css');
 var concat = require('gulp-concat');
 var strip = require('gulp-strip-comments');
 var uglify = require('gulp-uglify');
+var csso = require('gulp-csso');
 
 gulp.task('css', function () {
     return gulp.src([
@@ -23,10 +24,14 @@ gulp.task('css', function () {
         'public/js/revolution-slider/css/navigation.css',
         'public/css/colors/theme-skin-green.css',
         'public/css/style.css',
-    ]).pipe(concatCss('public.css', {
-        inlineImports: true,
-        rebaseUrls: true
-    }))
+    ])
+        .pipe(concatCss('public.css', {
+            inlineImports: true,
+            rebaseUrls: true
+        }))
+        .pipe(csso({
+            restructure: false
+        }))
         .pipe(gulp.dest('public/css'));
 });
 

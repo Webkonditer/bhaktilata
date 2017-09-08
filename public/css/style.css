@@ -18,8 +18,19 @@ theme. But don't modify style-main.css file.
     top: 71px;
 }
 
-.menuzord-menu > li.with-mega {
-    position: static;
+@media (min-width: 901px) {
+    .menuzord-menu > li.with-mega {
+        position: static;
+    }
+    .megamenu + .dropdown {
+        display: none !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .megamenu {
+        display: none !important;
+    }
 }
 
 h1 {
