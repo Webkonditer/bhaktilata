@@ -29,7 +29,7 @@ $router->middleware('navigation')->group(function($router) {
     $router->get('forms/ok', '\App\Forms\Http\Controllers\SimpleFormController@success')->name('simple.form.ok');
     $router->post('forms/{code}', '\App\Forms\Http\Controllers\SimpleFormController@store')->name('simple.form.store');
 
-    $router->get('contacts/leaders_new', 'Contacts\ContactsController@leaders')->name('contacts.leaders');
+    $router->get('contacts/leaders', 'Contacts\ContactsController@leaders')->name('contacts.leaders');
 
     $router->get('{page_path}', 'PagesController@index')
         ->name('page')
