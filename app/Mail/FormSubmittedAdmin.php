@@ -42,6 +42,7 @@ class FormSubmittedAdmin extends Mailable
     public function build()
     {
         return $this->subject('Заполнена форма: ' . $this->form->getTitle())
-                    ->view('mail.form-admin');
+                    ->view('mail.form-admin.html')
+                    ->text('mail.form-admin.text');
     }
 }

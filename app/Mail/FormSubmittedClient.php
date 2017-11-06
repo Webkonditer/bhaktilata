@@ -42,6 +42,7 @@ class FormSubmittedClient extends Mailable
     public function build()
     {
         return $this->subject('Ваше обращение принято!')
-                    ->view('mail.form-client');
+                    ->view('mail.form-client.html')
+                    ->text('mail.form-client.text');
     }
 }
