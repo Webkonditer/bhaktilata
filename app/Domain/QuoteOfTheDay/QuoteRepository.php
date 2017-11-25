@@ -3,6 +3,7 @@
 namespace App\Domain\QuoteOfTheDay;
 
 use App\Repositories\AdminEditTrait;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class QuoteRepository
 {
@@ -20,6 +21,26 @@ class QuoteRepository
         return $this->queryAll()->orderBy('day', 'DESC')->get();
     }
 
+    /**
+     * Выборка цитат для одной страницы
+     *
+     * @param int $page
+     * @param int $perPage
+     *
+     * @return LengthAwarePaginator
+     */
+    public function page($page, $perPage = 20)
+    {
+        $query = $this->queryAll();
+        $countQuery = clone $query;
+        return new LengthAwarePaginator(
+            $this->paginate($this->queryAll()->orderBy('day', 'DESC'), $page, $perPage)->get(),
+            $countQuery->count(),
+            $perPage,
+            $page
+        );
+    }
+
     public function forToday()
     {
         return $this->model->where('status', Quote::STATUS_PUBLISHED)->where('day', new \DateTime('midnight'))->inRandomOrder()->first();
@@ -35,4 +56,8 @@ class QuoteRepository
         ]);
     }
 
+    private function paginate($query, $page, $perPage)
+    {
+        return $query->skip($perPage * ($page - 1))->take($perPage);
+    }
 }

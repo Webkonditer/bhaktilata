@@ -5,15 +5,17 @@ namespace App\Http\Controllers\Admin\Quotes;
 
 use App\Http\Controllers\Controller;
 use App\Domain\QuoteOfTheDay\QuoteRepository;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ListController extends Controller
 {
     public function index(QuoteRepository $repository)
     {
-        $quotes = $repository->all();
+        $paging = $repository->page((int)LengthAwarePaginator::resolveCurrentPage())->setPath('/admin/quotes');
 
         return view('admin.quotes.list', [
-            'quotes' => $quotes,
+            'quotes' => $paging->items(),
+            'paging' => $paging,
         ]);
     }
 }

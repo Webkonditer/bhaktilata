@@ -1,5 +1,13 @@
 @extends('admin.layout')
 
+@section('title')
+    Цитата дня
+@endsection
+
+@section('crumbs')
+    <li class="active">Цитата дня</li>
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-sm-12">
@@ -8,6 +16,7 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
+        <div>{{ $paging->render() }}</div>
         <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
                 <tr role="row">
@@ -49,6 +58,7 @@
                 </tr>
             </tfoot>
         </table>
+        <div>{{ $paging->render() }}</div>
     </div>
 </div>
 @endsection
