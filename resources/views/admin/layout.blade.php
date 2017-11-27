@@ -379,6 +379,11 @@
                         <i class="fa fa-dashboard"></i> <span>Контакты</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.news.list')}}">
+                        <i class="fa fa-dashboard"></i> <span>Новости</span>
+                    </a>
+                </li>
                 <li class="header">ТУТ</li>
                 <li class="header">НЕКТОРЫЙ</li>
                 <li class="header">ОГРНАИЧИНТЕЛЬ</li>

@@ -6,8 +6,15 @@ var concat = require('gulp-concat');
 var strip = require('gulp-strip-comments');
 var uglify = require('gulp-uglify');
 var csso = require('gulp-csso');
+var sass = require('gulp-sass');
 
-gulp.task('css', function () {
+gulp.task('sass', function () {
+    return gulp.src('resources/assets/sass/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('public/css/build'));
+});
+
+gulp.task('css', ['sass'], function () {
     return gulp.src([
         'public/css/bootstrap.min.css',
         'public/css/jquery-ui.min.css',
@@ -24,6 +31,7 @@ gulp.task('css', function () {
         'public/js/revolution-slider/css/navigation.css',
         'public/css/colors/theme-skin-green.css',
         'public/css/style.css',
+        'public/css/build/**/*.css'
     ])
         .pipe(concatCss('public.css', {
             inlineImports: true,
@@ -49,3 +57,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('default', ['css', 'js']);
+
+gulp.task('sass:watch', function() {
+    gulp.watch('resources/assets/sass/**/*.scss', ['default']);
+});

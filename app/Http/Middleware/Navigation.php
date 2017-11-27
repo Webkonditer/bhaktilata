@@ -64,9 +64,9 @@ class Navigation extends BaseTrimmer
             $menu->projects_another_projects->add('Партнёры Бхакти-латы', 'projects/another-projects/partners');
             $menu->projects_another_projects->add('Частные разработки', 'projects/another-projects/personal');
 
-            $menu->raw('Ресурсы')->nickname('resources');
+            $menu->raw('Ресурсы')->nickname('resources')->active('/resources/*');
             $menu->resources->add('Статьи', 'resources/articles');
-            $menu->resources->add('Новости', 'resources/news');
+            $menu->resources->add('Новости', 'resources/news/');
             $menu->resources->add('Видео/вебинары', 'resources/video');
             $menu->resources->add('Документы', 'resources/documents');
             $menu->resources->add('Ссылки', 'resources/links');

@@ -1,9 +1,5 @@
+@import "blocks/news/index";
+@import "blocks/share/share";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+.blog-posts > .col-md-4:nth-child(3n+1) {clear:left}

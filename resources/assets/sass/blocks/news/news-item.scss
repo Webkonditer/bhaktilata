@@ -1,0 +1,84 @@
+@import "../mixins";
+
+.news-item {
+	&__title {
+		color: #000 !important;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	&__header {
+		height: 58px;
+		margin: 20px 0;
+	}
+	&__date {
+		background-color: #6ab43e !important;
+		padding: 5px 15px;
+		text-align: center;
+	}
+	&__date-day {
+		font-size: 16px;
+		font-weight: 600;
+		color: #ffffff;
+	}
+	&__date-month {
+		font-size: 12px;
+		color: #ffffff;
+		text-transform: uppercase;
+	}
+	&__share {
+		margin-left: 20px;
+		line-height: 58px;
+		height: 58px;
+		display: inline-block;
+	}
+	&__content {
+
+	}
+	&__back-button {
+		text-align:right;
+		padding-right: 15px;
+	}
+
+	@media all and (min-width: 978px) {
+		&__title {
+			margin-top: 0;
+		}
+	}
+	&_on-main {
+		padding-bottom: 0;
+		margin-bottom: 10px;
+
+		@include clearfix();
+		.news-item {
+			&__image {
+				padding-bottom: 0;
+				margin: 0 10px 0 0;
+				-webkit-transition: all .2s ease-in-out;
+				-o-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+			}
+			&__title {
+				margin-top: 0;
+				margin-bottom: 5px;
+				font-size: 18px;
+				text-transform: none;
+				text-align: left;
+				font-family: 'Trirong', serif;
+				font-weight: 500;
+				line-height: 1.42857143;
+				color: #333 !important;
+				&:hover {
+					color: #595959 !important;
+				}
+			}
+			&__date {
+				margin-bottom: 0;
+				font-size: 14px;
+				background-color: transparent !important;
+				padding: 0;
+				text-align: left;
+			}
+		}
+	}
+}

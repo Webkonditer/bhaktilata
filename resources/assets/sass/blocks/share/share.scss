@@ -1,0 +1,12 @@
+.share {
+	&__title {
+		color: #555;
+		font-weight: 700;
+		vertical-align: middle;
+	}
+	&__buttons {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 10px;
+	}
+}

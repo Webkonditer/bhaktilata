@@ -31,6 +31,11 @@ $router->middleware('navigation')->group(function($router) {
 
     $router->get('contacts/leaders', 'Contacts\ContactsController@leaders')->name('contacts.leaders');
 
+    $router->get('resources/news1/{page_number?}', 'News\ListController@index')
+        ->name('news')
+        ->where('page_number', '^page(\d)+');
+    $router->get('resources/news1/{news_code}', 'News\NewsController@item')->name('news.item');
+
     $router->get('{page_path}', 'PagesController@index')
         ->name('page')
         ->where('page_path', '(?!admin|login)(.+)');
@@ -80,6 +85,12 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/contacts/{contact}/edit', 'Contacts\ContactController@edit')->name('admin.contact.edit');
     $router->post('/contacts/{contact}/store', 'Contacts\ContactController@store')->name('admin.contact.store');
     $router->get('/contacts/{contact}/delete', 'Contacts\ContactController@delete')->name('admin.contact.delete');
+
+    $router->get('/news', 'News\ListController@index')->name('admin.news.list');
+    $router->get('/news/add', 'News\NewsController@add')->name('admin.news.add');
+    $router->get('/news/{newsItem}/edit', 'News\NewsController@edit')->name('admin.news.edit');
+    $router->post('/news/{newsItem}/store', 'News\NewsController@store')->name('admin.news.store');
+    $router->get('/news/{newsItem}/delete', 'News\NewsController@delete')->name('admin.news.delete');
 });
 
 Auth::routes();

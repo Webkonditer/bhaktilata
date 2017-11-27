@@ -16,3 +16,4 @@ npm-debug.log
 /public/docs
 /public/yandex*
 /public/sp-push*
+/public/css/build

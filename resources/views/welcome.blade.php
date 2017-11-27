@@ -440,47 +440,55 @@
 					</div>
 				@endif
 
-				<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
-					<h3 class="widget-title line-bottom">Последние <a href="/resources/news" class="text-theme-colored">новости:</a></h3>
-					<div class="latest-posts">
-						<article class="post media-post clearfix pb-0 mb-10">
-							<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news6.jpg" alt=""></div>
-							<div class="post-right">
-								<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news6">Сегодня мы запускаем наш сайт!</a></h5>
-								<p class="post-date mb-0 font-14">29 авг, 2017</p>
-							</div>
-						</article>
-						<article class="post media-post clearfix pb-0 mb-10">
-							<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news5.jpg" alt=""></div>
-							<div class="post-right">
-								<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news5">Создано расписание всех очных курсов</a></h5>
-								<p class="post-date mb-0 font-14">25 авг, 2017</p>
-							</div>
-						</article>
-						<article class="post media-post clearfix pb-0 mb-10">
-							<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news4.jpg" alt=""></div>
-							<div class="post-right">
-								<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news4">Готов раздел сотрудничества с нами</a></h5>
-								<p class="post-date mb-0 font-14">20 авг, 2017</p>
-							</div>
-						</article>
-						<article class="post media-post clearfix pb-0 mb-10">
-							<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news3.jpg" alt=""></div>
-							<div class="post-right">
-								<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news3">Сделан курс по ступеням духовного развития</a></h5>
-								<p class="post-date mb-0 font-14">10 авг, 2017</p>
-							</div>
-						</article>
-						<article class="post media-post clearfix pb-0 mb-10">
-							<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news2.jpg" alt=""></div>
-							<div class="post-right">
-								<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news2">Запуск онлайн курса по наставничеству</a></h5>
-								<p class="post-date mb-0 font-14">5 авг, 2017</p>
-							</div>
-						</article>
-
+				@if (!empty($_GET['news_variant']) && !empty($news))
+					<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
+						@include('public.widgets.latest-news', [
+							'news' => $news,
+						])
 					</div>
-				</div>
+				@else
+					<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
+						<h3 class="widget-title line-bottom">Последние <a href="/resources/news" class="text-theme-colored">новости:</a></h3>
+						<div class="latest-posts">
+							<article class="post media-post clearfix pb-0 mb-10">
+								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news6.jpg" alt=""></div>
+								<div class="post-right">
+									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news6">Сегодня мы запускаем наш сайт!</a></h5>
+									<p class="post-date mb-0 font-14">29 авг, 2017</p>
+								</div>
+							</article>
+							<article class="post media-post clearfix pb-0 mb-10">
+								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news5.jpg" alt=""></div>
+								<div class="post-right">
+									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news5">Создано расписание всех очных курсов</a></h5>
+									<p class="post-date mb-0 font-14">25 авг, 2017</p>
+								</div>
+							</article>
+							<article class="post media-post clearfix pb-0 mb-10">
+								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news4.jpg" alt=""></div>
+								<div class="post-right">
+									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news4">Готов раздел сотрудничества с нами</a></h5>
+									<p class="post-date mb-0 font-14">20 авг, 2017</p>
+								</div>
+							</article>
+							<article class="post media-post clearfix pb-0 mb-10">
+								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news3.jpg" alt=""></div>
+								<div class="post-right">
+									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news3">Сделан курс по ступеням духовного развития</a></h5>
+									<p class="post-date mb-0 font-14">10 авг, 2017</p>
+								</div>
+							</article>
+							<article class="post media-post clearfix pb-0 mb-10">
+								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news2.jpg" alt=""></div>
+								<div class="post-right">
+									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news2">Запуск онлайн курса по наставничеству</a></h5>
+									<p class="post-date mb-0 font-14">5 авг, 2017</p>
+								</div>
+							</article>
+
+						</div>
+					</div>
+				@endif
 				<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
 
 					<h3 class="widget-title line-bottom">Ближайшие <a href="/studying/closest-courses" class="text-theme-colored">курсы:</a></h3>
