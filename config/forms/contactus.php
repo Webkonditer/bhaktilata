@@ -24,7 +24,7 @@ return [
         'topic' => [
             'type' => 'string',
             'caption' => 'Тема сообщения ',
-            'required' => ture,
+            'required' => true,
             'placeholder' => 'Тема Вашего сообщения ',
         ],
         'description' => [
