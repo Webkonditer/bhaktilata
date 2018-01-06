@@ -9,16 +9,14 @@ use App\Common\Model;
  *
  * @package App\Domain\News
  *
- * @property string $id
- * @property string $place
- * @property string $name
- * @property string $email
- * @property int    $section
- * @property int    $sort
- * @property string $slug
- * @property string $small_image
- * @property string $medium_image
- * @property string $full_image
+ * @property string    $id
+ * @property string    $title
+ * @property \DateTime $date
+ * @property string    $slug
+ * @property string    $content
+ * @property string    $small_image
+ * @property string    $medium_image
+ * @property string    $full_image
  */
 class News extends Model
 {
@@ -56,6 +54,12 @@ class News extends Model
 
     public function smallImagePath()
     {
-        return $this->small_image ?: $this->medium_image;
+        $path = $this->small_image ?: $this->medium_image;
+        return $path ? \Storage::disk('public')->url($path) : '';
+    }
+
+    public function mediumImagePath()
+    {
+        return $this->medium_image ? \Storage::disk('public')->url($this->medium_image) : '';
     }
 }

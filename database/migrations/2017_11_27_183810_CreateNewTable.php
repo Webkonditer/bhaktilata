@@ -27,7 +27,7 @@ class CreateNewTable extends Migration
                 $table->string('small_image')->nullable();
                 $table->string('medium_image')->nullable();
                 $table->string('full_image')->nullable();
-                $table->string('code')->unique();
+                $table->string('slug')->unique();
                 $table->text('content');
                 $table->unsignedInteger('user_id')->index();
                 $table->timestamps();

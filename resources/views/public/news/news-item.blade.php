@@ -17,7 +17,9 @@
         <div class="container news-item">
             <section class="post">
                 <article class="entry-content clearfix">
-                    <img class="col-md-6" alt="" src="{{ $newsItem->medium_image }}"> {{-- тут картинка --}}
+                    @if($image = $newsItem->mediumImagePath())
+                        <img class="col-md-6" alt="" src="{{ $image }}">
+                    @endif
                     <h3 class="news-item__title">{{ $newsItem->title }}</h3>
                     <div class="news-item__header">
                         <div class="news-item__date pull-left col-md-1">

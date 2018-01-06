@@ -44,7 +44,7 @@ abstract class Model extends EloquentModel
             return $type == 'date';
         }));
         foreach ($datesAttributes as $attributeName) {
-            if (!empty($attributes[$attributeName])) {
+            if (!empty($attributes[$attributeName]) && !is_object($attributes[$attributeName])) {
                 $attributes[$attributeName] = Carbon::createFromFormat('d.m.Y', $attributes[$attributeName]);
             }
         }
