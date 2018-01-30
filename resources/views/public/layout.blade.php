@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link href="{{ url('css/public.css?ver=0.2') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url('css/public.css?ver=0.3') }}" rel="stylesheet" type="text/css">
 
     <script src="{{ url('js/public.js') }}"></script>
 

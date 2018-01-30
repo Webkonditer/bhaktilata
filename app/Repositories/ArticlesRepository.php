@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
-use App\Domain\News\News;
+use App\Domain\Articles\Article;
 use App\View\Paginator;
 
-class NewsRepository
+class ArticlesRepository
 {
     use AdminEditTrait {
         queryAll as protected traitQueryAll;
@@ -15,10 +15,10 @@ class NewsRepository
 
     public function __construct()
     {
-        $this->model = new News();
+        $this->model = new Article();
     }
 
-    public function findById(string $id): ?News
+    public function findById(string $id): ?Article
     {
         return $this->model->query()->where('id', '=', $id)->firstOrFail();
     }
@@ -50,7 +50,7 @@ class NewsRepository
 
     private function published($query)
     {
-        return $query->where('status', News::STATUS_PUBLISHED);
+        return $query->where('status', Article::STATUS_PUBLISHED);
     }
 
     private function buildOrderBy($query)
@@ -61,7 +61,7 @@ class NewsRepository
 
     public function makeNew()
     {
-        return new News([
+        return new Article([
             'title' => '',
             'date' => null,
             'small_image' => '',

@@ -65,7 +65,20 @@ class RouteServiceProvider extends ServiceProvider
 
         $repo = app()->make('App\Repositories\NewsRepository');
         Route::bind('news_code', function ($newsSlug) use ($repo) {
-            return $repo->findBySlug($newsSlug);
+            $newsItem = $repo->findBySlug($newsSlug);
+            if (!$newsItem || !$newsItem->isPublished()) {
+                throw new ModelNotFoundException();
+            }
+            return $newsItem;
+        });
+
+        $repo = app()->make('App\Repositories\ArticlesRepository');
+        Route::bind('article_code', function ($articleSlug) use ($repo) {
+            $article = $repo->findBySlug($articleSlug);
+            if (!$article || !$article->isPublished()) {
+                throw new ModelNotFoundException();
+            }
+            return $article;
         });
 
         Route::bind('page_number', function ($pageNumber) use ($repo) {

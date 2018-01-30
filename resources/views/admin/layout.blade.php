@@ -384,6 +384,11 @@
                         <i class="fa fa-newspaper-o"></i> <span>Новости</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.articles.list')}}">
+                        <i class="fa fa-file-text-o"></i> <span>Статьи</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->

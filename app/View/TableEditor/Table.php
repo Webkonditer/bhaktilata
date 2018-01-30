@@ -5,7 +5,7 @@ namespace App\View\TableEditor;
 class Table
 {
     /** @var TableRow[] */
-    private $rows;
+    private $rows = [];
     /** @var TableColumn[] */
     private $columns;
     /** @var TableActionButton[] */

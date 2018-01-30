@@ -9,7 +9,7 @@ class ListController extends Controller
 {
     public function index($page = 1, NewsRepository $repository)
     {
-        $paginator = $repository->getPage($page, 15);
+        $paginator = $repository->getPage($page, 15, true);
         $paginator->setRoute('news');
         return view('public.news.list', [
             'news' => $paginator->items(),

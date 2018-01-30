@@ -36,6 +36,11 @@ $router->middleware('navigation')->group(function($router) {
         ->where('page_number', '^page(\d)+');
     $router->get('resources/news1/{news_code}', 'News\NewsController@item')->name('news.item');
 
+    $router->get('resources/articles1/{page_number?}', 'Articles\ListController@index')
+        ->name('articles')
+        ->where('page_number', '^page(\d)+');
+    $router->get('resources/articles1/{article_code}', 'Articles\ArticleController@article')->name('articles.article');
+
     $router->get('{page_path}', 'PagesController@index')
         ->name('page')
         ->where('page_path', '(?!admin|login)(.+)');
@@ -91,6 +96,12 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/news/{newsItem}/edit', 'News\NewsController@edit')->name('admin.news.edit');
     $router->post('/news/{newsItem}/store', 'News\NewsController@store')->name('admin.news.store');
     $router->get('/news/{newsItem}/delete', 'News\NewsController@delete')->name('admin.news.delete');
+
+    $router->get('/articles', 'Articles\ListController@index')->name('admin.articles.list');
+    $router->get('/articles/add', 'Articles\ArticlesController@add')->name('admin.articles.add');
+    $router->get('/articles/{article}/edit', 'Articles\ArticlesController@edit')->name('admin.articles.edit');
+    $router->post('/articles/{article}/store', 'Articles\ArticlesController@store')->name('admin.articles.store');
+    $router->get('/articles/{article}/delete', 'Articles\ArticlesController@delete')->name('admin.articles.delete');
 });
 
 Auth::routes();
