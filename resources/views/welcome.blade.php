@@ -623,52 +623,60 @@
 	<section>
 		<div class="container" data-margin-top="-20px">
 			<div class="row">
-				<div class="col-md-6">
-					<p><h3 class="widget-title line-bottom">Новые <a href="/resources/articles" class="text-theme-colored">статьи:</a></h3></p>
+				@if (!empty($_GET['articles_variant']) && !empty($articles))
+					<div class="col-md-6">
+						@include('public.widgets.latest-articles', [
+							'articles' => $articles,
+						])
+					</div>
+				@else
+					<div class="col-md-6">
+						<p><h3 class="widget-title line-bottom">Новые <a href="/resources/articles" class="text-theme-colored">статьи:</a></h3></p>
 
-					<div class="col-md-6">
-						<article class="post clearfix mb-30 bg-lighter">
-							<div class="entry-header">
-								<div class="post-thumb thumb">
-									<img src="/images/articles/article1.jpg" alt="" class="img-responsive img-fullwidth">
-								</div>
-							</div>
-							<div class="entry-content">
-								<div class="entry-meta media no-bg no-border">
-									<div class="media-body">
-										<h3 align="center" class="title"><a href="/resources/article1">О целях образования</h3></a>
+						<div class="col-md-6">
+							<article class="post clearfix mb-30 bg-lighter">
+								<div class="entry-header">
+									<div class="post-thumb thumb">
+										<img src="/images/articles/article1.jpg" alt="" class="img-responsive img-fullwidth">
 									</div>
 								</div>
-								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.С. Бхакти Вигьяна Госвами Махарадж</span></p>
-								<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Лекция о принципах, целях и ценностях истинного, ведического образования.</p>
-								<div class="text-center"><a href="/resources/article1" class="btn btn-theme-colored">Читать!</a></div>
-								<div class="clearfix"></div>
-							</div>
-							<br>
-						</article>
-					</div>
-					<div class="col-md-6">
-						<article class="post clearfix mb-30 bg-lighter">
-							<div class="entry-header">
-								<div class="post-thumb thumb">
-									<img src="/images/articles/article2.jpg" alt="" class="img-responsive img-fullwidth">
+								<div class="entry-content">
+									<div class="entry-meta media no-bg no-border">
+										<div class="media-body">
+											<h3 align="center" class="title"><a href="/resources/article1">О целях образования</a></h3>
+										</div>
+									</div>
+									<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.С. Бхакти Вигьяна Госвами Махарадж</p>
+									<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Лекция о принципах, целях и ценностях истинного, ведического образования.</p>
+									<div class="text-center"><a href="/resources/article1" class="btn btn-theme-colored">Читать!</a></div>
+									<div class="clearfix"></div>
 								</div>
-							</div>
-							<div class="entry-content">
-								<div class="entry-meta media no-bg no-border">
-									<div class="media-body">
-										<h3 align="center" class="title"><a href="/resources/article2">Смена парадигмы</h3></a>
+								<br>
+							</article>
+						</div>
+						<div class="col-md-6">
+							<article class="post clearfix mb-30 bg-lighter">
+								<div class="entry-header">
+									<div class="post-thumb thumb">
+										<img src="/images/articles/article2.jpg" alt="" class="img-responsive img-fullwidth">
 									</div>
 								</div>
-								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Ачьюта прия прабху</span></p>
-								<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Выдержка из книги "Бхаката-сева", посвященной заботе о преданных.</p>
-								<div class="text-center"><a href="/resources/article2" class="btn btn-theme-colored">Читать!</a></div>
-								<div class="clearfix"></div>
-							</div>
-							<br>
-						</article>
+								<div class="entry-content">
+									<div class="entry-meta media no-bg no-border">
+										<div class="media-body">
+											<h3 align="center" class="title"><a href="/resources/article2">Смена парадигмы</a></h3>
+										</div>
+									</div>
+									<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Ачьюта прия прабху</p>
+									<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Выдержка из книги "Бхаката-сева", посвященной заботе о преданных.</p>
+									<div class="text-center"><a href="/resources/article2" class="btn btn-theme-colored">Читать!</a></div>
+									<div class="clearfix"></div>
+								</div>
+								<br>
+							</article>
+						</div>
 					</div>
-				</div>
+				@endif
 
 
 				<div class="col-md-6">
@@ -683,10 +691,10 @@
 							<div class="entry-content">
 								<div class="entry-meta media mt-0 no-bg no-border">
 									<div class="media-body">
-										<h3 align="center" class="title">Определение своей природы</h3></a>
+										<h3 align="center" class="title">Определение своей природы</h3>
 									</div>
 								</div>
-								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Враджендра Кумар прабху</span></p>
+								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Враджендра Кумар прабху</p>
 								<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Вебинар из цикла ШЛиС: "Развитие вайшнавского социума"</p>
 								<p><i class="fa fa-edge mr-5 text-theme-colored"></i><strong>Сайт: </strong><a href="http://lsanga.ru" class="text-theme-colored" target="_blank">www.lsanga.ru</a>
 								<div class="clearfix"></div>
@@ -703,10 +711,10 @@
 							<div class="entry-content">
 								<div class="entry-meta media mt-0 no-bg no-border">
 									<div class="media-body">
-										<h3 align="center" class="title">Наука духовных взаимоотношений</h3></a>
+										<h3 align="center" class="title">Наука духовных взаимоотношений</h3>
 									</div>
 								</div>
-								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Чайтанья Чандра Чаран прабху</span></p>
+								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Чайтанья Чандра Чаран прабху</p>
 								<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Вебинар из цикла ШЛиС: "Развитие вайшнавского социума"</p>
 								<p><i class="fa fa-edge mr-5 text-theme-colored"></i><strong>Сайт: </strong><a href="http://lsanga.ru" class="text-theme-colored" target="_blank">www.lsanga.ru</a>
 								<div class="clearfix"></div>
