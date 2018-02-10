@@ -31,15 +31,15 @@ $router->middleware('navigation')->group(function($router) {
 
     $router->get('contacts/leaders', 'Contacts\ContactsController@leaders')->name('contacts.leaders');
 
-    $router->get('resources/news1/{page_number?}', 'News\ListController@index')
+    $router->get('resources/news/{page_number?}', 'News\ListController@index')
         ->name('news')
         ->where('page_number', '^page(\d)+');
-    $router->get('resources/news1/{news_code}', 'News\NewsController@item')->name('news.item');
+    $router->get('resources/news/{news_code}', 'News\NewsController@item')->name('news.item');
 
-    $router->get('resources/articles1/{page_number?}', 'Articles\ListController@index')
+    $router->get('resources/articles/{page_number?}', 'Articles\ListController@index')
         ->name('articles')
         ->where('page_number', '^page(\d)+');
-    $router->get('resources/articles1/{article_code}', 'Articles\ArticleController@article')->name('articles.article');
+    $router->get('resources/articles/{article_code}', 'Articles\ArticleController@article')->name('articles.article');
 
     $router->get('{page_path}', 'PagesController@index')
         ->name('page')
