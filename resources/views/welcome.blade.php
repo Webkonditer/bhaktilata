@@ -440,55 +440,14 @@
 					</div>
 				@endif
 
-				@if (!empty($_GET['news_variant']) && !empty($news))
+				@if (!empty($news))
 					<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
 						@include('public.widgets.latest-news', [
 							'news' => $news,
 						])
 					</div>
-				@else
-					<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
-						<h3 class="widget-title line-bottom">Последние <a href="/resources/news" class="text-theme-colored">новости:</a></h3>
-						<div class="latest-posts">
-							<article class="post media-post clearfix pb-0 mb-10">
-								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news6.jpg" alt=""></div>
-								<div class="post-right">
-									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news6">Сегодня мы запускаем наш сайт!</a></h5>
-									<p class="post-date mb-0 font-14">29 авг, 2017</p>
-								</div>
-							</article>
-							<article class="post media-post clearfix pb-0 mb-10">
-								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news5.jpg" alt=""></div>
-								<div class="post-right">
-									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news5">Создано расписание всех очных курсов</a></h5>
-									<p class="post-date mb-0 font-14">25 авг, 2017</p>
-								</div>
-							</article>
-							<article class="post media-post clearfix pb-0 mb-10">
-								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news4.jpg" alt=""></div>
-								<div class="post-right">
-									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news4">Готов раздел сотрудничества с нами</a></h5>
-									<p class="post-date mb-0 font-14">20 авг, 2017</p>
-								</div>
-							</article>
-							<article class="post media-post clearfix pb-0 mb-10">
-								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news3.jpg" alt=""></div>
-								<div class="post-right">
-									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news3">Сделан курс по ступеням духовного развития</a></h5>
-									<p class="post-date mb-0 font-14">10 авг, 2017</p>
-								</div>
-							</article>
-							<article class="post media-post clearfix pb-0 mb-10">
-								<div class="pull-left col-md-4 post-thumb pb-0 mb-0"><img class="flip" src="/images/news/news2.jpg" alt=""></div>
-								<div class="post-right">
-									<h5 class="post-title mt-0 mb-5 font-18"><a href="/resources/news/news2">Запуск онлайн курса по наставничеству</a></h5>
-									<p class="post-date mb-0 font-14">5 авг, 2017</p>
-								</div>
-							</article>
-
-						</div>
-					</div>
 				@endif
+
 				<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
 
 					<h3 class="widget-title line-bottom">Ближайшие <a href="/studying/closest-courses" class="text-theme-colored">курсы:</a></h3>
@@ -623,61 +582,13 @@
 	<section>
 		<div class="container" data-margin-top="-20px">
 			<div class="row">
-				@if (!empty($_GET['articles_variant']) && !empty($articles))
+				@if (!empty($articles))
 					<div class="col-md-6">
 						@include('public.widgets.latest-articles', [
 							'articles' => $articles,
 						])
 					</div>
-				@else
-					<div class="col-md-6">
-						<p><h3 class="widget-title line-bottom">Новые <a href="/resources/articles" class="text-theme-colored">статьи:</a></h3></p>
-
-						<div class="col-md-6">
-							<article class="post clearfix mb-30 bg-lighter">
-								<div class="entry-header">
-									<div class="post-thumb thumb">
-										<img src="/images/articles/article1.jpg" alt="" class="img-responsive img-fullwidth">
-									</div>
-								</div>
-								<div class="entry-content">
-									<div class="entry-meta media no-bg no-border">
-										<div class="media-body">
-											<h3 align="center" class="title"><a href="/resources/article1">О целях образования</a></h3>
-										</div>
-									</div>
-									<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.С. Бхакти Вигьяна Госвами Махарадж</p>
-									<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Лекция о принципах, целях и ценностях истинного, ведического образования.</p>
-									<div class="text-center"><a href="/resources/article1" class="btn btn-theme-colored">Читать!</a></div>
-									<div class="clearfix"></div>
-								</div>
-								<br>
-							</article>
-						</div>
-						<div class="col-md-6">
-							<article class="post clearfix mb-30 bg-lighter">
-								<div class="entry-header">
-									<div class="post-thumb thumb">
-										<img src="/images/articles/article2.jpg" alt="" class="img-responsive img-fullwidth">
-									</div>
-								</div>
-								<div class="entry-content">
-									<div class="entry-meta media no-bg no-border">
-										<div class="media-body">
-											<h3 align="center" class="title"><a href="/resources/article2">Смена парадигмы</a></h3>
-										</div>
-									</div>
-									<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Ачьюта прия прабху</p>
-									<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Выдержка из книги "Бхаката-сева", посвященной заботе о преданных.</p>
-									<div class="text-center"><a href="/resources/article2" class="btn btn-theme-colored">Читать!</a></div>
-									<div class="clearfix"></div>
-								</div>
-								<br>
-							</article>
-						</div>
-					</div>
 				@endif
-
 
 				<div class="col-md-6">
 
