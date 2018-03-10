@@ -25,6 +25,7 @@ $router->middleware('navigation')->group(function($router) {
 //            ->where('project_category_slugs', '^[a-zA-Z\/-](?!project).+');
 //    });
 
+    $router->get('studying/closest-courses', 'Courses\ScheduleController@index')->name('courses.schedule');
 
     $router->get('forms/ok', '\App\Forms\Http\Controllers\SimpleFormController@success')->name('simple.form.ok');
     $router->post('forms/{code}', '\App\Forms\Http\Controllers\SimpleFormController@store')->name('simple.form.store');
@@ -60,6 +61,12 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/courses/categories/{category}/edit', 'Courses\CategoryController@edit')->name('admin.course.category.edit');
     $router->post('/courses/categories/{category}/store', 'Courses\CategoryController@store')->name('admin.course.category.store');
     $router->get('/courses/categories/{category}/delete', 'Courses\CategoryController@delete')->name('admin.course.category.delete');
+
+    $router->get('/courses/events', 'Courses\EventsListController@index')->name('admin.courses.events.list');
+    $router->get('/courses/events/add', 'Courses\EventController@add')->name('admin.courses.events.add');
+    $router->get('/courses/events/{courseEvent}/edit', 'Courses\EventController@edit')->name('admin.courses.events.edit');
+    $router->post('/courses/events/{courseEvent}/store', 'Courses\EventController@store')->name('admin.courses.events.store');
+    $router->get('/courses/events/{courseEvent}/delete', 'Courses\EventController@delete')->name('admin.courses.events.delete');
 
     $router->get('/projects', 'Projects\ListController@index')->name('admin.projects.list');
     $router->get('/projects/add', 'Projects\ProjectController@add')->name('admin.project.add');

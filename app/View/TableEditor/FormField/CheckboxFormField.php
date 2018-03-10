@@ -13,6 +13,12 @@ class CheckboxFormField extends FormField
         ]);
     }
 
+    public function fill($source)
+    {
+        $this->setValue(isset($source[$this->code()]));
+    }
+
+
     public function setValue($value)
     {
         parent::setValue((is_bool($value) && $value)|| $value === 'on');

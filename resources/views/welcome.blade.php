@@ -448,6 +448,14 @@
 					</div>
 				@endif
 
+
+				@if (!empty($events))
+					<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
+						@include('public.widgets.closest-events', [
+							'events' => $events,
+						])
+					</div>
+				@endif
 				<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
 
 					<h3 class="widget-title line-bottom">Ближайшие <a href="/studying/closest-courses" class="text-theme-colored">курсы:</a></h3>
