@@ -389,6 +389,11 @@
                         <i class="fa fa-file-text-o"></i> <span>Статьи</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.courses.events.list')}}">
+                        <i class="fa fa-file-text-o"></i> <span>Расписание курсов</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
