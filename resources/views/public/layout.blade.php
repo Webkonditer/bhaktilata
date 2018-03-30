@@ -23,7 +23,7 @@
     {{--{!! $crumbs->asUl() !!}--}}
     <div id="wrapper" class="clearfix">
         <!-- preloader -->
-        @if (!isset($_GET['no_preloader']))
+        @if (false)
             <div id="preloader">
                 <div id="spinner">
                     <img class="floating ml-5" src="{{ url('/images/preloaders/13.png') }}" alt="">
