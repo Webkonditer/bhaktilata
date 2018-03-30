@@ -449,7 +449,7 @@
 				@endif
 
 
-				@if (!empty($events))
+				@if ($events->isEmpty())
 					<div class="col-xs-12 col-sm-12 col-md-4 pb-sm-20">
 						@include('public.widgets.closest-events', [
 							'events' => $events,
