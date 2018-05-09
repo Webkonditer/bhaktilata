@@ -41,6 +41,8 @@ class Navigation extends BaseTrimmer
             $menu->projects_philosophy_and_practice_general->add('Серия курсов Бхакти-лата', 'about/materials');
             $menu->projects_philosophy_and_practice_general->add('Ученик в ИСККОН', 'idc');
             $menu->projects_philosophy_and_practice_general->add('Саманья-бхакти-шастры', 'bs');
+            $menu->projects_philosophy_and_practice_general->add('Академия во Вриндаване', 'http://www.vrindavan-academy.com')->data('outer', true);
+            $menu->projects_philosophy_and_practice_general->add('Маяпурский институт', 'http://mayapurinstitute.org/ru')->data('outer', true);
 //            $menu->projects_philosophy_and_practice->raw('Специализирвоанные курсы')->nickname('philosophy_and_practice_special_courses');
 //            $menu->philosophy_and_practice_special_courses->add('Курсы санскрита', 'sanskrit');
 
