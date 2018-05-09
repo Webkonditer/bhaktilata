@@ -1,19 +1,25 @@
 <?php
 
 return [
-    'title' => 'Связь с нами',
+    'title' => 'Регистрация на КПУ1',
     'fields' => [
         'name' => [
             'type' => 'string',
             'caption' => 'Имя ',
-            'required' => true,
+            'required' => false,
             'placeholder' => 'Ваше имя',
         ],
         'email' => [
             'type' => 'email',
             'caption' => 'E-mail ',
-            'required' => true,
+            'required' => false,
             'placeholder' => 'Ваш e-mail',
+        ],
+        'phone' => [
+            'type' => 'string',
+            'caption' => 'Телефон ',
+            'required' => false,
+            'placeholder' => 'Ваш телефон ',
         ],
         'skype' => [
             'type' => 'string',
@@ -21,24 +27,24 @@ return [
             'required' => false,
             'placeholder' => 'Ваш Skype, если есть ',
         ],
-        'topic' => [
+        'city' => [
             'type' => 'string',
-            'caption' => 'Тема сообщения ',
-            'required' => true,
-            'placeholder' => 'Тема Вашего сообщения ',
+            'caption' => 'Город ',
+            'required' => false,
+            'placeholder' => 'Ваш город проживания ',
         ],
         'description' => [
             'type' => 'text',
-            'caption' => 'Текст ',
-            'required' => true,
-            'rows' => 10,
-            'placeholder' => 'Ваш текст ',
+            'caption' => 'Комментарий ',
+            'required' => false,
+            'rows' => 5,
+            'placeholder' => 'Ваш комментарий, если есть ',
         ],
     ],
-    'send_to' => 'sekretariatbhaktilata@gmail.com',
+    'send_to' => 'kurs@veda.ru',
     'send_to_client' => 'email',
     'submit' => 'Отправить',
     'parameters' => [
-        'show_close_modal' => false,
+        'show_close_modal' => true,
     ],
 ];
