@@ -389,9 +389,24 @@
                         <i class="fa fa-file-text-o"></i> <span>Статьи</span>
                     </a>
                 </li>
-                <li>
+                {{--<li>
                     <a href="{{route('admin.courses.events.list')}}">
-                        <i class="fa fa-file-text-o"></i> <span>Расписание курсов</span>
+                        <i class="fa fa-th-list"></i> <span>Расписание курсов</span>
+                    </a>
+                </li>--}}
+                <li>
+                    <a href="{{route('admin.schedule.index')}}">
+                        <i class="fa fa-th-list"></i> <span>Расписание курсов</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="{{route('admin.documentation.index')}}">
+                        <i class="fa fa-file-o"></i> <span>Документы</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('admin.video.index')}}">
+                        <i class="fa fa-caret-square-o-right"></i> <span>Видео и вебинары</span>
                     </a>
                 </li>
             </ul>
@@ -403,7 +418,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>@yield('title', 'Dashboard')</h1>
+            <h1>@yield('title', 'Панель управления')</h1>
             <ol class="breadcrumb">
                 <li><a href="/admin/dashboard"><i class="fa fa-dashboard"></i> Главная</a></li>
                 @yield('crumbs', '<li class="active">Dashboard</li>')

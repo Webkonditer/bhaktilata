@@ -39,6 +39,7 @@ class Navigation extends BaseTrimmer
             $menu->projects_philosophy_and_practice->raw('Общие курсы')->nickname('projects_philosophy_and_practice_general');
 
             $menu->projects_philosophy_and_practice_general->add('Серия курсов Бхакти-лата', 'about/materials');
+			$menu->projects_philosophy_and_practice_general->add('По Шримад Бхагаватам', 'sb');
             $menu->projects_philosophy_and_practice_general->add('Ученик в ИСККОН', 'idc');
             $menu->projects_philosophy_and_practice_general->add('Саманья-бхакти-шастры', 'bs');
             $menu->projects_philosophy_and_practice_general->add('Академия во Вриндаване', 'http://www.vrindavan-academy.com')->data('outer', true);
@@ -69,22 +70,26 @@ class Navigation extends BaseTrimmer
             $menu->raw('Ресурсы')->nickname('resources')->active('/resources/*');
             $menu->resources->add('Статьи', 'resources/articles');
             $menu->resources->add('Новости', 'resources/news/');
-            $menu->resources->add('Видео/вебинары', 'resources/video');
-            $menu->resources->add('Документы', 'resources/documents');
+            //$menu->resources->add('Видео/вебинары', 'resources/video');
+            $menu->resources->add('Видео/вебинары', 'resources/videos');
+            //$menu->resources->add('Документы', 'resources/documents');
+            $menu->resources->add('Документы', 'resources/documentations');
             $menu->resources->add('Ссылки', 'resources/links');
             $menu->resources->add('Заказ книг', 'resources/books');
 
             $menu->raw('Обучение')->nickname('studying');
-            $menu->studying->add('Расписание очных курсов', 'studying/closest-courses');
+            //$menu->studying->add('Расписание очных курсов', 'studying/closest-courses');
+            $menu->studying->add('Расписание очных курсов', 'studying/course-schedule');
             $menu->studying->add('Онлайн-обучение', 'https://online.bhaktilata.ru/')->data('outer', true);
             $menu->studying->add('Техническая поддержка', 'online-studying/how-to-use-platform');
 
             $menu->raw('Сотрудничество')->nickname('cooperation');
             $menu->cooperation->add('Принять участие', 'cooperation/participate');
-            $menu->cooperation->add('Пожертвование', 'cooperation/donations');
-            $menu->cooperation->add('Стать проектом Бхакти-латы', 'cooperation/become-a-project');
-            $menu->cooperation->add('Стать преподавателем курса', 'cooperation/become-a-teacher');
-            $menu->cooperation->add('Руководителям общин', 'cooperation/leaders');
+            //$menu->cooperation->add('Пожертвование', 'cooperation/donations');
+			$menu->cooperation->add('Клуб попечителей', 'help');
+            $menu->cooperation->add('С проектами', 'cooperation/become-a-project');
+            $menu->cooperation->add('С преподавателями', 'cooperation/become-a-teacher');
+            $menu->cooperation->add('С лидерами общин', 'cooperation/leaders');
 
             $menu->raw('Контакты')->nickname('contacts');
             $menu->contacts->add('Связь с нами', 'contacts/contact-us');

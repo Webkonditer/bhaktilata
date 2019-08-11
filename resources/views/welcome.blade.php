@@ -484,48 +484,42 @@
 
 				<div class="col-md-6">
 
-					<p><h3 class="widget-title line-bottom">Последние <a href="/resources/video" class="text-theme-colored">вебинары:</a></h3></p>
+					<p><h3 class="widget-title line-bottom">Последние <a href="/resources/videos" class="text-theme-colored">вебинары:</a></h3></p>
 
+					@forelse ($videos as $key=>$data)
 					<div class="col-md-6">
 						<article class="post clearfix mb-30 bg-lighter">
 							<div class="entry-header">
-								<iframe width="360" height="240" src="https://www.youtube.com/embed/ihDgMBqQrI8" allowfullscreen></iframe>
+								<iframe allowfullscreen="" height="240" src="{{$data->video_uri}}" width="360"></iframe>
 							</div>
 							<div class="entry-content">
 								<div class="entry-meta media mt-0 no-bg no-border">
 									<div class="media-body">
-										<h3 align="center" class="title">Определение своей природы</h3>
+										<h3 align="center" class="title">{{$data->title}}</h3>
 									</div>
 								</div>
-								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Враджендра Кумар прабху</p>
-								<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Вебинар из цикла ШЛиС: "Развитие вайшнавского социума"</p>
-								<p><i class="fa fa-edge mr-5 text-theme-colored"></i><strong>Сайт: </strong><a href="http://lsanga.ru" class="text-theme-colored" target="_blank">www.lsanga.ru</a>
-								<div class="clearfix"></div>
+								<p>
+									<i class="fa fa-user mr-5 text-theme-colored"></i>
+									<strong>Автор: </strong>{{$data->autor}}
+								</p>
+								<p>
+									<i class="fa fa-pencil mr-5 text-theme-colored"></i>
+									<strong>Описание: </strong>{{$data->description}}
+								</p>
+								<p>
+									<i class="fa fa-edge mr-5 text-theme-colored"></i>
+									<strong>Сайт: </strong>
+									<a class="text-theme-colored" href="{{$data->site_link}}" target="_blank">
+															{{$data->site_link}}
+														</a>
+								</p>
+								<div class="clearfix">&nbsp;</div>
 							</div>
-							<br>
 						</article>
 					</div>
-
-					<div class="col-md-6">
-						<article class="post clearfix mb-30 bg-lighter">
-							<div class="entry-header">
-								<iframe width="360" height="240" src="https://www.youtube.com/embed/9CPEv3Pn-pM" allowfullscreen></iframe>
-							</div>
-							<div class="entry-content">
-								<div class="entry-meta media mt-0 no-bg no-border">
-									<div class="media-body">
-										<h3 align="center" class="title">Наука духовных взаимоотношений</h3>
-									</div>
-								</div>
-								<p><i class="fa fa-user mr-5 text-theme-colored"></i><strong>Автор: </strong>Е.М. Чайтанья Чандра Чаран прабху</p>
-								<p><i class="fa fa-pencil mr-5 text-theme-colored"></i><strong>Описание: </strong>Вебинар из цикла ШЛиС: "Развитие вайшнавского социума"</p>
-								<p><i class="fa fa-edge mr-5 text-theme-colored"></i><strong>Сайт: </strong><a href="http://lsanga.ru" class="text-theme-colored" target="_blank">www.lsanga.ru</a>
-								<div class="clearfix"></div>
-							</div>
-							<br>
-						</article>
-					</div>
-
+					@empty
+					<div></div>
+					@endforelse
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,16 @@
 /** @var \Illuminate\Routing\Router $router */
 $router->middleware('navigation')->group(function($router) {
     /** @var \Illuminate\Routing\Router $router */
-    $router->get('/', 'IndexController@index')->name('main');
+
+	$router->get('/', 'IndexController@index')->name('main');
+
+	//--Нароттам Вилас (Роут для вывода страницы с загруженными документами)
+	$router->get('resources/documentations', 'Admin\DocumentationController@showPage')
+	->name('resources.documentations');
+	//(Роут для вывода страницы с видео и вебинарами)
+	$router->get('resources/videos', 'Admin\VideoController@showPage')
+	->name('resources.videos');
+	//Нароттам Вилас--
 
 //    $router->namespace('Courses')->prefix('/courses')->group(function($router) {
 //        /** @var \Illuminate\Routing\Router $router */
@@ -25,7 +34,13 @@ $router->middleware('navigation')->group(function($router) {
 //            ->where('project_category_slugs', '^[a-zA-Z\/-](?!project).+');
 //    });
 
-    $router->get('studying/closest-courses', 'Courses\ScheduleController@index')->name('courses.schedule');
+	  $router->get('studying/closest-courses', 'Courses\ScheduleController@index')->name('courses.schedule');
+		//--Нароттам Вилас (Роут для работы с Ajax расписаний)
+		$router->post('studying/get_page', 'Courses\ScheduleController@get_page');
+		$router->get('studying/get_page', 'Courses\ScheduleController@get_page');
+		//(Роут для Расписаний очных курсов)
+		$router->get('studying/course-schedule', 'Courses\ScheduleController@show')->name('courses.course-schedule');
+		//Нароттам Вилас--
 
     $router->get('forms/ok', '\App\Forms\Http\Controllers\SimpleFormController@success')->name('simple.form.ok');
     $router->post('forms/{code}', '\App\Forms\Http\Controllers\SimpleFormController@store')->name('simple.form.store');
@@ -45,10 +60,24 @@ $router->middleware('navigation')->group(function($router) {
     $router->get('{page_path}', 'PagesController@index')
         ->name('page')
         ->where('page_path', '(?!admin|login)(.+)');
+
 });
+
 
 $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(function() use ($router) {
     $router->get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
+
+    //--Нароттам Вилас (Роут для работы с загруженными документами)
+    $router->resource('/documentation', 'DocumentationController', ['as'=>'admin']);
+		$router->get('/documentation/{documentation}/delete', 'DocumentationController@destroy')->name('admin.documentation.delete');
+		//(Роут для загрузки видео и вебинаров)
+		$router->resource('/video', 'VideoController', ['as'=>'admin']);
+		$router->get('/video/{video}/delete', 'VideoController@destroy')->name('admin.video.delete');
+		//(Роут для работы с расписанием)
+    $router->resource('/schedule', 'scheduleController', ['as'=>'admin']);
+		$router->get('/schedule/{schedule}/delete', 'scheduleController@destroy')->name('admin.schedule.delete');
+
+		//Нароттам Вилас--
 
     $router->get('/courses', 'Courses\ListController@index')->name('admin.courses.list');
     $router->get('/courses/add', 'Courses\CourseController@add')->name('admin.course.add');
@@ -67,6 +96,9 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
     $router->get('/courses/events/{courseEvent}/edit', 'Courses\EventController@edit')->name('admin.courses.events.edit');
     $router->post('/courses/events/{courseEvent}/store', 'Courses\EventController@store')->name('admin.courses.events.store');
     $router->get('/courses/events/{courseEvent}/delete', 'Courses\EventController@delete')->name('admin.courses.events.delete');
+		  //--Нароттам Вилас (Роут для работы с загруженными документами)
+		$router->post('/courses/events/get_page/{cour}', 'Courses\EventController@get_page');
+		//Нароттам Вилас--
 
     $router->get('/projects', 'Projects\ListController@index')->name('admin.projects.list');
     $router->get('/projects/add', 'Projects\ProjectController@add')->name('admin.project.add');

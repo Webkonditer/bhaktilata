@@ -53,7 +53,7 @@ return [
             'placeholder' => 'Ваш комментарий, если есть ',
         ],
     ],
-    'send_to' => 'bhaktisastri@mail.ru',
+    'send_to' => 'info@bhaktilata.ru',
     'send_to_client' => 'email',
     'submit' => 'Отправить',
     'parameters' => [

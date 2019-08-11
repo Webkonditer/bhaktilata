@@ -33,6 +33,8 @@
                                    placeholder="Введите название"
                             />
                         </div>
+                        
+                        {{------------------}}
                         <div class="form-group">
                             <label for="slug">Код</label>
                             <input type="text"

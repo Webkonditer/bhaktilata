@@ -68,7 +68,7 @@ return [
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'Это поле необходимо заполнить',
+    'required'             => 'Не заполнено поле [:attribute].',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :values is present.',
@@ -82,11 +82,11 @@ return [
         'string'  => 'The :attribute must be :size characters.',
         'array'   => 'The :attribute must contain :size items.',
     ],
-    'string'               => 'Значение поля должно быть строкой', //'The :attribute must be a string.'
+    'string'               => 'Значение поля [:attribute] должно быть строкой', //'The :attribute must be a string.'
     'timezone'             => 'The :attribute must be a valid zone.',
     'unique'               => 'The :attribute has already been taken.',
     'uploaded'             => 'The :attribute failed to upload.',
-    'url'                  => 'The :attribute format is invalid.',
+    'url'                  => 'Адрес [:attribute] указан неверно.',
 
     /*
     |--------------------------------------------------------------------------
