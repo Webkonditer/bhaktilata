@@ -1,7 +1,7 @@
 @extends('public.layout')
 
 @section('content')
-<section class="inner-header divider parallax" data-bg-img="/images/sp/photo3.jpg" style="background-image: url(/images/sp/photo3.jpg); background-position: 50% -45px;">
+<section class="inner-header divider parallax hidden-xs" data-bg-img="/images/sp/photo3.jpg" style="background-image: url(/images/sp/photo3.jpg); background-position: 50% -45px;">
   <div class="container pt-80 pb-20">
     <!-- Section Content -->
     <div class="section-content pt-140">

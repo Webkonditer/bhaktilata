@@ -17,3 +17,4 @@ npm-debug.log
 /public/yandex*
 /public/sp-push*
 /public/css/build
+/app/Providers/AppServiceProvider.php
