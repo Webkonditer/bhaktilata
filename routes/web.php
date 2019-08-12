@@ -76,6 +76,13 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
 		//(Роут для работы с расписанием)
     $router->resource('/schedule', 'scheduleController', ['as'=>'admin']);
 		$router->get('/schedule/{schedule}/delete', 'scheduleController@destroy')->name('admin.schedule.delete');
+		//(Роут для даных преподавателей)
+		$router->resource('/teachers', 'TeachersController', ['as'=>'admin']);
+		$router->get('/teachers/{teacher}/delete', 'TeachersController@destroy')->name('admin.teachers.delete');
+		$router->get('/teachers/create', 'TeachersController@create')->name('admin.teachers.create');
+		$router->post('/teachers/store', 'TeachersController@store')->name('admin.teachers.store');
+		$router->get('/teachers/{teacher}/edit', 'TeachersController@edit')->name('admin.teachers.edit');
+		$router->post('/teachers/{teacher}/update', 'TeachersController@update')->name('admin.teachers.update');
 
 		//Нароттам Вилас--
 

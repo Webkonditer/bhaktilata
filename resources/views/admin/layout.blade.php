@@ -398,7 +398,7 @@
                     <a href="{{route('admin.schedule.index')}}">
                         <i class="fa fa-th-list"></i> <span>Расписание курсов</span>
                     </a>
-                </li>                
+                </li>
                 <li>
                     <a href="{{route('admin.documentation.index')}}">
                         <i class="fa fa-file-o"></i> <span>Документы</span>
@@ -407,6 +407,11 @@
                 <li>
                     <a href="{{route('admin.video.index')}}">
                         <i class="fa fa-caret-square-o-right"></i> <span>Видео и вебинары</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('admin.teachers.index')}}">
+                        <i class="fa fa-user-secret"></i> <span>Преподаватели</span>
                     </a>
                 </li>
             </ul>

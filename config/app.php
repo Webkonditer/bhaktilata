@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Lavary\Menu\ServiceProvider::class,
-		
+
 		Backup\BackupServiceProvider::class,
 
     ],
