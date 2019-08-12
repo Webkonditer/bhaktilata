@@ -1,7 +1,7 @@
 @extends('public.layout')
 
 @section('content')
-    <section class="inner-header divider parallax" data-bg-img="{{ $page->image }}" style="background-image: url(&quot;{{ $page->image }}&quot;); background-position: 50% 62px;">
+    <section class="inner-header divider parallax hidden-xs" data-bg-img="{{ $page->image }}" style="background-image: url(&quot;{{ $page->image }}&quot;); background-position: 50% 62px;">
         <div class="container pt-80 pb-20">
             <!-- Section Content -->
             <div class="section-content pt-140">
