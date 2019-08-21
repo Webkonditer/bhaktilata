@@ -414,6 +414,11 @@
                         <i class="fa fa-user-secret"></i> <span>Преподаватели</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.onlinecourses.index')}}">
+                        <i class="fa fa-user-secret"></i> <span>Онлайн курсы</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->

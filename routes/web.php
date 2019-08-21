@@ -83,7 +83,9 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
 		$router->post('/teachers/store', 'TeachersController@store')->name('admin.teachers.store');
 		$router->get('/teachers/{teacher}/edit', 'TeachersController@edit')->name('admin.teachers.edit');
 		$router->post('/teachers/{teacher}/update', 'TeachersController@update')->name('admin.teachers.update');
-
+		//(Роут для даных онлайн курсов)
+		$router->resource('/onlinecourses', 'OnlineCourseController', ['as'=>'admin']);
+		$router->get('/onlinecourses/{onlinecourse}/delete', 'OnlineCourseController@destroy')->name('admin.onlinecourses.delete');
 		//Нароттам Вилас--
 
     $router->get('/courses', 'Courses\ListController@index')->name('admin.courses.list');
