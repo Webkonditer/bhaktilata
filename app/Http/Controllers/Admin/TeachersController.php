@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\teacher;
+use App\teacher; 
 
 class TeachersController extends Controller
 {

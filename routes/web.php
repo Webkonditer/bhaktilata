@@ -12,6 +12,9 @@ $router->middleware('navigation')->group(function($router) {
 	//(Роут для вывода страницы с видео и вебинарами)
 	$router->get('resources/videos', 'Admin\VideoController@showPage')
 	->name('resources.videos');
+	//(Роут для вывода онлайн-курсов)
+	$router->get('/onlinecourses/{onlinecourse}', 'FrontOnlineCoursesController@index')->name('onlinecourses.main');
+
 	//Нароттам Вилас--
 
 //    $router->namespace('Courses')->prefix('/courses')->group(function($router) {
@@ -86,6 +89,7 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
 		//(Роут для даных онлайн курсов)
 		$router->resource('/onlinecourses', 'OnlineCourseController', ['as'=>'admin']);
 		$router->get('/onlinecourses/{onlinecourse}/delete', 'OnlineCourseController@destroy')->name('admin.onlinecourses.delete');
+		$router->post('/onlinecourses/{onlinecourse}/update', 'OnlineCourseController@update')->name('admin.onlinecourses.update');
 		//Нароттам Вилас--
 
     $router->get('/courses', 'Courses\ListController@index')->name('admin.courses.list');

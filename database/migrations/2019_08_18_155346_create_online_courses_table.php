@@ -18,7 +18,7 @@ class CreateOnlineCoursesTable extends Migration
             $table->string('top_image')->nullable();
             $table->string('title')->nullable();
             $table->string('side_picture')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('benefits_list')->nullable();
             $table->string('topics')->nullable();
             $table->string('date_start')->nullable();
