@@ -416,7 +416,7 @@
                 </li>
                 <li>
                     <a href="{{route('admin.onlinecourses.index')}}">
-                        <i class="fa fa-user-secret"></i> <span>Онлайн курсы</span>
+                        <i class="fa fa-object-group"></i> <span>Онлайн курсы</span>
                     </a>
                 </li>
             </ul>

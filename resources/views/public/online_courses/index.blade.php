@@ -43,9 +43,9 @@
 <p><i class="fa fa-comments-o mr-5 text-theme-colored"></i><b> Аудитория:</b> {{ $audience }}</p>
 </div>
 <div class="col-md-6">
-<p><i class="fa fa-key mr-5 text-theme-colored"></i><b>Особые требования:</b>{{ $onlinecourse->special_requirements }}</p>
-<p><i class="fa fa-clock-o mr-5 text-theme-colored"></i><b>Длительность:</b>{{ $onlinecourse->duration }}</p>
-<p><i class="fa fa-mortar-board mr-5 text-theme-colored"></i><b>Формат:</b>{{ $onlinecourse->format }}</p>
+<p><i class="fa fa-key mr-5 text-theme-colored"></i><b>Особые требования:</b> {{ $onlinecourse->special_requirements }}</p>
+<p><i class="fa fa-clock-o mr-5 text-theme-colored"></i><b>Длительность:</b> {{ $onlinecourse->duration }}</p>
+<p><i class="fa fa-mortar-board mr-5 text-theme-colored"></i><b>Формат:</b> {{ $onlinecourse->format }}</p>
 </div>
 
 
