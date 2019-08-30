@@ -90,6 +90,11 @@ $router->middleware('auth')->prefix('/admin')->namespace('Admin')->group(functio
 		$router->resource('/onlinecourses', 'OnlineCourseController', ['as'=>'admin']);
 		$router->get('/onlinecourses/{onlinecourse}/delete', 'OnlineCourseController@destroy')->name('admin.onlinecourses.delete');
 		$router->post('/onlinecourses/{onlinecourse}/update', 'OnlineCourseController@update')->name('admin.onlinecourses.update');
+		//(Роут для даных карточки курсов)
+		$router->resource('/cardofcourses', 'CardOfCourseController', ['as'=>'admin']);
+		$router->get('/cardofcourses/{cardofcourse}/delete', 'CardOfCourseController@destroy')->name('admin.cardofcourses.delete');
+		$router->post('/cardofcourses/{cardofcourse}/update', 'CardOfCourseController@update')->name('admin.cardofcourses.update');
+
 		//Нароттам Вилас--
 
     $router->get('/courses', 'Courses\ListController@index')->name('admin.courses.list');
