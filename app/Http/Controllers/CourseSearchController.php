@@ -83,6 +83,7 @@ class CourseSearchController extends Controller
   {
 
     foreach ($CardOfCourses as $CardOfCourse) {
+
         $arrey[$CardOfCourse->id]['image'] = $CardOfCourse->picture;
         $arrey[$CardOfCourse->id]['title'] = $CardOfCourse->title;
         $arrey[$CardOfCourse->id]['description'] = $CardOfCourse->description;
@@ -128,7 +129,8 @@ class CourseSearchController extends Controller
         $arrey[$CardOfCourse->id]['course_link'] = $CardOfCourse->course_link;
     }
 
-    return $arrey;
+    if(isset($arrey)) return $arrey;
+    else return;
   }
 
   public function index()
@@ -162,7 +164,7 @@ class CourseSearchController extends Controller
       }
     }
     $response = array_unique($response);
-
+//dd($this->out($response));
     return view('public.card_of_courses.index', [
       'cards' => $this->out($response),
     ]);

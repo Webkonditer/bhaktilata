@@ -195,6 +195,8 @@
 
 
       <div class="row">
+        @if(isset($cards))
+
         @foreach ($cards as $card)
           <div class="col-md-6">
             <article class="post clearfix mb-30 bg-lighter">
@@ -228,6 +230,9 @@
             </article>
           </div>
       @endforeach
+      @else
+        <div class="tab-content">По заданным Вами критериям ничего не найдено.</div>
+      @endif
 
       <div style="clear:both">&nbsp;</div>
     </div>
