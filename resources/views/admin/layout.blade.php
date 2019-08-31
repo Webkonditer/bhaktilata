@@ -419,6 +419,11 @@
                         <i class="fa fa-object-group"></i> <span>Онлайн курсы</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.cardofcourses.index')}}">
+                        <i class="fa fa-newspaper-o"></i> <span>Карточки курсов</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->

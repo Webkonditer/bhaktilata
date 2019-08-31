@@ -55,12 +55,6 @@
                        </textarea>
                     </div>
 
-
-
-                    //-----------------------------------
-
-
-
                     <div class="form-group">
                       <label for="topics">Темы:</label>
                       <p class="tab mb5 mt10">1. Изучение писаний</p>
@@ -301,9 +295,9 @@
                     <div class="form-group">
                       <label for="topics">Длительность:</label>
                       <div class="tab2">
-                        <input type="checkbox" name=" duration[1]" id=""
+                        <input type="checkbox" name="duration[1]" id=""
                         @foreach ($durations as $duration)
-                          @if($duration == "5") checked @endif
+                          @if($duration == "1") checked @endif
                         @endforeach
                         >
                       &nbsp;&nbsp;Пара дней
@@ -433,7 +427,7 @@
                     <div class="form-group">
                       <label for="format">Формат курса:</label>
                       <div class="tab2">
-                        <input type="checkbox" name=" format[1]" id=""
+                        <input type="checkbox" name="format[1]" id=""
                         @foreach ($formats as $format)
                           @if($format == "1") checked @endif
                         @endforeach

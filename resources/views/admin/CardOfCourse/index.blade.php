@@ -31,7 +31,7 @@
                     <tr role="row">
                         <td>{{ $cardofcourse->id }}</td>
                         <td>{{ $cardofcourse->title }}</td>
-                        <td><a href="{{ route('admin.onlinecourses.edit', ['id' => $cardofcourse->id]) }}"><i class="icon glyphicon glyphicon-pencil"></i></a></td>
+                        <td><a href="{{ route('admin.cardofcourses.edit', ['id' => $cardofcourse->id]) }}"><i class="icon glyphicon glyphicon-pencil"></i></a></td>
                         <td><a onclick="return confirm ('Удалить карточку курса?')" href="{{ route('admin.cardofcourses.delete', ['id' => $cardofcourse->id]) }}"><i class="icon glyphicon glyphicon-remove"></i></a></td>
                     </tr>
                   @empty

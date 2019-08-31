@@ -39,39 +39,33 @@ class CardOfCourseController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request, CardOfCourse $CardOfCourse)
+  public function store(Request $request, CardOfCourse $cardofcourse)
   {
       //dd($request);
       $validator = $this->validate($request, [
-        'top_image' => 'required|active_url',
+        'picture' => 'required|image',
         'title' => 'required|string|max:255',
-        'side_picture' => 'required|image',
         'description' => 'required|string|max:2000',
-        'benefits_list' => 'required|string|max:255',
         'topics.*' => 'required|string|max:2',
         'date_start' => 'required|string|max:255',
         'audience.*' => 'required|string|max:2',
-        'special_requirements' => 'required|string|max:255',
-        'duration' => 'required|string|max:255',
-        'format' => 'required|string|max:255',
+        'duration.*' => 'required|string|max:2',
+        'format.*' => 'required|string|max:2',
         'teacher.*' => 'required|string|max:2',
-        'registration_link' => 'required|active_url',
+        'course_link' => 'required|active_url',
       ]);
-      $topics = '';
-      $CardOfCourse->top_image = $request->top_image;
-      $CardOfCourse->title = $request->title;
-      $CardOfCourse->side_picture = $request->file('side_picture')->store('i/CardOfCourse', 'public');
-      $CardOfCourse->description = $request->description;
-      $CardOfCourse->benefits_list = $request->benefits_list;
-      $CardOfCourse->topics = implode('|', array_keys($request->topics));
-      $CardOfCourse->date_start = $request->date_start;
-      $CardOfCourse->audience = implode('|', array_keys($request->audience));
-      $CardOfCourse->special_requirements = $request->special_requirements;
-      $CardOfCourse->duration = $request->duration;
-      $CardOfCourse->format = $request->format;
-      $CardOfCourse->teacher = implode('|', array_keys($request->teacher));
-      $CardOfCourse->registration_link = $request->registration_link;
-      $CardOfCourse->save();
+
+      $cardofcourse->picture = $request->file('picture')->store('i/CardOfCourse', 'public');
+      $cardofcourse->title = $request->title;
+      $cardofcourse->description = $request->description;
+      $cardofcourse->topics = implode('|', array_keys($request->topics));
+      $cardofcourse->date_start = $request->date_start;
+      $cardofcourse->audience = implode('|', array_keys($request->audience));
+      $cardofcourse->duration = implode('|', array_keys($request->duration));
+      $cardofcourse->format = implode('|', array_keys($request->format));
+      $cardofcourse->teacher = implode('|', array_keys($request->teacher));
+      $cardofcourse->course_link = $request->course_link;
+      $cardofcourse->save();
 
       return redirect()->route('admin.cardofcourses.index');
   }
@@ -93,15 +87,17 @@ class CardOfCourseController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit(CardOfCourse $CardOfCourse)
+  public function edit(CardOfCourse $cardofcourse)
   {
 
     return view('admin.CardOfCourse.edit', [
-      'cardofcourses' => $CardOfCourse,
+      'cardofcourse' => $cardofcourse,
       'teachers' => teacher::orderBy('id', 'asc')->get(),
-      'topics' => explode("|", $CardOfCourse->topics),
-      'audiences' => explode("|", $CardOfCourse->audience),
-      'ch_teachers' => explode("|", $CardOfCourse->teacher),
+      'topics' => explode("|", $cardofcourse->topics),
+      'audiences' => explode("|", $cardofcourse->audience),
+      'ch_teachers' => explode("|", $cardofcourse->teacher),
+      'durations' => explode("|", $cardofcourse->duration),
+      'formats' => explode("|", $cardofcourse->format),
     ]);
   }
 
@@ -112,38 +108,33 @@ class CardOfCourseController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, CardOfCourse $CardOfCourse)
+  public function update(Request $request, CardOfCourse $cardofcourse)
   {
+
     $validator = $this->validate($request, [
-      'top_image' => 'required|active_url',
+      'picture' => 'nullable|image',
       'title' => 'required|string|max:255',
-      'side_picture' => 'nullable|image',
       'description' => 'required|string|max:2000',
-      'benefits_list' => 'required|string|max:255',
       'topics.*' => 'required|string|max:2',
       'date_start' => 'required|string|max:255',
       'audience.*' => 'required|string|max:2',
-      'special_requirements' => 'required|string|max:255',
-      'duration' => 'required|string|max:255',
-      'format' => 'required|string|max:255',
+      'duration.*' => 'required|string|max:2',
+      'format.*' => 'required|string|max:2',
       'teacher.*' => 'required|string|max:2',
-      'registration_link' => 'required|active_url',
+      'course_link' => 'required|active_url',
     ]);
 
-    $CardOfCourse->top_image = $request->top_image;
-    $CardOfCourse->title = $request->title;
-    if(isset($request->side_picture))$CardOfCourse->side_picture = $request->file('side_picture')->store('i/CardOfCourse', 'public');
-    $CardOfCourse->description = $request->description;
-    $CardOfCourse->benefits_list = $request->benefits_list;
-    $CardOfCourse->topics = implode('|', array_keys($request->topics));
-    $CardOfCourse->date_start = $request->date_start;
-    $CardOfCourse->audience = implode('|', array_keys($request->audience));
-    $CardOfCourse->special_requirements = $request->special_requirements;
-    $CardOfCourse->duration = $request->duration;
-    $CardOfCourse->format = $request->format;
-    $CardOfCourse->teacher = implode('|', array_keys($request->teacher));
-    $CardOfCourse->registration_link = $request->registration_link;
-    $CardOfCourse->save();
+    if(isset($request->picture))$cardofcourse->picture = $request->file('picture')->store('i/CardOfCourse', 'public');
+    $cardofcourse->title = $request->title;
+    $cardofcourse->description = $request->description;
+    $cardofcourse->topics = implode('|', array_keys($request->topics));
+    $cardofcourse->date_start = $request->date_start;
+    $cardofcourse->audience = implode('|', array_keys($request->audience));
+    $cardofcourse->duration = implode('|', array_keys($request->duration));
+    $cardofcourse->format = implode('|', array_keys($request->format));
+    $cardofcourse->teacher = implode('|', array_keys($request->teacher));
+    $cardofcourse->course_link = $request->course_link;
+    $cardofcourse->save();
 
     return redirect()->route('admin.cardofcourses.index');
   }
@@ -154,9 +145,9 @@ class CardOfCourseController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy(CardOfCourse $CardOfCourse)
+  public function destroy(CardOfCourse $cardofcourse)
   {
-    $CardOfCourse->delete();
+    $cardofcourse->delete();
 
     return redirect()->route('admin.cardofcourses.index');
   }

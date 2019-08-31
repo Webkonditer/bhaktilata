@@ -13,8 +13,10 @@ $router->middleware('navigation')->group(function($router) {
 	$router->get('resources/videos', 'Admin\VideoController@showPage')
 	->name('resources.videos');
 	//(Роут для вывода онлайн-курсов)
-	$router->get('/onlinecourses/{onlinecourse}', 'FrontOnlineCoursesController@index')->name('onlinecourses.main');
-
+	$router->get('/onlin/{onlinecourse}', 'FrontOnlineCoursesController@index')->name('onlinecourses.main');
+	//(Роут для вывода картоек онлайн-курсов)
+	$router->get('/course_search', 'CourseSearchController@index')->name('course_search.main');
+	$router->post('/course_search', 'CourseSearchController@search_1')->name('course_search.post1');
 	//Нароттам Вилас--
 
 //    $router->namespace('Courses')->prefix('/courses')->group(function($router) {

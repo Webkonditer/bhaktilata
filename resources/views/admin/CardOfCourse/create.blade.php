@@ -191,7 +191,7 @@
                     <div class="form-group">
                       <label for="topics">Длительность:</label>
                       <div class="tab2">
-                        <input type="checkbox" name=" duration[1]" id="" @if("on"==old(' duration.1')) checked @endif >
+                        <input type="checkbox" name="duration[1]" id="" @if("on"==old('duration.1')) checked @endif >
                       &nbsp;&nbsp;Пара дней
                       </div>
                       <div class="tab2">
@@ -259,7 +259,7 @@
                     <div class="form-group">
                       <label for="format">Формат курса:</label>
                       <div class="tab2">
-                        <input type="checkbox" name=" format[1]" id="" @if("on"==old(' format.1')) checked @endif >
+                        <input type="checkbox" name="format[1]" id="" @if("on"==old('format.1')) checked @endif >
                       &nbsp;&nbsp;Онлайн (с сопровождением)
                       </div>
                       <div class="tab2">
