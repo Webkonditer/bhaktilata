@@ -236,7 +236,15 @@
                             @if($topic == "21") checked @endif
                           @endforeach
                         >
-                      &nbsp;&nbsp;a. Социальное и семейное образование
+                      &nbsp;&nbsp;a. Социальное образование
+                      </div>
+                      <div class="tab2">
+                        <input type="checkbox" name="topics[22]" id=""
+                          @foreach ($topics as $topic)
+                            @if($topic == "22") checked @endif
+                          @endforeach
+                        >
+                      &nbsp;&nbsp;b. Семейное образование
                       </div>
                     </div>
 

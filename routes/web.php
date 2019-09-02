@@ -12,11 +12,12 @@ $router->middleware('navigation')->group(function($router) {
 	//(Роут для вывода страницы с видео и вебинарами)
 	$router->get('resources/videos', 'Admin\VideoController@showPage')
 	->name('resources.videos');
-	//(Роут для вывода онлайн-курсов)
-	$router->get('/onlin/{onlinecourse}', 'FrontOnlineCoursesController@index')->name('onlinecourses.main');
 	//(Роут для вывода картоек онлайн-курсов)
-	$router->get('/course_search', 'CourseSearchController@index')->name('course_search.main');
-	$router->post('/course_search', 'CourseSearchController@search_1')->name('course_search.post1');
+	$router->get('/online', 'CourseSearchController@index')->name('online.main');
+	$router->post('/online', 'CourseSearchController@search')->name('online.post');
+	//(Роут для вывода онлайн-курсов)
+	$router->get('/online/{onlinecourse}', 'FrontOnlineCoursesController@index')->name('onlinecourses.main');
+
 	//Нароттам Вилас--
 
 //    $router->namespace('Courses')->prefix('/courses')->group(function($router) {

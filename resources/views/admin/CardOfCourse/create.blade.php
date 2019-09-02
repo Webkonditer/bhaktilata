@@ -152,7 +152,11 @@
                       <p class="tab mb5 mt10">7. Социальное и семейное образование</p>
                       <div class="tab2">
                         <input type="checkbox" name="topics[21]" id="" @if("on"==old('topics.21')) checked @endif>
-                      &nbsp;&nbsp;a. Социальное и семейное образование
+                      &nbsp;&nbsp;a. Социальное образование
+                      </div>
+                      <div class="tab2">
+                        <input type="checkbox" name="topics[22]" id="" @if("on"==old('topics.22')) checked @endif>
+                      &nbsp;&nbsp;b. Семейное образование
                       </div>
                     </div>
 

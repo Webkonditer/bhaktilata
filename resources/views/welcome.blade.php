@@ -524,6 +524,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="divider parallax layer-overlay overlay-dark-8"  data-bg-img="/images/sp/photo4.jpg">
 		<div class="container">
 			<div class="section-content text-center">
@@ -777,6 +778,7 @@
 				</div><br><br>
 			</div></div>
 	</section>
+
 	<section class="divider parallax layer-overlay overlay-dark-8"  data-bg-img="/images/sp/photo6.jpg">
 		<div class="container">
 			<div class="section-content text-center">
@@ -808,4 +810,5 @@
 			<div id="instafeed2" class="instagram-feed-carousel" data-userid="5893122485" data-accesstoken="5893122485.1677ed0.020d2c203bf94144a383bb9b6437394a" data-limit="12" data-resolution="low_resolution"></div>
 		</div>
 	</section>
+
 @endsection

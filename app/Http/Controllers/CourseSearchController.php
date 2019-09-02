@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 use App\CardOfCourse;
 use App\teacher;
 
@@ -42,7 +43,8 @@ class CourseSearchController extends Controller
     $l[18] = 'Этикет и распорядок жизни';
     $l[19] = 'Духовное лидерство';
     $l[20] = 'Управление и организация';
-    $l[21] = 'Социальное и семейное образование' ;
+    $l[21] = 'Социальное образование';
+    $l[22] = 'Семейное образование';
 
     return $l[$id];
   }
@@ -139,34 +141,145 @@ class CourseSearchController extends Controller
 
     return view('public.card_of_courses.index', [
       'cards' => $this->out($CardOfCourses),
+      'audiences' => array(),
+      'topics' => array(),
+      'durations' => array(),
+      'formats' => array(),
     ]);
-
   }
 
-  public function search_1(Request $request)
+  public function search(Request $request)//Расширенный фильтр
   {
-    $validator = $this->validate($request, [
-      'audience.*' => 'required|string|max:2',
-    ]);
+    if(isset($request->filter2)){
 
-    foreach ($request->audience as $key => $value) {
-        $audiences[] = $key;
-    }
+      $validator = Validator::make($request->all(), [
+        'topic' => 'required|array',
+        'audience' => 'required|array',
+        'format' => 'required|array',
+        'duration' => 'required|array',
+      ],
+      [
+        'topic.required' => 'Вы забыли поставить галочку в разделе Темы.',
+        'audience.required' => 'Вы забыли поставить галочку в разделе Аудитория.',
+        'format.required' => 'Вы забыли поставить галочку в разделе Формат.',
+        'duration.required' => 'Вы забыли поставить галочку в разделе Длительность.',
+      ]);
+      if ($validator->fails()) {
+        return back()->withInput()->withErrors($validator->errors());
+      }
 
-    $CardOfCourses = CardOfCourse::orderBy('id', 'asc')->get();
-
-    $response = array();
-    foreach ($CardOfCourses as $CardOfCourse) {
-      foreach ($audiences as $audience) {
-        if(strstr($CardOfCourse->audience, (string)$audience)){
-          $response[] = $CardOfCourse;
+      //Фильтр по темам
+      $CardOfCourses = CardOfCourse::orderBy('id', 'asc')->get();
+      foreach ($request->topic as $key => $value) {
+          $topics[] = $key;
+      }
+      $filters_t = array();
+      foreach ($CardOfCourses as $CardOfCourse) {
+        foreach ($topics as $topic) {
+          if(strstr($CardOfCourse->topics, (string)$topic)){
+            $filters_t[] = $CardOfCourse;
+          }
         }
       }
+      $filters_t = array_unique($filters_t);
+
+      //Фильтр по аудитории
+      foreach ($request->audience as $key => $value) {
+          $audiences[] = $key;
+      }
+      $filters_a = array();
+      foreach ($filters_t as $filter_t) {
+        foreach ($audiences as $audience) {
+          if(strstr($filter_t->audience, (string)$audience)){
+            $filters_a[] = $filter_t;
+          }
+        }
+      }
+      $filters_a = array_unique($filters_a);
+
+      //Фильтр по формату
+      foreach ($request->format as $key => $value) {
+          $formats[] = $key;
+      }
+      $filters_f = array();
+      foreach ($filters_a as $filter_a) {
+        foreach ($formats as $format) {
+          if(strstr($filter_a->format, (string)$format)){
+            $filters_f[] = $filter_a;
+          }
+        }
+      }
+      $filters_f = array_unique($filters_f);
+
+      //Фильтр по длительности
+      foreach ($request->duration as $key => $value) {
+          $durs[] = $key;
+      }
+
+      foreach ($durs as $dur) {
+        if($dur == 1) $durations[] = 1;
+        if($dur == 2) $durations[] = 3;
+        if($dur == 3) {$durations[] = 4;$durations[] = 5;$durations[] = 6;$durations[] = 7;}
+        if($dur == 4) {$durations[] = 8;$durations[] = 9;$durations[] = 10;$durations[] = 11;$durations[] = 12;$durations[] = 13;$durations[] = 14;$durations[] = 15;$durations[] = 16;}
+        if($dur == 5) $durations[] = 17;
+        if($dur == 6) $durations[] = 18;
+      }
+      $durations = array_unique($durations);
+
+      $filters_d = array();
+      foreach ($filters_f as $filter_f) {
+        foreach ($durations as $duration) {
+          if(strstr($filter_f->duration, (string)$duration)){
+            $filters_d[] = $filter_f;
+          }
+        }
+      }
+      $filters_d = array_unique($filters_d);
+
+      return view('public.card_of_courses.index', [
+        'cards' => $this->out($filters_d),
+        'topics' => $topics,
+        'audiences' => $audiences,
+        'formats' => $formats,
+        'durations' => $durs,
+        'filter2' => 1,
+      ]);
     }
-    $response = array_unique($response);
-//dd($this->out($response));
-    return view('public.card_of_courses.index', [
-      'cards' => $this->out($response),
-    ]);
+    else{
+      $validator = Validator::make($request->all(), [
+        'audience' => 'required|array',
+      ],
+      [
+        'audience.required' => 'Вы забыли поставить галочку в разделе Аудитория.',
+      ]);
+
+      if ($validator->fails()) {
+        return back()->withInput()->withErrors($validator->errors());
+      }
+
+      foreach ($request->audience as $key => $value) {
+          $audiences[] = $key;
+      }
+
+      $CardOfCourses = CardOfCourse::orderBy('id', 'asc')->get();
+
+      $response = array();
+      foreach ($CardOfCourses as $CardOfCourse) {
+        foreach ($audiences as $audience) {
+          if(strstr($CardOfCourse->audience, (string)$audience)){
+            $response[] = $CardOfCourse;
+          }
+        }
+      }
+      $response = array_unique($response);
+
+      return view('public.card_of_courses.index', [
+        'cards' => $this->out($response),
+        'audiences' => $audiences,
+        'topics' => array(),
+        'durations' => array(),
+        'formats' => array(),
+      ]);
+    }
   }
 }

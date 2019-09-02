@@ -27,6 +27,7 @@ class Navigation extends BaseTrimmer
             $menu->bhakti_lata->add('Материалы', 'about/materials');
 
 
+            /*
             $menu->add('Рекомендованые проекты', 'projects')->nickname('projects')->data('megamenu', true);
 
             $menu->projects->raw('Внеконфессиональная проповедь')->nickname('projects_non_confessional');
@@ -39,7 +40,7 @@ class Navigation extends BaseTrimmer
             $menu->projects_philosophy_and_practice->raw('Общие курсы')->nickname('projects_philosophy_and_practice_general');
 
             $menu->projects_philosophy_and_practice_general->add('Серия курсов Бхакти-лата', 'about/materials');
-			$menu->projects_philosophy_and_practice_general->add('По Шримад Бхагаватам', 'sb');
+			      $menu->projects_philosophy_and_practice_general->add('По Шримад Бхагаватам', 'sb');
             $menu->projects_philosophy_and_practice_general->add('Ученик в ИСККОН', 'idc');
             $menu->projects_philosophy_and_practice_general->add('Саманья-бхакти-шастры', 'bs');
             $menu->projects_philosophy_and_practice_general->add('Академия во Вриндаване', 'http://www.vrindavan-academy.com')->data('outer', true);
@@ -66,7 +67,7 @@ class Navigation extends BaseTrimmer
             $menu->projects->raw('Другие проекты')->nickname('projects_another_projects');
             $menu->projects_another_projects->add('Партнёры Бхакти-латы', 'projects/another-projects/partners');
             $menu->projects_another_projects->add('Частные разработки', 'projects/another-projects/personal');
-
+            */
             $menu->raw('Ресурсы')->nickname('resources')->active('/resources/*');
             $menu->resources->add('Статьи', 'resources/articles');
             $menu->resources->add('Новости', 'resources/news/');
@@ -77,10 +78,10 @@ class Navigation extends BaseTrimmer
             $menu->resources->add('Ссылки', 'resources/links');
             $menu->resources->add('Заказ книг', 'resources/books');
 
-            $menu->raw('Обучение')->nickname('studying');
-            //$menu->studying->add('Расписание очных курсов', 'studying/closest-courses');
+            $menu->raw('Записаться на обучение')->nickname('studying');
+            $menu->studying->add('Каталог всех курсов', 'online');
             $menu->studying->add('Расписание очных курсов', 'studying/course-schedule');
-            $menu->studying->add('Онлайн-обучение', 'https://online.bhaktilata.ru/')->data('outer', true);
+            //$menu->studying->add('Онлайн-обучение', 'https://online.bhaktilata.ru/')->data('outer', true);
             $menu->studying->add('Техническая поддержка', 'online-studying/how-to-use-platform');
 
             $menu->raw('Сотрудничество')->nickname('cooperation');
